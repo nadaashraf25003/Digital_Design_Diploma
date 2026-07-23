@@ -1,0 +1,53 @@
+
+module DigCt (IN1,IN2,IN3,IN4,CLK,OUT1,OUT2,OUT3);
+
+// Ports declaration
+input  IN1  ;
+input  IN2  ;
+input  IN3  ;
+input  IN4  ;
+input  CLK  ;
+output OUT1 ; 
+output OUT2 ;
+output OUT3 ;
+
+
+// Signal type definition
+reg OUT1, OUT2, OUT3 ;
+reg D1, D2, D3 ;
+
+
+ 
+always @(posedge CLK)
+ begin
+  OUT1 <= D1 ;
+ end
+ 
+always @(posedge CLK)
+ begin
+  OUT2 <= D2 ;
+ end
+ 
+ always @(posedge CLK)
+ begin
+  OUT3 <= D3 ;
+ end
+ 
+always @(IN1,IN2)
+ begin
+   D1 = ~(IN1|IN2) ;
+ end
+ 
+always @(IN2,IN3)
+ begin
+   D2 = ~(IN2&IN3) ;
+ end
+ 
+ always @(IN3,IN4)
+ begin
+  D3 = IN3 | IN4 ;
+ end
+ 
+ 
+endmodule 
+ 
