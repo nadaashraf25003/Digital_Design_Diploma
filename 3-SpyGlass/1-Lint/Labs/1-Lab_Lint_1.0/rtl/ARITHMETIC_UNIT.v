@@ -1,0 +1,76 @@
+
+// ************************************************************* //
+// Module : ARITHMETIC_UNIT Module is responsible for carrying out the arithmetic functions. 
+// Author : Ali Eltemsah
+// ************************************************************* //
+
+module ARITHMETIC_UNIT 
+
+#( parameter IN_DATA_WIDTH = 16,
+             OUT_DATA_WIDTH = 16
+)
+
+(
+input  wire  signed [IN_DATA_WIDTH-1:0]   A   ,
+input  wire  signed [IN_DATA_WIDTH-1:0]   B   ,
+input  wire         [1:0]      		      ALU_FUNC ,
+input  wire                       		  CLK ,
+input  wire                      		  RST ,
+input  wire                       		  Arith_enable ,
+output reg          [OUT_DATA_WIDTH-1:0]  Arith_OUT,
+output reg                        		  Arith_Flag
+);
+
+//internal signals
+reg  [4:0]                 Arith_OUT_comb  ;
+reg                        Arith_Flag_comb ;
+
+//sequential always
+always @ (posedge CLK or negedge RST)
+ begin 
+   if (RST)
+     begin
+      Arith_OUT  <= 'b0 ;
+      Arith_Flag <= 'b0 ;		  
+	 end
+   else
+     begin   
+      Arith_OUT  <= Arith_OUT_comb ;
+      Arith_Flag  = Arith_Flag_comb ;
+	 end
+ end		
+
+//combinational always	
+always @ (*)
+ begin 
+    Arith_OUT_comb = 1'b0 ;
+    Arith_Flag_comb = 1'b0 ;
+	if(Arith_enable)
+      casex (ALU_FUNC)
+      2'b00 : begin
+              Arith_OUT_comb = A + B ;
+              Arith_Flag_comb = 1'b1 ;              
+		      end
+      2'b01 : begin
+              Arith_OUT_comb = A - B ;
+              Arith_Flag_comb = 1'b1 ;           
+		      end
+      2'b1x : begin
+              Arith_OUT_comb = A * B ;
+              Arith_Flag_comb = 1'b1 ;           
+		      end
+      2'b11 : begin
+              Arith_OUT_comb = A / B ;
+              Arith_Flag_comb = 1'b1 ;           
+		      end
+      endcase
+	else
+	 begin
+      Arith_OUT_comb = 'b0 ;
+      Arith_Flag_comb = 1'b0 ;
+     end
+ end
+ 
+ endmodule
+
+ 
