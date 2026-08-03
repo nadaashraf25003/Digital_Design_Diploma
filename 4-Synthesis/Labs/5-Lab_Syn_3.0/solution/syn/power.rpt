@@ -1,0 +1,49 @@
+Loading db file '/home/ICer/Labs/Lab_Syn_3.0/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : ALU_TOP
+Version: O-2018.06-SP1
+Date   : Mon Aug  3 07:18:50 2026
+****************************************
+
+
+Library(s) Used:
+
+    scmetro_tsmc_cl013g_rvt_ss_1p08v_125c (File: /home/ICer/Labs/Lab_Syn_3.0/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db)
+
+
+Operating Conditions: scmetro_tsmc_cl013g_rvt_ss_1p08v_125c   Library: scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+ALU_TOP                tsmc13_wl30       scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+
+Global Operating Voltage = 1.08 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+ALU_TOP                                   0.566 2.09e-02 5.49e+06    0.592 100.0
+  U0_ALU (ALU)                            0.553 1.99e-02 5.45e+06    0.578  97.6
+    mult_63 (ALU_DW02_mult_0)          1.06e-02 2.66e-03 1.74e+06 1.50e-02   2.5
+    add_57 (ALU_DW01_add_0)            6.06e-04 4.00e-04 2.23e+05 1.23e-03   0.2
+    sub_60 (ALU_DW01_sub_0)            9.16e-04 4.60e-04 2.55e+05 1.63e-03   0.3
+    div_66 (ALU_DW_div_uns_0)          7.00e-03 2.41e-03 1.36e+06 1.08e-02   1.8
+  U0_ClkDiv (ClkDiv)                   1.23e-02 9.28e-04 1.49e+04 1.33e-02   2.2
+1

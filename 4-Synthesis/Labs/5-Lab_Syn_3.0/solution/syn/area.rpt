@@ -1,0 +1,50 @@
+ 
+****************************************
+Report : area
+Design : ALU_TOP
+Version: O-2018.06-SP1
+Date   : Mon Aug  3 07:18:49 2026
+****************************************
+
+Library(s) Used:
+
+    scmetro_tsmc_cl013g_rvt_ss_1p08v_125c (File: /home/ICer/Labs/Lab_Syn_3.0/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db)
+
+Number of ports:                          251
+Number of nets:                           843
+Number of cells:                          559
+Number of combinational cells:            511
+Number of sequential cells:                41
+Number of macros/black boxes:               0
+Number of buf/inv:                        121
+Number of references:                       3
+
+Combinational area:               5810.544622
+Buf/Inv area:                      874.288091
+Noncombinational area:             914.295893
+Macro/Black Box area:                0.000000
+Net Interconnect area:          189140.954926
+
+Total cell area:                  6724.840515
+Total area:                     195865.795440
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  ----------------
+ALU_TOP                           6724.8405    100.0    17.6505     0.0000  0.0000  ALU_TOP
+U0_ALU                            6680.1259     99.3  1757.9898   887.2318  0.0000  ALU
+U0_ALU/add_57                      231.8099      3.4   231.8099     0.0000  0.0000  ALU_DW01_add_0
+U0_ALU/div_66                     1423.8070     21.2  1423.8070     0.0000  0.0000  ALU_DW_div_uns_0
+U0_ALU/mult_63                    2115.7066     31.5  1908.6074     0.0000  0.0000  ALU_DW02_mult_0
+U0_ALU/mult_63/FS_1                207.0992      3.1   207.0992     0.0000  0.0000  ALU_DW01_add_1
+U0_ALU/sub_60                      263.5808      3.9   263.5808     0.0000  0.0000  ALU_DW01_sub_0
+U0_ClkDiv                           27.0641      0.4     0.0000    27.0641  0.0000  ClkDiv
+--------------------------------  ---------  -------  ---------  ---------  ------  ----------------
+Total                                                 5810.5446   914.2959  0.0000
+
+1

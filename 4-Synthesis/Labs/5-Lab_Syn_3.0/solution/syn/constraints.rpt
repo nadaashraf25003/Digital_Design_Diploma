@@ -1,0 +1,80 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : ALU_TOP
+Version: O-2018.06-SP1
+Date   : Mon Aug  3 07:18:50 2026
+****************************************
+
+
+   max_transition
+
+                             Required        Actual
+   Net                      Transition     Transition        Slack
+   -----------------------------------------------------------------
+   ALU_OUT[0]                   1.50          25.00         -23.50  (VIOLATED)
+       PIN :   U0_ALU/U24/Y     1.50          25.00         -23.50  (VIOLATED)
+   ALU_OUT[1]                   1.50          25.00         -23.50  (VIOLATED)
+       PIN :   U0_ALU/U38/Y     1.50          25.00         -23.50  (VIOLATED)
+   ALU_OUT[2]                   1.50          25.00         -23.50  (VIOLATED)
+       PIN :   U0_ALU/U40/Y     1.50          25.00         -23.50  (VIOLATED)
+   ALU_OUT[3]                   1.50          25.00         -23.50  (VIOLATED)
+       PIN :   U0_ALU/U42/Y     1.50          25.00         -23.50  (VIOLATED)
+   ALU_OUT[4]                   1.50          25.00         -23.50  (VIOLATED)
+       PIN :   U0_ALU/U44/Y     1.50          25.00         -23.50  (VIOLATED)
+   ALU_OUT[5]                   1.50          25.00         -23.50  (VIOLATED)
+       PIN :   U0_ALU/U46/Y     1.50          25.00         -23.50  (VIOLATED)
+   ALU_OUT[6]                   1.50          25.00         -23.50  (VIOLATED)
+       PIN :   U0_ALU/U48/Y     1.50          25.00         -23.50  (VIOLATED)
+   ALU_OUT[7]                   1.50          25.00         -23.50  (VIOLATED)
+       PIN :   U0_ALU/U50/Y     1.50          25.00         -23.50  (VIOLATED)
+   ALU_OUT[8]                   1.50          25.00         -23.50  (VIOLATED)
+       PIN :   U0_ALU/U52/Y     1.50          25.00         -23.50  (VIOLATED)
+   ALU_OUT[9]                   1.50          25.00         -23.50  (VIOLATED)
+       PIN :   U0_ALU/U54/Y     1.50          25.00         -23.50  (VIOLATED)
+   ALU_OUT[10]                  1.50          25.00         -23.50  (VIOLATED)
+       PIN :   U0_ALU/U26/Y     1.50          25.00         -23.50  (VIOLATED)
+   ALU_OUT[11]                  1.50          25.00         -23.50  (VIOLATED)
+       PIN :   U0_ALU/U28/Y     1.50          25.00         -23.50  (VIOLATED)
+   ALU_OUT[12]                  1.50          25.00         -23.50  (VIOLATED)
+       PIN :   U0_ALU/U30/Y     1.50          25.00         -23.50  (VIOLATED)
+   ALU_OUT[13]                  1.50          25.00         -23.50  (VIOLATED)
+       PIN :   U0_ALU/U32/Y     1.50          25.00         -23.50  (VIOLATED)
+   ALU_OUT[14]                  1.50          25.00         -23.50  (VIOLATED)
+       PIN :   U0_ALU/U34/Y     1.50          25.00         -23.50  (VIOLATED)
+   ALU_OUT[15]                  1.50          25.00         -23.50  (VIOLATED)
+       PIN :   U0_ALU/U36/Y     1.50          25.00         -23.50  (VIOLATED)
+   ALU_VLD                      1.50          25.00         -23.50  (VIOLATED)
+       PIN :   U0_ALU/U56/Y     1.50          25.00         -23.50  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      17               -399.54  
+
+   max_capacitance
+
+                             Required        Actual
+   Net                      Capacitance    Capacitance       Slack
+   -----------------------------------------------------------------
+   ALU_OUT[0]                   3.69          50.03         -46.34  (VIOLATED)
+   ALU_OUT[1]                   3.69          50.03         -46.34  (VIOLATED)
+   ALU_OUT[2]                   3.69          50.03         -46.34  (VIOLATED)
+   ALU_OUT[3]                   3.69          50.03         -46.34  (VIOLATED)
+   ALU_OUT[4]                   3.69          50.03         -46.34  (VIOLATED)
+   ALU_OUT[5]                   3.69          50.03         -46.34  (VIOLATED)
+   ALU_OUT[6]                   3.69          50.03         -46.34  (VIOLATED)
+   ALU_OUT[7]                   3.69          50.03         -46.34  (VIOLATED)
+   ALU_OUT[8]                   3.69          50.03         -46.34  (VIOLATED)
+   ALU_OUT[9]                   3.69          50.03         -46.34  (VIOLATED)
+   ALU_OUT[10]                  3.69          50.03         -46.34  (VIOLATED)
+   ALU_OUT[11]                  3.69          50.03         -46.34  (VIOLATED)
+   ALU_OUT[12]                  3.69          50.03         -46.34  (VIOLATED)
+   ALU_OUT[13]                  3.69          50.03         -46.34  (VIOLATED)
+   ALU_OUT[14]                  3.69          50.03         -46.34  (VIOLATED)
+   ALU_OUT[15]                  3.69          50.03         -46.34  (VIOLATED)
+   ALU_VLD                      3.69          50.03         -46.34  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      17               -787.75  
+
+1

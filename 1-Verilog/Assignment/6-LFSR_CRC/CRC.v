@@ -65,8 +65,8 @@ module CRC #( parameter SEED = 8'hD8)
      always@(posedge CLK or negedge RST)
        begin
           if(!RST)
-            count <= 5'b1000 ;
-          else if (ACTIVE)
+            count <= 5'b1000 ; 
+          else if (ACTIVE) // as at first if the active = 0 and counter = 8 it will do nothing and that right
             count <= 5'b0 ;				
           else if (!count_max)
             count <= count + 5'b1 ;				  
