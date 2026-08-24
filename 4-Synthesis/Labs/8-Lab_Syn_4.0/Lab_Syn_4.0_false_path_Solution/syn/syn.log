@@ -1,0 +1,566 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version O-2018.06-SP1 for linux64 - Jul 19, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /home/ICer/.synopsys_dv_prefs.tcl
+########################### Define Top Module ############################
+set top_module System_Top
+System_Top
+##################### Define Working Library Directory ######################
+define_design_lib work -path ./work
+1
+################## Design Compiler Library Files #setup ######################
+puts "###########################################"
+###########################################
+puts "#      #setting Design Libraries           #"
+#      #setting Design Libraries           #
+puts "###########################################"
+###########################################
+#Add the path of the libraries to the search_path variable
+lappend search_path /home/ICer/Labs/Lab_Syn_4.0/std_cells
+. /home/synopsys/syn/O-2018.06-SP1/libraries/syn /home/synopsys/syn/O-2018.06-SP1/minpower/syn /home/synopsys/syn/O-2018.06-SP1/dw/syn_ver /home/synopsys/syn/O-2018.06-SP1/dw/sim_ver /home/ICer/Labs/Lab_Syn_4.0/std_cells
+lappend search_path /home/ICer/Labs/Lab_Syn_4.0/rtl
+. /home/synopsys/syn/O-2018.06-SP1/libraries/syn /home/synopsys/syn/O-2018.06-SP1/minpower/syn /home/synopsys/syn/O-2018.06-SP1/dw/syn_ver /home/synopsys/syn/O-2018.06-SP1/dw/sim_ver /home/ICer/Labs/Lab_Syn_4.0/std_cells /home/ICer/Labs/Lab_Syn_4.0/rtl
+set SSLIB "scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db"
+scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db
+set TTLIB "scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+set FFLIB "scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db"
+scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db
+## Standard Cell libraries 
+set target_library [list $SSLIB $TTLIB $FFLIB]
+scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db
+## Standard Cell & Hard Macros libraries 
+set link_library [list * $SSLIB $TTLIB $FFLIB]  
+* scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db
+######################## Reading RTL Files #################################
+puts "###########################################"
+###########################################
+puts "#             Reading RTL Files           #"
+#             Reading RTL Files           #
+puts "###########################################"
+###########################################
+set file_format verilog
+verilog
+read_file -format $file_format CRC.v
+Loading db file '/home/ICer/Labs/Lab_Syn_4.0/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db'
+Loading db file '/home/ICer/Labs/Lab_Syn_4.0/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db'
+Loading db file '/home/ICer/Labs/Lab_Syn_4.0/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db'
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/gtech.db'
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/standard.sldb'
+  Loading link library 'scmetro_tsmc_cl013g_rvt_ss_1p08v_125c'
+  Loading link library 'scmetro_tsmc_cl013g_rvt_tt_1p2v_25c'
+  Loading link library 'scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c'
+  Loading link library 'gtech'
+Loading verilog file '/home/ICer/Labs/Lab_Syn_4.0/rtl/CRC.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/ICer/Labs/Lab_Syn_4.0/rtl/CRC.v
+
+Inferred memory devices in process
+	in routine CRC line 23 in file
+		'/home/ICer/Labs/Lab_Syn_4.0/rtl/CRC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      LFSR_reg       | Flip-flop |   4   |  Y  | N  | N  | Y  | N  | N  | N  |
+|      LFSR_reg       | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      Valid_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|       CRC_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine CRC line 65 in file
+		'/home/ICer/Labs/Lab_Syn_4.0/rtl/CRC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      count_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      count_reg      | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/ICer/Labs/Lab_Syn_4.0/rtl/CRC.db:CRC'
+Loaded 1 design.
+Current design is 'CRC'.
+CRC
+read_file -format $file_format DATA_SYNC.v
+Loading verilog file '/home/ICer/Labs/Lab_Syn_4.0/rtl/DATA_SYNC.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/ICer/Labs/Lab_Syn_4.0/rtl/DATA_SYNC.v
+
+Inferred memory devices in process
+	in routine DATA_SYNC line 30 in file
+		'/home/ICer/Labs/Lab_Syn_4.0/rtl/DATA_SYNC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    sync_reg_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine DATA_SYNC line 45 in file
+		'/home/ICer/Labs/Lab_Syn_4.0/rtl/DATA_SYNC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   enable_flop_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine DATA_SYNC line 68 in file
+		'/home/ICer/Labs/Lab_Syn_4.0/rtl/DATA_SYNC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    sync_bus_reg     | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine DATA_SYNC line 82 in file
+		'/home/ICer/Labs/Lab_Syn_4.0/rtl/DATA_SYNC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| enable_pulse_d_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/ICer/Labs/Lab_Syn_4.0/rtl/DATA_SYNC.db:DATA_SYNC'
+Loaded 1 design.
+Current design is 'DATA_SYNC'.
+DATA_SYNC
+read_file -format $file_format RegFile.v
+Loading verilog file '/home/ICer/Labs/Lab_Syn_4.0/rtl/RegFile.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/ICer/Labs/Lab_Syn_4.0/rtl/RegFile.v
+
+Inferred memory devices in process
+	in routine RegFile line 21 in file
+		'/home/ICer/Labs/Lab_Syn_4.0/rtl/RegFile.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     RdData_reg      | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RD_ADDR_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     WR_ADDR_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     regArr_reg      | Flip-flop |  128  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|    RegFile/39    |   16   |    8    |      4       |
+======================================================
+Presto compilation completed successfully.
+Current design is now '/home/ICer/Labs/Lab_Syn_4.0/rtl/RegFile.db:RegFile'
+Loaded 1 design.
+Current design is 'RegFile'.
+RegFile
+read_file -format $file_format RST_SYNC.v
+Loading verilog file '/home/ICer/Labs/Lab_Syn_4.0/rtl/RST_SYNC.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/ICer/Labs/Lab_Syn_4.0/rtl/RST_SYNC.v
+
+Inferred memory devices in process
+	in routine RST_SYNC line 20 in file
+		'/home/ICer/Labs/Lab_Syn_4.0/rtl/RST_SYNC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    sync_reg_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/ICer/Labs/Lab_Syn_4.0/rtl/RST_SYNC.db:RST_SYNC'
+Loaded 1 design.
+Current design is 'RST_SYNC'.
+RST_SYNC
+read_file -format $file_format SER_2_PAR.v
+Loading verilog file '/home/ICer/Labs/Lab_Syn_4.0/rtl/SER_2_PAR.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/ICer/Labs/Lab_Syn_4.0/rtl/SER_2_PAR.v
+
+Inferred memory devices in process
+	in routine SER_2_PAR line 17 in file
+		'/home/ICer/Labs/Lab_Syn_4.0/rtl/SER_2_PAR.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  PAR_DATA_VLD_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    PAR_DATA_reg     | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/ICer/Labs/Lab_Syn_4.0/rtl/SER_2_PAR.db:SER_2_PAR'
+Loaded 1 design.
+Current design is 'SER_2_PAR'.
+SER_2_PAR
+read_file -format $file_format System_Top.v
+Loading verilog file '/home/ICer/Labs/Lab_Syn_4.0/rtl/System_Top.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/ICer/Labs/Lab_Syn_4.0/rtl/System_Top.v
+Presto compilation completed successfully.
+Current design is now '/home/ICer/Labs/Lab_Syn_4.0/rtl/System_Top.db:System_Top'
+Loaded 1 design.
+Current design is 'System_Top'.
+System_Top
+###################### Defining toplevel ###################################
+current_design $top_module
+Current design is 'System_Top'.
+{System_Top}
+#################### Liniking All The Design Parts #########################
+puts "###############################################"
+###############################################
+puts "######## Liniking All The Design Parts ########"
+######## Liniking All The Design Parts ########
+puts "###############################################"
+###############################################
+link 
+
+  Linking design 'System_Top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (6 designs)               /home/ICer/Labs/Lab_Syn_4.0/rtl/System_Top.db, etc
+  scmetro_tsmc_cl013g_rvt_ss_1p08v_125c (library) /home/ICer/Labs/Lab_Syn_4.0/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db
+  scmetro_tsmc_cl013g_rvt_tt_1p2v_25c (library) /home/ICer/Labs/Lab_Syn_4.0/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+  scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c (library) /home/ICer/Labs/Lab_Syn_4.0/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db
+
+1
+#################### Liniking All The Design Parts #########################
+puts "###############################################"
+###############################################
+puts "######## checking design consistency ##########"
+######## checking design consistency ##########
+puts "###############################################"
+###############################################
+check_design
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06-SP1
+Date:        Thu Aug 20 22:49:06 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               3
+    Cells do not drive (LINT-1)                                     3
+--------------------------------------------------------------------------------
+
+Warning: In design 'CRC', cell 'C192' does not drive any nets. (LINT-1)
+Warning: In design 'RegFile', cell 'C656' does not drive any nets. (LINT-1)
+Warning: In design 'RegFile', cell 'C657' does not drive any nets. (LINT-1)
+1
+############################### Path groups ################################
+puts "###############################################"
+###############################################
+puts "################ Path groups ##################"
+################ Path groups ##################
+puts "###############################################"
+###############################################
+group_path -name INREG -from [all_inputs]
+1
+group_path -name REGOUT -to [all_outputs]
+1
+group_path -name INOUT -from [all_inputs] -to [all_outputs]
+1
+#################### Define Design Constraints #########################
+puts "###############################################"
+###############################################
+puts "############ Design Constraints #### ##########"
+############ Design Constraints #### ##########
+puts "###############################################"
+###############################################
+source -echo ./cons.tcl
+# Constraints
+# ----------------------------------------------------------------------------
+#
+# 1. Master Clock Definitions
+#
+# 2. Generated Clock Definitions
+#
+# 3. Clock Uncertainties
+#
+# 4. Clock Latencies 
+#
+# 5. Clock Relationships
+#
+# 6. set input/output delay on ports
+#
+# 7. Driving cells
+#
+# 8. Output load
+####################################################################################
+#########################################################
+#### Section 1 : Clock Definition ####
+#########################################################
+#################################################################################### 
+# 1. Master Clock Definitions 
+# 2. Generated Clock Definitions
+# 3. Clock Latencies
+# 4. Clock Uncertainties
+# 4. Clock Transitions
+####################################################################################
+set CLK_SETUP_SKEW 0.2
+set CLK_HOLD_SKEW 0.1
+set CLK_RISE 0.05
+set CLK_FALL 0.05
+create_clock -name CLKA_DOMAIN -period 70 -waveform "0 35" [get_ports CLKA]
+set_clock_uncertainty -setup $CLK_SETUP_SKEW [get_clocks CLKA_DOMAIN]
+set_clock_uncertainty -hold $CLK_HOLD_SKEW  [get_clocks CLKA_DOMAIN]
+set_clock_transition -rise $CLK_RISE  [get_clocks CLKA_DOMAIN]
+set_clock_transition -fall $CLK_FALL  [get_clocks CLKA_DOMAIN]
+create_clock -name CLKB_DOMAIN -period 20 -waveform "0 10" [get_ports CLKB]
+set_clock_uncertainty -setup $CLK_SETUP_SKEW [get_clocks CLKB_DOMAIN]
+set_clock_uncertainty -hold $CLK_HOLD_SKEW  [get_clocks CLKB_DOMAIN]
+set_clock_transition -rise $CLK_RISE  [get_clocks CLKB_DOMAIN]
+set_clock_transition -fall $CLK_FALL  [get_clocks CLKB_DOMAIN]
+set_dont_touch_network [get_clocks {CLKA_DOMAIN CLKB_DOMAIN}]
+####################################################################################
+#########################################################
+#### Section 2 : Clocks Relationships ####
+#########################################################
+####################################################################################
+set_clock_groups -asynchronous -group [get_clocks {CLKA_DOMAIN}]                                -group [get_clocks {CLKB_DOMAIN}]
+#set_false_path -from [get_clocks {CLKA_DOMAIN}] -to [get_clocks {CLKB_DOMAIN}] 
+#set_false_path -from [get_clocks {CLKB_DOMAIN}] -to [get_clocks {CLKA_DOMAIN}]
+####################################################################################
+#########################################################
+#### Section 3 : set input/output delay on ports ####
+#########################################################
+####################################################################################
+set in1_delay  [expr 0.2*70]
+set out1_delay [expr 0.2*70]
+set in2_delay  [expr 0.2*20]
+set out2_delay [expr 0.2*20]
+#Constrain Input Paths
+set_input_delay $in1_delay -clock CLKA_DOMAIN [get_port DATA]
+set_input_delay $in1_delay -clock CLKA_DOMAIN [get_port ACTIVE]
+set_input_delay $in2_delay -clock CLKB_DOMAIN [get_port RdEn]
+#Constrain Output Paths
+set_output_delay $out2_delay -clock CLKB_DOMAIN [get_port RdData]
+####################################################################################
+#########################################################
+#### Section 4 : Driving cells ####
+#########################################################
+####################################################################################
+set_driving_cell -library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c -lib_cell BUFX2M -pin Y [get_port DATA]
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+set_driving_cell -library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c -lib_cell BUFX2M -pin Y [get_port ACTIVE]
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+set_driving_cell -library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c -lib_cell BUFX2M -pin Y [get_port RdEn]
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+####################################################################################
+#########################################################
+#### Section 5 : Output load ####
+#########################################################
+####################################################################################
+set_load 0.5 [get_port RdData]
+####################################################################################
+#########################################################
+#### Section 6 : Operating Condition ####
+#########################################################
+####################################################################################
+# Define the Worst Library for Max(#setup) analysis
+# Define the Best Library for Min(hold) analysis
+set_operating_conditions -min_library "scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c" -min "scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c" -max_library "scmetro_tsmc_cl013g_rvt_ss_1p08v_125c" -max "scmetro_tsmc_cl013g_rvt_ss_1p08v_125c"
+Using operating conditions 'scmetro_tsmc_cl013g_rvt_ss_1p08v_125c' found in library 'scmetro_tsmc_cl013g_rvt_ss_1p08v_125c'.
+Using operating conditions 'scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c' found in library 'scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c'.
+####################################################################################
+#########################################################
+#### Section 7 : wireload Model ####
+#########################################################
+####################################################################################
+####################################################################################
+#########################################################
+#### Section 8 : multicycle path ####
+#########################################################
+####################################################################################
+####################################################################################
+#########################################################
+#### Section 9 : Max/Min Delay path ####
+#########################################################
+####################################################################################
+#set_max_delay 5 -from [get_cells U0_SER_2_PAR/PAR_DATA*] -to [get_cells U0_DATA_SYNC/sync_bus*] 
+###################### Mapping and optimization ########################
+puts "###############################################"
+###############################################
+puts "########## Mapping & Optimization #############"
+########## Mapping & Optimization #############
+puts "###############################################"
+###############################################
+compile -map_effort high
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.1 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 3 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: Operating condition scmetro_tsmc_cl013g_rvt_ss_1p08v_125c set on design System_Top has different process,
+voltage and temperatures parameters than the parameters at which target library 
+scmetro_tsmc_cl013g_rvt_tt_1p2v_25c is characterized. Delays may be inaccurate as a result. (OPT-998)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'RegFile'
+  Processing 'DATA_SYNC'
+  Processing 'SER_2_PAR'
+  Processing 'CRC'
+  Processing 'RST_SYNC_0'
+  Processing 'System_Top'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'CRC_DW01_inc_0'
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+Loading db file '/home/ICer/Labs/Lab_Syn_4.0/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db'
+Loading db file '/home/ICer/Labs/Lab_Syn_4.0/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db'
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:06   13974.5      0.00       0.0       0.0                          
+    0:00:06   13974.5      0.00       0.0       0.0                          
+    0:00:06   13974.5      0.00       0.0       0.0                          
+    0:00:06   13974.5      0.00       0.0       0.0                          
+    0:00:06   13974.5      0.00       0.0       0.0                          
+    0:00:06    7575.6      0.00       0.0       0.0                          
+    0:00:06    7556.8      0.00       0.0       0.0                          
+    0:00:07    7556.8      0.00       0.0       0.0                          
+    0:00:07    7556.8      0.00       0.0       0.0                          
+    0:00:07    7537.9      0.00       0.0       0.0                          
+    0:00:07    7537.9      0.00       0.0       0.0                          
+    0:00:07    7537.9      0.00       0.0       0.0                          
+    0:00:07    7537.9      0.00       0.0       0.0                          
+    0:00:07    7537.9      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:07    7537.9      0.00       0.0       0.0                          
+    0:00:07    7537.9      0.00       0.0       0.0                          
+    0:00:07    7487.3      0.00       0.0      28.1                          
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:07    7487.3      0.00       0.0      28.1                          
+    0:00:07    7534.4      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:07    7534.4      0.00       0.0       0.0                          
+    0:00:07    7534.4      0.00       0.0       0.0                          
+    0:00:07    7505.0      0.00       0.0       0.0                          
+    0:00:07    7485.0      0.00       0.0       0.0                          
+    0:00:07    7455.6      0.00       0.0       0.0                          
+    0:00:07    7442.6      0.00       0.0       0.0                          
+    0:00:07    7434.4      0.00       0.0       0.0                          
+    0:00:07    7434.4      0.00       0.0       0.0                          
+    0:00:07    7434.4      0.00       0.0       0.0                          
+    0:00:07    7434.4      0.00       0.0       0.0                          
+    0:00:07    7434.4      0.00       0.0       0.0                          
+    0:00:07    7434.4      0.00       0.0       0.0                          
+    0:00:07    7434.4      0.00       0.0       0.0                          
+    0:00:07    7434.4      0.00       0.0       0.0                          
+    0:00:07    7434.4      0.00       0.0       0.0                          
+Loading db file '/home/ICer/Labs/Lab_Syn_4.0/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+#############################################################################
+# Write out Design after initial compile
+#############################################################################
+write_file -format verilog -hierarchy -output System_Top_netlist.v
+Writing verilog file '/home/ICer/Labs/Lab_Syn_4.0/syn/System_Top_netlist.v'.
+1
+write_file -format ddc -hierarchy -output System_Top_netlist.ddc
+Writing ddc file 'System_Top_netlist.ddc'.
+1
+write_sdc  -nosplit System_Top.sdc
+1
+write_sdf           System_Top.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/home/ICer/Labs/Lab_Syn_4.0/syn/System_Top.sdf'. (WT-3)
+Information: Updating design information... (UID-85)
+1
+################# reporting #######################
+report_area -hierarchy > area.rpt
+report_power -hierarchy > power.rpt
+report_timing -max_paths 500 -delay_type min > hold.rpt
+report_timing -max_paths 500 -delay_type max > setup.rpt
+report_clock -attributes > clocks.rpt
+report_constraint -all_violators > constraints.rpt
+################# starting graphical user interface #######################
+#gui_start
+exit
+
+Memory usage for main task 271 Mbytes.
+Memory usage for this session 271 Mbytes.
+CPU usage for this session 9 seconds ( 0.00 hours ).
+
+Thank you...

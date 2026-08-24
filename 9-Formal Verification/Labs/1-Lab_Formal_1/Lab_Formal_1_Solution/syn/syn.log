@@ -1,0 +1,328 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version O-2018.06-SP1 for linux64 - Jul 19, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /home/ICer/.synopsys_dv_prefs.tcl
+##################### Define Working Library Directory ######################
+define_design_lib work -path ./work
+1
+########################### Formality Setup file ############################
+set_svf ALU.svf
+1
+################## Design Compiler Library Files #setup ######################
+puts "###########################################"
+###########################################
+puts "#      #setting Design Libraries           #"
+#      #setting Design Libraries           #
+puts "###########################################"
+###########################################
+#Add the path of the libraries to the search_path variable
+lappend search_path /home/ICer/Labs/Lab_Formal_1/rtl
+. /home/synopsys/syn/O-2018.06-SP1/libraries/syn /home/synopsys/syn/O-2018.06-SP1/minpower/syn /home/synopsys/syn/O-2018.06-SP1/dw/syn_ver /home/synopsys/syn/O-2018.06-SP1/dw/sim_ver /home/ICer/Labs/Lab_Formal_1/rtl
+lappend search_path /home/ICer/Labs/Lab_Formal_1/std_cells
+. /home/synopsys/syn/O-2018.06-SP1/libraries/syn /home/synopsys/syn/O-2018.06-SP1/minpower/syn /home/synopsys/syn/O-2018.06-SP1/dw/syn_ver /home/synopsys/syn/O-2018.06-SP1/dw/sim_ver /home/ICer/Labs/Lab_Formal_1/rtl /home/ICer/Labs/Lab_Formal_1/std_cells
+set SSLIB "scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db"
+scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db
+set TTLIB "scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+set FFLIB "scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db"
+scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db
+## Standard Cell libraries 
+set target_library [list $SSLIB $TTLIB $FFLIB]
+scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db
+## Standard Cell & Hard Macros libraries 
+set link_library [list * $SSLIB $TTLIB $FFLIB]  
+* scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db
+######################## Reading RTL Files #################################
+puts "###########################################"
+###########################################
+puts "#             Reading RTL Files           #"
+#             Reading RTL Files           #
+puts "###########################################"
+###########################################
+set file_format verilog
+verilog
+analyze -format $file_format ALU.v
+Running PRESTO HDLC
+Compiling source file ./ALU.v
+Presto compilation completed successfully.
+Loading db file '/home/ICer/Labs/Lab_Formal_1/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db'
+Loading db file '/home/ICer/Labs/Lab_Formal_1/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db'
+Loading db file '/home/ICer/Labs/Lab_Formal_1/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db'
+1
+elaborate -lib work ALU
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/gtech.db'
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/standard.sldb'
+  Loading link library 'scmetro_tsmc_cl013g_rvt_ss_1p08v_125c'
+  Loading link library 'scmetro_tsmc_cl013g_rvt_tt_1p2v_25c'
+  Loading link library 'scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'ALU'.
+Information: Building the design 'ALU_DW01_addsub_0'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ALU_DW01_cmp6_0'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ALU_DW_div_uns_0'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ALU_DW02_mult_0'. (HDL-193)
+Presto compilation completed successfully.
+1
+#################### Liniking All The Design Parts #########################
+puts "###############################################"
+###############################################
+puts "######## Liniking All The Design Parts ########"
+######## Liniking All The Design Parts ########
+puts "###############################################"
+###############################################
+link 
+
+  Linking design 'ALU'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (5 designs)               /home/ICer/Labs/Lab_Formal_1/syn/ALU.db, etc
+  scmetro_tsmc_cl013g_rvt_ss_1p08v_125c (library) /home/ICer/Labs/Lab_Formal_1/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db
+  scmetro_tsmc_cl013g_rvt_tt_1p2v_25c (library) /home/ICer/Labs/Lab_Formal_1/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+  scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c (library) /home/ICer/Labs/Lab_Formal_1/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db
+
+1
+#################### Liniking All The Design Parts #########################
+puts "###############################################"
+###############################################
+puts "######## checking design consistency ##########"
+######## checking design consistency ##########
+puts "###############################################"
+###############################################
+check_design
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06-SP1
+Date:        Fri Aug 21 02:27:12 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     40
+    Unconnected ports (LINT-28)                                    40
+
+Cells                                                               3
+    Connected to power or ground (LINT-32)                          3
+
+Nets                                                               16
+    Unloaded nets (LINT-2)                                         16
+--------------------------------------------------------------------------------
+
+Warning: In design 'ALU', net 'SYNOPSYS_UNCONNECTED__15' driven by pin 'mult_45/PRODUCT[16]' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'SYNOPSYS_UNCONNECTED__14' driven by pin 'mult_45/PRODUCT[17]' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'SYNOPSYS_UNCONNECTED__13' driven by pin 'mult_45/PRODUCT[18]' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'SYNOPSYS_UNCONNECTED__12' driven by pin 'mult_45/PRODUCT[19]' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'SYNOPSYS_UNCONNECTED__11' driven by pin 'mult_45/PRODUCT[20]' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'SYNOPSYS_UNCONNECTED__10' driven by pin 'mult_45/PRODUCT[21]' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'SYNOPSYS_UNCONNECTED__9' driven by pin 'mult_45/PRODUCT[22]' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'SYNOPSYS_UNCONNECTED__8' driven by pin 'mult_45/PRODUCT[23]' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'SYNOPSYS_UNCONNECTED__7' driven by pin 'mult_45/PRODUCT[24]' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'SYNOPSYS_UNCONNECTED__6' driven by pin 'mult_45/PRODUCT[25]' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'SYNOPSYS_UNCONNECTED__5' driven by pin 'mult_45/PRODUCT[26]' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'SYNOPSYS_UNCONNECTED__4' driven by pin 'mult_45/PRODUCT[27]' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'SYNOPSYS_UNCONNECTED__3' driven by pin 'mult_45/PRODUCT[28]' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'SYNOPSYS_UNCONNECTED__2' driven by pin 'mult_45/PRODUCT[29]' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'SYNOPSYS_UNCONNECTED__1' driven by pin 'mult_45/PRODUCT[30]' has no loads. (LINT-2)
+Warning: In design 'ALU', net 'SYNOPSYS_UNCONNECTED__0' driven by pin 'mult_45/PRODUCT[31]' has no loads. (LINT-2)
+Warning: In design 'ALU_DW01_addsub_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_addsub_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_cmp6_0', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_cmp6_0', port 'LE' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_cmp6_0', port 'GE' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_cmp6_0', port 'NE' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'divide_by_0' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'PRODUCT[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'PRODUCT[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'PRODUCT[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'PRODUCT[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'PRODUCT[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'PRODUCT[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'PRODUCT[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'PRODUCT[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'PRODUCT[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'PRODUCT[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'PRODUCT[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'PRODUCT[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'PRODUCT[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'PRODUCT[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'PRODUCT[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'PRODUCT[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU', a pin on submodule 'r92' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'r86' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'TC' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'mult_45' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'TC' is connected to logic 0. 
+1
+###################### Mapping and optimization ############################
+puts "###############################################"
+###############################################
+puts "########## Mapping & Optimization #############"
+########## Mapping & Optimization #############
+puts "###############################################"
+###############################################
+compile
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.1 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 59 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: Operating condition scmetro_tsmc_cl013g_rvt_ss_1p08v_125c set on design ALU has different process,
+voltage and temperatures parameters than the parameters at which target library 
+scmetro_tsmc_cl013g_rvt_tt_1p2v_25c is characterized. Delays may be inaccurate as a result. (OPT-998)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'ALU_DW02_mult_0'
+  Processing 'ALU_DW_div_uns_0'
+  Processing 'ALU_DW01_cmp6_0'
+  Processing 'ALU_DW01_addsub_0'
+  Processing 'ALU'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Design 'ALU' has no optimization constraints set. (OPT-108)
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+  Structuring 'ALU_DW02_mult_0'
+  Mapping 'ALU_DW02_mult_0'
+  Structuring 'ALU_DW_div_uns_0'
+  Mapping 'ALU_DW_div_uns_0'
+  Structuring 'ALU_DW01_cmp6_0'
+  Mapping 'ALU_DW01_cmp6_0'
+  Structuring 'ALU_DW01_addsub_0'
+  Mapping 'ALU_DW01_addsub_0'
+  Structuring 'ALU'
+  Mapping 'ALU'
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:04   12687.2      0.00       0.0       0.4                          
+    0:00:04   12687.2      0.00       0.0       0.4                          
+    0:00:04   12687.2      0.00       0.0       0.4                          
+    0:00:04   12687.2      0.00       0.0       0.4                          
+    0:00:04   12687.2      0.00       0.0       0.4                          
+    0:00:04   12536.6      0.00       0.0       0.4                          
+    0:00:04   12536.6      0.00       0.0       0.4                          
+    0:00:04   12536.6      0.00       0.0       0.4                          
+    0:00:04   12536.6      0.00       0.0       0.4                          
+    0:00:04   12536.6      0.00       0.0       0.4                          
+    0:00:04   12536.6      0.00       0.0       0.0                          
+    0:00:04   12536.6      0.00       0.0       0.0                          
+    0:00:04   12536.6      0.00       0.0       0.0                          
+    0:00:04   12536.6      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:04   12536.6      0.00       0.0       0.0                          
+    0:00:04   12536.6      0.00       0.0       0.0                          
+    0:00:04   12536.6      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:04   12536.6      0.00       0.0       0.0                          
+    0:00:04   12536.6      0.00       0.0       0.0                          
+    0:00:04   12536.6      0.00       0.0       0.0                          
+    0:00:04   12536.6      0.00       0.0       0.0                          
+    0:00:04   12536.6      0.00       0.0       0.0                          
+    0:00:04   12536.6      0.00       0.0       0.0                          
+    0:00:04   12536.6      0.00       0.0       0.0                          
+    0:00:04   12536.6      0.00       0.0       0.0                          
+    0:00:04   12536.6      0.00       0.0       0.0                          
+    0:00:04   12536.6      0.00       0.0       0.0                          
+    0:00:04   12536.6      0.00       0.0       0.0                          
+Loading db file '/home/ICer/Labs/Lab_Formal_1/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db'
+Loading db file '/home/ICer/Labs/Lab_Formal_1/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db'
+Loading db file '/home/ICer/Labs/Lab_Formal_1/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+##################### Close Formality Setup file ###########################
+set_svf -off
+1
+############################################################################
+# Write out Design after initial compile
+#############################################################################
+write_file -format verilog -hierarchy -output ALU.v
+Writing verilog file '/home/ICer/Labs/Lab_Formal_1/syn/ALU.v'.
+Warning: Verilog writer has added 16 nets to module ALU using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+1
+################# starting graphical user interface #######################
+#gui_start
+exit
+
+Memory usage for main task 263 Mbytes.
+Memory usage for this session 263 Mbytes.
+CPU usage for this session 7 seconds ( 0.00 hours ).
+
+Thank you...

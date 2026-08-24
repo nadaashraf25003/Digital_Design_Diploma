@@ -1,0 +1,45 @@
+Loading db file '/home/ICer/Labs/Lab_Syn_4.0/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : System_Top
+Version: O-2018.06-SP1
+Date   : Thu Aug 20 22:51:34 2026
+****************************************
+
+
+Library(s) Used:
+
+    scmetro_tsmc_cl013g_rvt_ss_1p08v_125c (File: /home/ICer/Labs/Lab_Syn_4.0/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db)
+
+
+Operating Conditions: scmetro_tsmc_cl013g_rvt_ss_1p08v_125c   Library: scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1.08 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+System_Top                             4.62e-03    0.132 3.50e+06    0.140 100.0
+  U0_RegFile (RegFile)                 3.52e-03    0.112 2.79e+06    0.118  84.6
+  U0_DATA_SYNC (DATA_SYNC)             1.33e-05 9.58e-03 1.75e+05 9.77e-03   7.0
+  U0_SER_2_PAR (SER_2_PAR)             2.93e-05 2.11e-03 1.40e+05 2.28e-03   1.6
+  U0_CRC (CRC)                         3.45e-04 5.08e-03 3.43e+05 5.77e-03   4.1
+  U1_RST_SYNC (RST_SYNC_1)             1.29e-05 2.24e-03 2.53e+04 2.28e-03   1.6
+  U0_RST_SYNC (RST_SYNC_0)             2.43e-04 7.37e-04 2.50e+04 1.01e-03   0.7
+1
