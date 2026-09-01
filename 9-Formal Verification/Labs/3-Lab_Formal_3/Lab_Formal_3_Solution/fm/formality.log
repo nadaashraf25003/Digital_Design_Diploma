@@ -1,0 +1,35 @@
+Info:  Net Ref:/WORK/ALU_TOP/SO is undriven.
+Info:  Net Imp:/WORK/CMP_UNIT_DW01_cmp6_0/LE is undriven.
+Info:  Net Imp:/WORK/CMP_UNIT_DW01_cmp6_0/GE is undriven.
+Info:  Net Imp:/WORK/CMP_UNIT_DW01_cmp6_0/NE is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW01_add_1/CO is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW01_add_0/CO is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW01_sub_0/CO is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW_div_uns_0/remainder[15] is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW_div_uns_0/remainder[14] is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW_div_uns_0/remainder[13] is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW_div_uns_0/remainder[12] is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW_div_uns_0/remainder[11] is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW_div_uns_0/remainder[10] is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW_div_uns_0/remainder[9] is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW_div_uns_0/remainder[8] is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW_div_uns_0/remainder[7] is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW_div_uns_0/remainder[6] is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW_div_uns_0/remainder[5] is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW_div_uns_0/remainder[4] is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW_div_uns_0/remainder[3] is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW_div_uns_0/remainder[2] is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW_div_uns_0/remainder[1] is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW_div_uns_0/remainder[0] is undriven.
+Info:  Net Imp:/WORK/ARITHMETIC_UNIT_DW_div_uns_0/divide_by_0 is undriven.
+Info:  guide_transformation 11 (Line: 95)  Rejected transformation 11 because design 'CMP_UNIT' cannot be found.
+Info:  guide_transformation 11 (Line: 95) Retrying with unread processing enabled.
+Info:  guide_transformation 11 (Line: 95)  Rejected transformation 11 because design 'CMP_UNIT' cannot be found.
+Info:  SVF Operation 11 (Line: 95) - transformation_share.  Status: rejected
+
+Info:  guide_reg_constant 12 (Line: 114) Cannot find reference design 'CMP_UNIT'.
+Info:  SVF Operation 12 (Line: 114) - reg_constant.  Status: rejected
+
+Info:  guide_uniquify 24 (Line: 197)  Cannot find object "U0_ARITHMETIC_UNIT/dp_cluster_0/mult_59" in design 'ALU_TOP'.
+Info:  Pre-verification of Ref:/WORK/ARITHMETIC_UNIT_IN_DATA_WIDTH16_OUT_DATA_WIDTH32/div_63 SUCCEEDED.
+Info:  Pre-verification of Ref:/WORK/ARITHMETIC_UNIT_IN_DATA_WIDTH16_OUT_DATA_WIDTH32/mult_59 SUCCEEDED.

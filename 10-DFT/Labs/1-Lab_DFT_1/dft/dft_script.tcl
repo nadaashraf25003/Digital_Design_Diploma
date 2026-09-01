@@ -66,7 +66,9 @@ puts "###############################################"
 puts "############ Design Constraints #### ##########"
 puts "###############################################"
 
+
 source -echo ./cons.tcl
+
 
 #################### Archirecture Scan Chains #########################
 puts "###############################################"
@@ -79,7 +81,8 @@ puts "###############################################"
 puts "########## Mapping & Optimization #############"
 puts "###############################################"
 
-compile 
+
+compile -scan
 
 ################################################################### 
 # Setting Test Timing Variables
@@ -96,14 +99,15 @@ set test_default_strobe_width 0
 
 
 ############################# Create Test Protocol #####################
-                                           
 
 
+                            
 ###################### Pre-DFT Design Rule Checking ####################
 
 
 
 ############################# Preview DFT ##############################
+
 
 
 
@@ -131,8 +135,8 @@ write_file -format verilog -hierarchy -output ALU_dft.v
 
 report_area -hierarchy > area_dft.rpt
 report_power -hierarchy > power_dft.rpt
-report_timing -delay_type min > hold_dft.rpt
-report_timing -delay_type max > setup_dft.rpt
+report_timing -max_paths 100 -delay_type min > hold_dft.rpt
+report_timing -max_paths 100 -delay_type max > setup_dft.rpt
 report_clock -attributes > clocks_dft.rpt
 report_constraint -all_violators > constraints_dft.rpt
 

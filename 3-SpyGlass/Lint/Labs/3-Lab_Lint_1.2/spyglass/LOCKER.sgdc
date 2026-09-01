@@ -1,0 +1,20 @@
+#======================================================
+# SGDC Constraints for LOCKER_Mealy_FSM
+#======================================================
+
+current_design LOCKER_Mealy_Lint
+
+# ------------------------------------------------------
+# Clock definition
+# ------------------------------------------------------
+# Adjust -period to your actual target frequency (in ns).
+# Example below assumes a 100 MHz clock (10 ns period).
+clock -name clk -period 10 -domain d0
+
+# ------------------------------------------------------
+# Reset definition
+# ------------------------------------------------------
+# rst is asynchronous and active-low (matches
+# "posedge clk or negedge rst" / "if(!rst)" in the RTL)
+reset -name rst -value 0 -async
+

@@ -1,0 +1,64 @@
+#!SPYGLASS_PROJECT_FILE
+#!VERSION 3.0
+#  -------------------------------------------------------------------
+#  This is a software generated project file. Manual edits to this file could be lost during the next save operation
+#  Copyright Synopsys Inc.
+#  Last Updated By: SpyGlass SpyGlass_vL-2016.06
+#  Last Updated On Sat Aug 29 05:13:02 2026
+#
+#  -------------------------------------------------------------------
+
+##Data Import Section
+
+read_file -type verilog ../rtl/Async_fifo.v
+read_file -type verilog ../rtl/bit_sync.v
+read_file -type verilog ../rtl/clk_divider_1.v
+read_file -type verilog ../rtl/clk_divider_2.v
+read_file -type verilog ../rtl/clock_gate.v
+read_file -type verilog ../rtl/controller.v
+read_file -type verilog ../rtl/data_sync.v
+read_file -type verilog ../rtl/DF_Sync.v
+read_file -type verilog ../rtl/fifo_mem.v
+read_file -type verilog ../rtl/fifo_rd.v
+read_file -type verilog ../rtl/fifo_wr.v
+read_file -type verilog ../rtl/mult_unit.v
+read_file -type verilog ../rtl/par_to_ser.v
+read_file -type verilog ../rtl/register_file.v
+read_file -type verilog ../rtl/ser_to_par.v
+read_file -type verilog ../rtl/top.v
+read_file -type sgdc top.sgdc
+read_file -type gateslib ../std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.lib
+read_file -type verilog ../rtl/RST_SYNC.v
+
+##Common Options Section
+
+set_option projectwdir .
+set_option language_mode mixed
+set_option designread_enable_synthesis yes
+set_option designread_disable_flatten no
+set_option active_methodology $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff
+
+
+##Goal Setup Section
+
+current_methodology $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff
+
+
+current_goal cdc/cdc_setup_check -alltop
+set_goal_option sdc2sgdc yes
+
+
+current_goal cdc/clock_reset_integrity -alltop
+set_goal_option sdc2sgdc yes
+set_parameter use_inferred_clocks yes
+
+
+current_goal cdc/cdc_verify_struct -alltop
+set_goal_option sdc2sgdc yes
+
+
+current_goal cdc/cdc_verify -alltop
+read_file -type awl ./top/cdc/cdc_verify/top_waiver_file.awl
+set_goal_option sdc2sgdc yes
+set_goal_option default_waiver_file ./top/cdc/cdc_verify/top_waiver_file.awl
+
