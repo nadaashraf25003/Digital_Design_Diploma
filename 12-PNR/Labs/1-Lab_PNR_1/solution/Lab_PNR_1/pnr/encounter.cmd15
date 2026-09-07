@@ -1,0 +1,220 @@
+#######################################################
+#                                                     #
+#  Encounter Command Logging File                     #
+#  Created on Wed Sep 17 12:14:32 2025                #
+#                                                     #
+#######################################################
+
+#@(#)CDS: First Encounter v08.10-p004_1 (32bit) 11/04/2008 14:34 (Linux 2.6)
+#@(#)CDS: NanoRoute v08.10-p008 NR081027-0018/USR58-UB (database version 2.30, 67.1.1) {superthreading v1.11}
+#@(#)CDS: CeltIC v08.10-p002_1 (32bit) 10/23/2008 22:04:14 (Linux 2.6.9-67.0.10.ELsmp)
+#@(#)CDS: CTE v08.10-p016_1 (32bit) Oct 26 2008 15:11:51 (Linux 2.6.9-67.0.10.ELsmp)
+#@(#)CDS: CPE v08.10-p009
+
+encMessage warning 0
+encMessage debug 0
+encMessage info 0
+restoreDesign /home/ahesham/Labs/Lab_PNR_1/pnr/ALU_TOP_place.enc.dat ALU_TOP
+setDrawView fplan
+encMessage warning 1
+encMessage debug 0
+encMessage info 1
+setDrawView place
+clockDesign -genSpecOnly Clock.ctstch
+clockDesign -specFile Clock.ctstch -outDir clock_report -fixedInstBeforeCTS
+clearClockDomains
+setClockDomains -all
+timeDesign -postCTS -pathReports -drvReports -slackReports -numPaths 50 -prefix ALU_TOP_postCTS -outDir timingReports
+clearClockDomains
+setClockDomains -all
+timeDesign -postCTS -hold -pathReports -slackReports -numPaths 50 -prefix ALU_TOP_postCTS -outDir timingReports
+setNanoRouteMode -quiet -routeTopRoutingLayer 6
+routeDesign -globalDetail -viaOpt -wireOpt
+clearDrc
+verifyGeometry -noMinArea
+zoomBox -9.911 50.208 32.055 28.542
+zoomBox -1.265 44.383 6.160 40.287
+zoomBox -0.805 43.530 1.579 42.127
+selectWire -0.1000 43.0500 0.3050 43.2500 3 {B[0]}
+deselectAll
+selectWire 0.3900 43.3300 3.2800 43.5900 1 VDD
+deselectAll
+selectWire 0.3900 0.3900 1.3900 118.9200 6 VDD
+deselectAll
+zoomBox -7.178 49.232 29.518 28.933
+zoomBox -1.649 44.465 6.537 39.697
+selectWire 0.3900 0.3900 1.3900 118.9200 6 VDD
+uiSetTool ruler
+uiSetTool select
+deselectAll
+refinePlace -preserveRouting
+setNanoRouteMode -routeWithEco true
+routeDesign -globalDetail -viaOpt -wireOpt
+clearDrc
+refinePlace -preserveRouting
+setNanoRouteMode -routeWithEco true
+routeDesign -globalDetail -viaOpt -wireOpt
+clearClockDomains
+setClockDomains -all
+timeDesign -postRoute -pathReports -drvReports -slackReports -numPaths 50 -prefix ALU_TOP_postRoute -outDir timingReports
+clearClockDomains
+setClockDomains -all
+timeDesign -postRoute -hold -pathReports -slackReports -numPaths 50 -prefix ALU_TOP_postRoute -outDir timingReports
+addFiller -cell {FILL1M FILL2M FILL4M FILL8M FILL16M FILL32M FILL64M} -prefix FILLER -markFixed
+setLayerPreference allM0 -isVisible 0
+setLayerPreference allM1 -isVisible 0
+setLayerPreference allM2 -isVisible 0
+setLayerPreference allM3 -isVisible 0
+setLayerPreference allM4 -isVisible 0
+setLayerPreference allM5 -isVisible 0
+setLayerPreference allM6 -isVisible 0
+setLayerPreference allM7 -isVisible 0
+setLayerPreference allM1Cont -isVisible 0
+setLayerPreference allM2Cont -isVisible 0
+setLayerPreference allM3Cont -isVisible 0
+setLayerPreference allM4Cont -isVisible 0
+setLayerPreference allM5Cont -isVisible 0
+setLayerPreference allM6Cont -isVisible 0
+setLayerPreference allM7Cont -isVisible 0
+setLayerPreference allM0 -isVisible 1
+setLayerPreference allM1 -isVisible 1
+setLayerPreference allM2 -isVisible 1
+setLayerPreference allM3 -isVisible 1
+setLayerPreference allM4 -isVisible 1
+setLayerPreference allM5 -isVisible 1
+setLayerPreference allM6 -isVisible 1
+setLayerPreference allM7 -isVisible 1
+setLayerPreference allM1Cont -isVisible 1
+setLayerPreference allM2Cont -isVisible 1
+setLayerPreference allM3Cont -isVisible 1
+setLayerPreference allM4Cont -isVisible 1
+setLayerPreference allM5Cont -isVisible 1
+setLayerPreference allM6Cont -isVisible 1
+setLayerPreference allM7Cont -isVisible 1
+verifyGeometry -noMinArea
+zoomBox -11.440 50.381 26.905 31.014
+zoomBox -2.037 44.116 3.570 40.797
+zoomBox -11.863 105.837 28.542 75.582
+zoomBox -1.515 96.005 9.076 88.945
+zoomBox -8.349 112.864 24.248 93.150
+zoomBox 3.567 105.788 20.893 100.314
+zoomBox -6.788 120.281 37.130 93.344
+zoomBox -3.033 118.968 5.045 115.109
+selectWire 0.3900 0.3900 1.3900 118.9200 6 VDD
+panPage 0 -1
+panPage 0 -1
+zoomOut
+deselectAll
+selectWire 0.3900 0.3900 1.3900 118.9200 6 VDD
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+panPage 0 1
+zoomOut
+zoomBox -0.806 1.894 3.776 -0.067
+deselectAll
+selectWire 0.3900 0.3900 1.3900 118.9200 6 VDD
+deselectAll
+selectWire 0.3900 0.3900 22.7400 1.3900 5 VDD
+zoomOut
+zoomOut
+zoomOut
+uiSetTool move
+deselectAll
+selectWire 0.3900 0.3900 1.3900 118.9200 6 VDD
+uiSetTool select
+zoomBox -1.123 2.223 6.918 -2.203
+deselectAll
+selectWire 0.3900 0.3900 22.7400 1.3900 5 VDD
+uiSetTool moveWire
+deselectAll
+selectWire 0.3900 0.3900 1.3900 118.9200 6 VDD
+uiSetTool select
+zoomBox -7.764 45.914 16.636 21.320
+zoomBox -1.577 39.120 5.290 33.054
+uiSetTool moveWire
+editMove x 0.105
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+uiSetTool select
+uiSetTool select
+uiSetTool select
+verifyGeometry -noMinArea
+verifyConnectivity -type all -noAntenna -error 1000 -warning 50
+verifyProcessAntenna -reportfile ALU_TOP.antenna.rpt -leffile ALU_TOP.antenna.lef -error 1000
+checkFiller -highlight true
+setLayerPreference allM0 -isVisible 0
+setLayerPreference allM1 -isVisible 0
+setLayerPreference allM2 -isVisible 0
+setLayerPreference allM3 -isVisible 0
+setLayerPreference allM4 -isVisible 0
+setLayerPreference allM5 -isVisible 0
+setLayerPreference allM6 -isVisible 0
+setLayerPreference allM7 -isVisible 0
+setLayerPreference allM1Cont -isVisible 0
+setLayerPreference allM2Cont -isVisible 0
+setLayerPreference allM3Cont -isVisible 0
+setLayerPreference allM4Cont -isVisible 0
+setLayerPreference allM5Cont -isVisible 0
+setLayerPreference allM6Cont -isVisible 0
+setLayerPreference allM7Cont -isVisible 0
+setLayerPreference allM0 -isVisible 1
+setLayerPreference allM1 -isVisible 1
+setLayerPreference allM2 -isVisible 1
+setLayerPreference allM3 -isVisible 1
+setLayerPreference allM4 -isVisible 1
+setLayerPreference allM5 -isVisible 1
+setLayerPreference allM6 -isVisible 1
+setLayerPreference allM7 -isVisible 1
+setLayerPreference allM1Cont -isVisible 1
+setLayerPreference allM2Cont -isVisible 1
+setLayerPreference allM3Cont -isVisible 1
+setLayerPreference allM4Cont -isVisible 1
+setLayerPreference allM5Cont -isVisible 1
+setLayerPreference allM6Cont -isVisible 1
+setLayerPreference allM7Cont -isVisible 1
+clearClockDomains
+setClockDomains -all
+timeDesign -postRoute -pathReports -drvReports -slackReports -numPaths 50 -prefix ALU_TOP_postRoute -outDir timingReports
+clearClockDomains
+setClockDomains -all
+timeDesign -postRoute -hold -pathReports -slackReports -numPaths 50 -prefix ALU_TOP_postRoute -outDir timingReports
+saveNetlist export/ALU_TOP.v
+saveNetlist export/ALU_TOP_pg.v -includePowerGround
+rcOut -spf export/ALU_TOP.spf
+delayCal -sdf export/ALU_TOP.sdf -version 3.0
+report_power -outfile report/power.rpt
+streamOut export/ALU_TOP.gds -mapFile ./import/gds2InLayer.map -libName DesignLib -stripes 1 -units 2000 -mode ALL

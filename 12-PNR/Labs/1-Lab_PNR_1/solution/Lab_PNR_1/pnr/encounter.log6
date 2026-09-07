@@ -1,0 +1,4055 @@
+Checking out Encounter license ...
+SOC_Encounter_GXL 8.1 license checkout succeeded.
+This Encounter release has been compiled with OA version 22.04-p032.
+sourcing /usr/Cadence/SOC/etc/fe/rdaDSL.tcl
+*******************************************************************
+*   Copyright (c)  Cadence Design Systems, Inc.  1996 - 2008.     *
+*                     All rights reserved.                        *
+*                                                                 *
+*                                                                 *
+*                                                                 *
+* This program contains confidential and trade secret information *
+* of Cadence Design Systems, Inc. and is protected by copyright   *
+* law and international treaties.  Any reproduction, use,         *
+* distribution or disclosure of this program or any portion of it,*
+* or any attempt to obtain a human-readable version of this       *
+* program, without the express, prior written consent of          *
+* Cadence Design Systems, Inc., is strictly prohibited.           *
+*                                                                 *
+*                 Cadence Design Systems, Inc.                    *
+*                    2655 Seely Avenue                            *
+*                   San Jose, CA 95134,  USA                      *
+*                                                                 *
+*                                                                 *
+*******************************************************************
+
+@(#)CDS: First Encounter v08.10-p004_1 (32bit) 11/04/2008 14:34 (Linux 2.6)
+@(#)CDS: NanoRoute v08.10-p008 NR081027-0018/USR58-UB (database version 2.30, 67.1.1) {superthreading v1.11}
+@(#)CDS: CeltIC v08.10-p002_1 (32bit) 10/23/2008 22:04:14 (Linux 2.6.9-67.0.10.ELsmp)
+@(#)CDS: CTE v08.10-p016_1 (32bit) Oct 26 2008 15:11:51 (Linux 2.6.9-67.0.10.ELsmp)
+@(#)CDS: CPE v08.10-p009
+--- Starting "First Encounter v08.10-p004_1" on Wed Sep 17 11:01:35 2025 (mem=62.2M) ---
+--- Running on localhost.localdomain (x86_64 w/Linux 2.6.32-431.29.2.el6.x86_64) ---
+This version was compiled on Tue Nov 4 14:34:21 PST 2008.
+Set DBUPerIGU to 1000.
+Set Default Mode Total Cap Scale Factor to 1.00
+Set Detail Mode Total Cap Scale Factor to 1.00
+Set Coupling Total Cap Scale Factor to 1.00
+Set Total Res Scale Factor to 1.00
+Set net toggle Scale Factor to 1.00
+Set Shrink Factor to 1.00000
+<CMD> encMessage warning 0
+Suppress "**WARN ..." messages.
+<CMD> encMessage debug 0
+<CMD> encMessage info 0
+Reading config file - /home/ahesham/Labs/Lab_PNR_1/pnr/ALU_TOP_cts.enc.dat/ALU_TOP.conf
+*** End library_loading (cpu=0.12min, mem=91.1M, fe_cpu=0.16min, fe_mem=280.1M) ***
+**WARN: (TCLCMD-1013):	The SDC set_operating_conditions assertion is not supported. Please use the Encounter setOpCond command to specify library and operating condition information. Use the setAnalysisMode command to control single vs. bestCase/worstCase vs. on-chip variation timing analysis. (File /home/ahesham/Labs/Lab_PNR_1/pnr/../dft/ALU_TOP_func.sdc, Line 9).
+
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (EMS-27):	Message (SOCCTE-286) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+**WARN: (EMS-27):	Message (SOCCTE-289) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+#WARNING (NRDB-21) The number of routing layer 7 in the database does not match with the value of 10 in the Extended Cap Table file.
+Loading preference file /home/ahesham/Labs/Lab_PNR_1/pnr/ALU_TOP_cts.enc.dat/enc.pref.tcl ...
+#WARNING (NRDB-21) The number of routing layer 7 in the database does not match with the value of 10 in the Extended Cap Table file.
+loading place ...
+loading route ...
+<CMD> setDrawView place
+<CMD> setNanoRouteMode -quiet -routeTopRoutingLayer 6
+<CMD> setNanoRouteMode -quiet -routeWithSiDriven true
+<CMD> setNanoRouteMode -quiet -routeSiEffort max
+<CMD> routeDesign -globalDetail -viaOpt -wireOpt
+Begin checking placement ...
+*info: Placed = 716
+*info: Unplaced = 0
+Placement Density:70.23%(8928/12712)
+Redoing specifyClockTree  -clkfile /home/ahesham/Labs/Lab_PNR_1/pnr/ALU_TOP_cts.enc.dat/ALU_TOP.ctstch  ...
+
+changeUseClockNetStatus Option :  -noFixedNetWires 
+*** Changed status on (10) nets in Clock.
+*** End changeUseClockNetStatus (cpu=0:00:00.0, real=0:00:00.0, mem=297.5M) ***
+
+globalDetailRoute
+
+#Start globalDetailRoute on Wed Sep 17 11:02:10 2025
+#
+#Generating timing graph information, please wait...
+#868 total nets, 10 already routed, 10 will ignore in trialRoute
+#TrialRoute congestion 0.000000 0.134771 -2
+#Based on TrialRoute congestion, NR sets routeTdrEffort to 2
+#Dump tif for version 2.1
+#Write timing file took: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 301.00 (Mb)
+#Done generating timing graph information.
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 301.00 (Mb)
+#Start reading timing information from file .timing_file.tif ...
+#
+#The worst setup slack read in is 47.190 
+#
+#No hold time constraints read in
+#Read in timing information for 68 ports, 764 instances from timing file .timing_file.tif.
+#NanoRoute Version v08.10-p008 NR081027-0018/USR58-UB
+#Merging special wires...
+#Using S.M.A.R.T. routing technology.
+#
+#Start data preparation...
+#
+#Data preparation is done.
+#
+#  Resource Analysis:
+#
+#               Routing  #Avail      #Track     #Total     %Gcell
+#  Layer      Direction   Track     Blocked      Gcell    Blocked
+#  --------------------------------------------------------------
+#  Metal 1        H         293           0         400    70.00%
+#  Metal 2        V         293           0         400     2.25%
+#  Metal 3        H         293           0         400     0.00%
+#  Metal 4        V         293           0         400     2.25%
+#  Metal 5        H         293           0         400     0.00%
+#  Metal 6        V         293           0         400     5.00%
+#  --------------------------------------------------------------
+#  Total                   1758       0.00%        2400    13.25%
+#
+#  10 nets (1.12%) with 1 preferred extra spacing.
+#
+#
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 349.00 (Mb)
+#
+#start global routing iteration 1...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#Computing layers for timing driven layer assignment from range: 1 6
+#For the given process, RC's between different routing layers does not vary significantly. Layer assignment may not improve timing and hence skipped.
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 350.00 (Mb)
+#
+#start global routing iteration 2...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 350.00 (Mb)
+#
+#start global routing iteration 3...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 350.00 (Mb)
+#
+#start global routing iteration 4...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 350.00 (Mb)
+#
+#start global routing iteration 5...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 350.00 (Mb)
+#
+#
+#  Congestion Analysis: (blocked Gcells are excluded from the statistics)
+#
+#                 OverCon       OverCon          
+#                  #Gcell        #Gcell    %Gcell
+#     Layer           (1)           (2)   OverCon
+#  ----------------------------------------------
+#   Metal 1      0(0.00%)      0(0.00%)   (0.00%)
+#   Metal 2      0(0.00%)      1(0.25%)   (0.25%)
+#   Metal 3      0(0.00%)      0(0.00%)   (0.00%)
+#   Metal 4      0(0.00%)      0(0.00%)   (0.00%)
+#   Metal 5      0(0.00%)      0(0.00%)   (0.00%)
+#   Metal 6      0(0.00%)      0(0.00%)   (0.00%)
+#  ----------------------------------------------
+#     Total      0(0.00%)      1(0.05%)   (0.05%)
+#
+#  The worst congested Gcell overcon (routing demand over resource in number of tracks) = 2
+#
+#Complete Global Routing.
+#Total wire length = 16024 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 6 um.
+#Total wire length on LAYER METAL2 = 5598 um.
+#Total wire length on LAYER METAL3 = 7365 um.
+#Total wire length on LAYER METAL4 = 2538 um.
+#Total wire length on LAYER METAL5 = 517 um.
+#Total wire length on LAYER METAL6 = 0 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 3485
+#Up-Via Summary (total 3485):
+#           
+#-----------------------
+#  Metal 1         1837
+#  Metal 2         1375
+#  Metal 3          233
+#  Metal 4           40
+#-----------------------
+#                  3485 
+#
+#Max overcon = 2 tracks.
+#Total overcon = 0.05%.
+#Worst layer Gcell overcon rate = 0.25%.
+#Cpu time = 00:00:01
+#Elapsed time = 00:00:01
+#Increased memory = 3.00 (Mb)
+#Total memory = 350.00 (Mb)
+#Peak memory = 382.00 (Mb)
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#Using S.M.A.R.T. routing technology.
+#routeSiEffort set to max
+#
+#Start Detail Routing.
+#start initial detail routing ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 355.00 (Mb)
+#start 1st optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#start 2nd optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#start 3rd optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#start 4th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#start 5th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#start 6th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#start 7th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#start 8th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#start 9th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#start 10th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#start 11th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#start 12th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#start 13th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#start 14th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#start 15th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#start 16th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#start 17th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#start 18th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#start 19th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#start 20th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 361.00 (Mb)
+#Complete Detail Routing.
+#Total wire length = 16700 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 832 um.
+#Total wire length on LAYER METAL2 = 5641 um.
+#Total wire length on LAYER METAL3 = 6315 um.
+#Total wire length on LAYER METAL4 = 2825 um.
+#Total wire length on LAYER METAL5 = 1086 um.
+#Total wire length on LAYER METAL6 = 0 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 5265
+#Up-Via Summary (total 5265):
+#           
+#-----------------------
+#  Metal 1         2402
+#  Metal 2         2169
+#  Metal 3          541
+#  Metal 4          153
+#-----------------------
+#                  5265 
+#
+#Total number of DRC violations = 5
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#Cpu time = 00:00:06
+#Elapsed time = 00:00:06
+#Increased memory = 11.00 (Mb)
+#Total memory = 361.00 (Mb)
+#Peak memory = 397.00 (Mb)
+#
+#Start Post Routing Optimization.
+#start 1st post routing optimization iteration ...
+#    number of DRC violations = 5
+#cpu time = 00:00:03, elapsed time = 00:00:03, memory = 359.00 (Mb)
+#start 2nd post routing optimization iteration ...
+#    number of DRC violations = 5
+#cpu time = 00:00:03, elapsed time = 00:00:03, memory = 359.00 (Mb)
+#start 3rd post routing optimization iteration ...
+#    number of DRC violations = 5
+#cpu time = 00:00:03, elapsed time = 00:00:03, memory = 359.00 (Mb)
+#Complete Post Routing Optimization.
+#Cpu time = 00:00:09
+#Elapsed time = 00:00:09
+#Increased memory = -2.00 (Mb)
+#Total memory = 359.00 (Mb)
+#Peak memory = 397.00 (Mb)
+#Total wire length = 16700 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 832 um.
+#Total wire length on LAYER METAL2 = 5641 um.
+#Total wire length on LAYER METAL3 = 6315 um.
+#Total wire length on LAYER METAL4 = 2825 um.
+#Total wire length on LAYER METAL5 = 1086 um.
+#Total wire length on LAYER METAL6 = 0 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 5265
+#Up-Via Summary (total 5265):
+#           
+#-----------------------
+#  Metal 1         2402
+#  Metal 2         2169
+#  Metal 3          541
+#  Metal 4          153
+#-----------------------
+#                  5265 
+#
+#Total number of DRC violations = 5
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#start routing for process antenna violation fix ...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#
+#Total wire length = 16701 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 832 um.
+#Total wire length on LAYER METAL2 = 5641 um.
+#Total wire length on LAYER METAL3 = 6316 um.
+#Total wire length on LAYER METAL4 = 2826 um.
+#Total wire length on LAYER METAL5 = 1086 um.
+#Total wire length on LAYER METAL6 = 0 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 5265
+#Up-Via Summary (total 5265):
+#           
+#-----------------------
+#  Metal 1         2402
+#  Metal 2         2169
+#  Metal 3          541
+#  Metal 4          153
+#-----------------------
+#                  5265 
+#
+#Total number of DRC violations = 5
+#Total number of net violated process antenna rule = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#detailRoute Statistics:
+#Cpu time = 00:00:14
+#Elapsed time = 00:00:15
+#Increased memory = 20.00 (Mb)
+#Total memory = 370.00 (Mb)
+#Peak memory = 397.00 (Mb)
+#
+#globalDetailRoute statistics:
+#Cpu time = 00:00:16
+#Elapsed time = 00:00:16
+#Increased memory = 85.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 397.00 (Mb)
+#Number of warnings = 0
+#Total number of warnings = 2
+#Number of fails = 0
+#Total number of fails = 0
+#Complete globalDetailRoute on Wed Sep 17 11:02:26 2025
+#
+
+detailRoute
+
+#Start detailRoute on Wed Sep 17 11:02:26 2025
+#
+Using detail cap. scale factor for clock nets.
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+#Start reading timing information from file .timing_file.tif ...
+#
+#The worst setup slack read in is 47.190 
+#
+#No hold time constraints read in
+#Read in timing information for 68 ports, 764 instances from timing file .timing_file.tif.
+#NanoRoute Version v08.10-p008 NR081027-0018/USR58-UB
+#Merging special wires...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#Using S.M.A.R.T. routing technology.
+#routeSiEffort set to max
+#
+#Start Detail Routing.
+#start initial detail routing ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 1st optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 2nd optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 3rd optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 4th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 5th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 6th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 7th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 8th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 9th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 10th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 11th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 12th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 13th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 14th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 15th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 16th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 17th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 18th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 19th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 20th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#Complete Detail Routing.
+#Total wire length = 16690 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 833 um.
+#Total wire length on LAYER METAL2 = 5654 um.
+#Total wire length on LAYER METAL3 = 6324 um.
+#Total wire length on LAYER METAL4 = 2802 um.
+#Total wire length on LAYER METAL5 = 1077 um.
+#Total wire length on LAYER METAL6 = 0 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 5263
+#Up-Via Summary (total 5263):
+#           
+#-----------------------
+#  Metal 1         2402
+#  Metal 2         2169
+#  Metal 3          539
+#  Metal 4          153
+#-----------------------
+#                  5263 
+#
+#Total number of DRC violations = 5
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#Cpu time = 00:00:04
+#Elapsed time = 00:00:05
+#Increased memory = 0.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 403.00 (Mb)
+#
+#Start Post Routing Optimization.
+#start 1st post routing optimization iteration ...
+#    number of DRC violations = 5
+#cpu time = 00:00:03, elapsed time = 00:00:03, memory = 369.00 (Mb)
+#start 2nd post routing optimization iteration ...
+#    number of DRC violations = 5
+#cpu time = 00:00:03, elapsed time = 00:00:03, memory = 369.00 (Mb)
+#start 3rd post routing optimization iteration ...
+#    number of DRC violations = 5
+#cpu time = 00:00:03, elapsed time = 00:00:03, memory = 369.00 (Mb)
+#Complete Post Routing Optimization.
+#Cpu time = 00:00:08
+#Elapsed time = 00:00:08
+#Increased memory = 0.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 404.00 (Mb)
+#Total wire length = 16690 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 833 um.
+#Total wire length on LAYER METAL2 = 5654 um.
+#Total wire length on LAYER METAL3 = 6324 um.
+#Total wire length on LAYER METAL4 = 2802 um.
+#Total wire length on LAYER METAL5 = 1077 um.
+#Total wire length on LAYER METAL6 = 0 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 5263
+#Up-Via Summary (total 5263):
+#           
+#-----------------------
+#  Metal 1         2402
+#  Metal 2         2169
+#  Metal 3          539
+#  Metal 4          153
+#-----------------------
+#                  5263 
+#
+#Total number of DRC violations = 5
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#start routing for via minimization ...
+#Total wire length = 16695 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 707 um.
+#Total wire length on LAYER METAL2 = 7663 um.
+#Total wire length on LAYER METAL3 = 5660 um.
+#Total wire length on LAYER METAL4 = 2015 um.
+#Total wire length on LAYER METAL5 = 649 um.
+#Total wire length on LAYER METAL6 = 0 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4097
+#Up-Via Summary (total 4097):
+#           
+#-----------------------
+#  Metal 1         2368
+#  Metal 2         1419
+#  Metal 3          258
+#  Metal 4           52
+#-----------------------
+#                  4097 
+#
+#Total number of DRC violations = 5
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#Complete routing via minimization.
+#
+#start routing for process antenna violation fix ...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#
+#Total wire length = 16696 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 712 um.
+#Total wire length on LAYER METAL2 = 7667 um.
+#Total wire length on LAYER METAL3 = 5657 um.
+#Total wire length on LAYER METAL4 = 2010 um.
+#Total wire length on LAYER METAL5 = 649 um.
+#Total wire length on LAYER METAL6 = 0 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4096
+#Up-Via Summary (total 4096):
+#           
+#-----------------------
+#  Metal 1         2368
+#  Metal 2         1421
+#  Metal 3          255
+#  Metal 4           52
+#-----------------------
+#                  4096 
+#
+#Total number of DRC violations = 5
+#Total number of net violated process antenna rule = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#
+#detailRoute statistics:
+#Cpu time = 00:00:15
+#Elapsed time = 00:00:15
+#Increased memory = 0.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 404.00 (Mb)
+#Number of warnings = 0
+#Total number of warnings = 4
+#Number of fails = 0
+#Total number of fails = 0
+#Complete detailRoute on Wed Sep 17 11:02:41 2025
+#
+
+detailRoute
+
+#Start detailRoute on Wed Sep 17 11:02:41 2025
+#
+Using detail cap. scale factor for clock nets.
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+#Start reading timing information from file .timing_file.tif ...
+#
+#The worst setup slack read in is 47.190 
+#
+#No hold time constraints read in
+#Read in timing information for 68 ports, 764 instances from timing file .timing_file.tif.
+#NanoRoute Version v08.10-p008 NR081027-0018/USR58-UB
+#Merging special wires...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#    number of violations = 13
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 376.00 (Mb)
+#Start search and repair to fix violations ... Done
+#Total wire length = 16697 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 714 um.
+#Total wire length on LAYER METAL2 = 7667 um.
+#Total wire length on LAYER METAL3 = 5656 um.
+#Total wire length on LAYER METAL4 = 2011 um.
+#Total wire length on LAYER METAL5 = 649 um.
+#Total wire length on LAYER METAL6 = 0 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4100
+#Total number of multi-cut vias = 1728 ( 42.1%)
+#Total number of single cut vias = 2372 ( 57.9%)
+#Up-Via Summary (total 4100):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1614 ( 68.1%)       757 ( 31.9%)       2371
+#  Metal 2         651 ( 45.8%)       769 ( 54.2%)       1420
+#  Metal 3         106 ( 41.2%)       151 ( 58.8%)        257
+#  Metal 4           1 (  1.9%)        51 ( 98.1%)         52
+#-----------------------------------------------------------
+#                 2372 ( 57.9%)      1728 ( 42.1%)       4100 
+#
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#CELL_VIEW ALU_TOP,init has 5 DRC violations
+#Total number of DRC violations = 5
+#Total number of net violated process antenna rule = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#Post Route via swapping is done.
+#
+#detailRoute statistics:
+#Cpu time = 00:00:01
+#Elapsed time = 00:00:01
+#Increased memory = 0.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 404.00 (Mb)
+#Number of warnings = 0
+#Total number of warnings = 5
+#Number of fails = 0
+#Total number of fails = 0
+#Complete detailRoute on Wed Sep 17 11:02:42 2025
+#
+
+detailRoute
+
+#Start detailRoute on Wed Sep 17 11:02:42 2025
+#
+Using detail cap. scale factor for clock nets.
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+#Start reading timing information from file .timing_file.tif ...
+#
+#The worst setup slack read in is 47.190 
+#
+#No hold time constraints read in
+#Read in timing information for 68 ports, 764 instances from timing file .timing_file.tif.
+#NanoRoute Version v08.10-p008 NR081027-0018/USR58-UB
+#Merging special wires...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#Using S.M.A.R.T. routing technology.
+#routeSiEffort set to max
+#
+#Start Detail Routing.
+#start initial detail routing ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 1st optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 2nd optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 3rd optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 4th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 5th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 6th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 7th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 8th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 9th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 10th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#start 11th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 12th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 13th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 14th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 15th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 16th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#start 17th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#start 18th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#start 19th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#start 20th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#Complete Detail Routing.
+#Total wire length = 16661 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7430 um.
+#Total wire length on LAYER METAL3 = 5889 um.
+#Total wire length on LAYER METAL4 = 1925 um.
+#Total wire length on LAYER METAL5 = 629 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4282
+#Total number of multi-cut vias = 1568 ( 36.6%)
+#Total number of single cut vias = 2714 ( 63.4%)
+#Up-Via Summary (total 4282):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1704 ( 71.6%)       676 ( 28.4%)       2380
+#  Metal 2         869 ( 55.2%)       705 ( 44.8%)       1574
+#  Metal 3         131 ( 48.5%)       139 ( 51.5%)        270
+#  Metal 4           8 ( 14.3%)        48 ( 85.7%)         56
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2714 ( 63.4%)      1568 ( 36.6%)       4282 
+#
+#Total number of DRC violations = 5
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#Cpu time = 00:00:08
+#Elapsed time = 00:00:08
+#Increased memory = 0.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 404.00 (Mb)
+#
+#Start Post Routing Optimization.
+#start 1st post routing optimization iteration ...
+#    number of DRC violations = 5
+#cpu time = 00:00:05, elapsed time = 00:00:05, memory = 369.00 (Mb)
+#start 2nd post routing optimization iteration ...
+#    number of DRC violations = 5
+#cpu time = 00:00:04, elapsed time = 00:00:05, memory = 369.00 (Mb)
+#start 3rd post routing optimization iteration ...
+#    number of DRC violations = 5
+#cpu time = 00:00:05, elapsed time = 00:00:05, memory = 369.00 (Mb)
+#Complete Post Routing Optimization.
+#Cpu time = 00:00:14
+#Elapsed time = 00:00:14
+#Increased memory = 0.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 404.00 (Mb)
+#Total wire length = 16661 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7430 um.
+#Total wire length on LAYER METAL3 = 5889 um.
+#Total wire length on LAYER METAL4 = 1925 um.
+#Total wire length on LAYER METAL5 = 629 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4282
+#Total number of multi-cut vias = 1568 ( 36.6%)
+#Total number of single cut vias = 2714 ( 63.4%)
+#Up-Via Summary (total 4282):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1704 ( 71.6%)       676 ( 28.4%)       2380
+#  Metal 2         869 ( 55.2%)       705 ( 44.8%)       1574
+#  Metal 3         131 ( 48.5%)       139 ( 51.5%)        270
+#  Metal 4           8 ( 14.3%)        48 ( 85.7%)         56
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2714 ( 63.4%)      1568 ( 36.6%)       4282 
+#
+#Total number of DRC violations = 5
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#start routing for process antenna violation fix ...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#
+#Total wire length = 16662 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7430 um.
+#Total wire length on LAYER METAL3 = 5890 um.
+#Total wire length on LAYER METAL4 = 1926 um.
+#Total wire length on LAYER METAL5 = 629 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4282
+#Total number of multi-cut vias = 1568 ( 36.6%)
+#Total number of single cut vias = 2714 ( 63.4%)
+#Up-Via Summary (total 4282):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1704 ( 71.6%)       676 ( 28.4%)       2380
+#  Metal 2         869 ( 55.2%)       705 ( 44.8%)       1574
+#  Metal 3         131 ( 48.5%)       139 ( 51.5%)        270
+#  Metal 4           8 ( 14.3%)        48 ( 85.7%)         56
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2714 ( 63.4%)      1568 ( 36.6%)       4282 
+#
+#Total number of DRC violations = 5
+#Total number of net violated process antenna rule = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#
+#detailRoute statistics:
+#Cpu time = 00:00:22
+#Elapsed time = 00:00:23
+#Increased memory = 0.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 404.00 (Mb)
+#Number of warnings = 0
+#Total number of warnings = 6
+#Number of fails = 0
+#Total number of fails = 0
+#Complete detailRoute on Wed Sep 17 11:03:05 2025
+#
+<CMD> setNanoRouteMode -quiet -routeTopRoutingLayer 6
+<CMD> setNanoRouteMode -quiet -routeWithSiDriven true
+<CMD> setNanoRouteMode -quiet -routeSiEffort max
+<CMD> routeDesign -globalDetail -viaOpt -wireOpt
+Begin checking placement ...
+*info: Placed = 716
+*info: Unplaced = 0
+Placement Density:70.23%(8928/12712)
+Redoing specifyClockTree  -clkfile /home/ahesham/Labs/Lab_PNR_1/pnr/ALU_TOP_cts.enc.dat/ALU_TOP.ctstch  ...
+
+changeUseClockNetStatus Option :  -noFixedNetWires 
+*** Changed status on (0) nets in Clock.
+*** End changeUseClockNetStatus (cpu=0:00:00.0, real=0:00:00.0, mem=369.1M) ***
+
+globalDetailRoute
+
+#Start globalDetailRoute on Wed Sep 17 11:03:20 2025
+#
+#Generating timing graph information, please wait...
+#868 total nets, 867 already routed, 867 will ignore in trialRoute
+#Option routeTdrEffort has been set to 2 by user
+#Dump tif for version 2.1
+#Write timing file took: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#Done generating timing graph information.
+#Start reading timing information from file .timing_file.tif ...
+#
+#The worst setup slack read in is 47.803 
+#
+#No hold time constraints read in
+#Read in timing information for 68 ports, 764 instances from timing file .timing_file.tif.
+#NanoRoute Version v08.10-p008 NR081027-0018/USR58-UB
+#Merging special wires...
+#Using S.M.A.R.T. routing technology.
+#WARNING (NRGR-22) Design is already detail routed.
+#Cpu time = 00:00:00
+#Elapsed time = 00:00:00
+#Increased memory = 0.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 404.00 (Mb)
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#Using S.M.A.R.T. routing technology.
+#routeSiEffort set to max
+#
+#Start Detail Routing.
+#start initial detail routing ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 1st optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 2nd optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 3rd optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 4th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 5th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 6th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 7th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 8th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 9th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 10th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 11th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 12th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 13th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 14th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 15th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 16th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 370.00 (Mb)
+#start 17th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 370.00 (Mb)
+#start 18th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 370.00 (Mb)
+#start 19th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 370.00 (Mb)
+#start 20th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 370.00 (Mb)
+#Complete Detail Routing.
+#Total wire length = 16659 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7428 um.
+#Total wire length on LAYER METAL3 = 5876 um.
+#Total wire length on LAYER METAL4 = 1936 um.
+#Total wire length on LAYER METAL5 = 630 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4283
+#Total number of multi-cut vias = 1569 ( 36.6%)
+#Total number of single cut vias = 2714 ( 63.4%)
+#Up-Via Summary (total 4283):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         865 ( 55.1%)       706 ( 44.9%)       1571
+#  Metal 3         131 ( 48.5%)       139 ( 51.5%)        270
+#  Metal 4          10 ( 17.2%)        48 ( 82.8%)         58
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2714 ( 63.4%)      1569 ( 36.6%)       4283 
+#
+#Total number of DRC violations = 5
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#Cpu time = 00:00:07
+#Elapsed time = 00:00:07
+#Increased memory = 1.00 (Mb)
+#Total memory = 370.00 (Mb)
+#Peak memory = 404.00 (Mb)
+#
+#Start Post Routing Optimization.
+#start 1st post routing optimization iteration ...
+#    number of DRC violations = 5
+#cpu time = 00:00:04, elapsed time = 00:00:04, memory = 369.00 (Mb)
+#start 2nd post routing optimization iteration ...
+#    number of DRC violations = 5
+#cpu time = 00:00:05, elapsed time = 00:00:05, memory = 369.00 (Mb)
+#start 3rd post routing optimization iteration ...
+#    number of DRC violations = 5
+#cpu time = 00:00:05, elapsed time = 00:00:05, memory = 369.00 (Mb)
+#Complete Post Routing Optimization.
+#Cpu time = 00:00:14
+#Elapsed time = 00:00:14
+#Increased memory = -1.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 404.00 (Mb)
+#Total wire length = 16659 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7428 um.
+#Total wire length on LAYER METAL3 = 5876 um.
+#Total wire length on LAYER METAL4 = 1936 um.
+#Total wire length on LAYER METAL5 = 630 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4283
+#Total number of multi-cut vias = 1569 ( 36.6%)
+#Total number of single cut vias = 2714 ( 63.4%)
+#Up-Via Summary (total 4283):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         865 ( 55.1%)       706 ( 44.9%)       1571
+#  Metal 3         131 ( 48.5%)       139 ( 51.5%)        270
+#  Metal 4          10 ( 17.2%)        48 ( 82.8%)         58
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2714 ( 63.4%)      1569 ( 36.6%)       4283 
+#
+#Total number of DRC violations = 5
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#start routing for process antenna violation fix ...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#
+#Total wire length = 16660 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7428 um.
+#Total wire length on LAYER METAL3 = 5877 um.
+#Total wire length on LAYER METAL4 = 1937 um.
+#Total wire length on LAYER METAL5 = 630 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4283
+#Total number of multi-cut vias = 1569 ( 36.6%)
+#Total number of single cut vias = 2714 ( 63.4%)
+#Up-Via Summary (total 4283):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         865 ( 55.1%)       706 ( 44.9%)       1571
+#  Metal 3         131 ( 48.5%)       139 ( 51.5%)        270
+#  Metal 4          10 ( 17.2%)        48 ( 82.8%)         58
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2714 ( 63.4%)      1569 ( 36.6%)       4283 
+#
+#Total number of DRC violations = 5
+#Total number of net violated process antenna rule = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#detailRoute Statistics:
+#Cpu time = 00:00:21
+#Elapsed time = 00:00:21
+#Increased memory = 0.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 404.00 (Mb)
+#
+#globalDetailRoute statistics:
+#Cpu time = 00:00:21
+#Elapsed time = 00:00:22
+#Increased memory = 0.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 404.00 (Mb)
+#Number of warnings = 1
+#Total number of warnings = 7
+#Number of fails = 0
+#Total number of fails = 0
+#Complete globalDetailRoute on Wed Sep 17 11:03:42 2025
+#
+
+detailRoute
+
+#Start detailRoute on Wed Sep 17 11:03:42 2025
+#
+Using detail cap. scale factor for clock nets.
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+#Start reading timing information from file .timing_file.tif ...
+#
+#The worst setup slack read in is 47.803 
+#
+#No hold time constraints read in
+#Read in timing information for 68 ports, 764 instances from timing file .timing_file.tif.
+#NanoRoute Version v08.10-p008 NR081027-0018/USR58-UB
+#Merging special wires...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#Using S.M.A.R.T. routing technology.
+#routeSiEffort set to max
+#
+#Start Detail Routing.
+#start initial detail routing ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 1st optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 2nd optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 3rd optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 4th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 5th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 6th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 7th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 8th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 9th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 10th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 11th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 12th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 13th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 14th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 15th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 16th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 370.00 (Mb)
+#start 17th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 371.00 (Mb)
+#start 18th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 370.00 (Mb)
+#start 19th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 371.00 (Mb)
+#start 20th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 370.00 (Mb)
+#Complete Detail Routing.
+#Total wire length = 16659 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7419 um.
+#Total wire length on LAYER METAL3 = 5869 um.
+#Total wire length on LAYER METAL4 = 1935 um.
+#Total wire length on LAYER METAL5 = 647 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4282
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2715 ( 63.4%)
+#Up-Via Summary (total 4282):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1705 ( 71.6%)       676 ( 28.4%)       2381
+#  Metal 2         869 ( 55.2%)       704 ( 44.8%)       1573
+#  Metal 3         126 ( 47.5%)       139 ( 52.5%)        265
+#  Metal 4          13 ( 21.3%)        48 ( 78.7%)         61
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2715 ( 63.4%)      1567 ( 36.6%)       4282 
+#
+#Total number of DRC violations = 5
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#Cpu time = 00:00:07
+#Elapsed time = 00:00:08
+#Increased memory = 1.00 (Mb)
+#Total memory = 370.00 (Mb)
+#Peak memory = 404.00 (Mb)
+#
+#Start Post Routing Optimization.
+#start 1st post routing optimization iteration ...
+#    number of DRC violations = 5
+#cpu time = 00:00:04, elapsed time = 00:00:05, memory = 369.00 (Mb)
+#start 2nd post routing optimization iteration ...
+#    number of DRC violations = 5
+#cpu time = 00:00:06, elapsed time = 00:00:06, memory = 369.00 (Mb)
+#start 3rd post routing optimization iteration ...
+#    number of DRC violations = 5
+#cpu time = 00:00:05, elapsed time = 00:00:05, memory = 369.00 (Mb)
+#Complete Post Routing Optimization.
+#Cpu time = 00:00:15
+#Elapsed time = 00:00:15
+#Increased memory = -1.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#Total wire length = 16659 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7419 um.
+#Total wire length on LAYER METAL3 = 5869 um.
+#Total wire length on LAYER METAL4 = 1935 um.
+#Total wire length on LAYER METAL5 = 647 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4282
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2715 ( 63.4%)
+#Up-Via Summary (total 4282):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1705 ( 71.6%)       676 ( 28.4%)       2381
+#  Metal 2         869 ( 55.2%)       704 ( 44.8%)       1573
+#  Metal 3         126 ( 47.5%)       139 ( 52.5%)        265
+#  Metal 4          13 ( 21.3%)        48 ( 78.7%)         61
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2715 ( 63.4%)      1567 ( 36.6%)       4282 
+#
+#Total number of DRC violations = 5
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#start routing for process antenna violation fix ...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#
+#Total wire length = 16660 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7419 um.
+#Total wire length on LAYER METAL3 = 5869 um.
+#Total wire length on LAYER METAL4 = 1936 um.
+#Total wire length on LAYER METAL5 = 647 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4282
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2715 ( 63.4%)
+#Up-Via Summary (total 4282):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1705 ( 71.6%)       676 ( 28.4%)       2381
+#  Metal 2         869 ( 55.2%)       704 ( 44.8%)       1573
+#  Metal 3         126 ( 47.5%)       139 ( 52.5%)        265
+#  Metal 4          13 ( 21.3%)        48 ( 78.7%)         61
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2715 ( 63.4%)      1567 ( 36.6%)       4282 
+#
+#Total number of DRC violations = 5
+#Total number of net violated process antenna rule = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#
+#detailRoute statistics:
+#Cpu time = 00:00:22
+#Elapsed time = 00:00:23
+#Increased memory = 0.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#Number of warnings = 0
+#Total number of warnings = 7
+#Number of fails = 0
+#Total number of fails = 0
+#Complete detailRoute on Wed Sep 17 11:04:05 2025
+#
+
+detailRoute
+
+#Start detailRoute on Wed Sep 17 11:04:05 2025
+#
+Using detail cap. scale factor for clock nets.
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+#Start reading timing information from file .timing_file.tif ...
+#
+#The worst setup slack read in is 47.803 
+#
+#No hold time constraints read in
+#Read in timing information for 68 ports, 764 instances from timing file .timing_file.tif.
+#NanoRoute Version v08.10-p008 NR081027-0018/USR58-UB
+#Merging special wires...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#Using S.M.A.R.T. routing technology.
+#routeSiEffort set to max
+#
+#Start Detail Routing.
+#start initial detail routing ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 1st optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 2nd optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 3rd optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 4th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 5th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 6th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 7th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 8th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 9th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 10th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 11th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 12th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 13th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 14th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 15th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 16th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 372.00 (Mb)
+#start 17th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 372.00 (Mb)
+#start 18th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 372.00 (Mb)
+#start 19th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 372.00 (Mb)
+#start 20th optimization iteration ...
+#    number of violations = 5
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 372.00 (Mb)
+#Complete Detail Routing.
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 5
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#Cpu time = 00:00:08
+#Elapsed time = 00:00:08
+#Increased memory = 3.00 (Mb)
+#Total memory = 372.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#
+#Start Post Routing Optimization.
+#start 1st post routing optimization iteration ...
+#    number of DRC violations = 5
+#cpu time = 00:00:05, elapsed time = 00:00:05, memory = 369.00 (Mb)
+#start 2nd post routing optimization iteration ...
+#    number of DRC violations = 5
+#cpu time = 00:00:05, elapsed time = 00:00:05, memory = 369.00 (Mb)
+#start 3rd post routing optimization iteration ...
+#    number of DRC violations = 5
+#cpu time = 00:00:05, elapsed time = 00:00:05, memory = 369.00 (Mb)
+#Complete Post Routing Optimization.
+#Cpu time = 00:00:15
+#Elapsed time = 00:00:15
+#Increased memory = -3.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 5
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#start routing for process antenna violation fix ...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#
+#Total wire length = 16664 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5866 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 5
+#Total number of net violated process antenna rule = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 5
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#
+#detailRoute statistics:
+#Cpu time = 00:00:23
+#Elapsed time = 00:00:23
+#Increased memory = 0.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#Number of warnings = 0
+#Total number of warnings = 8
+#Number of fails = 0
+#Total number of fails = 0
+#Complete detailRoute on Wed Sep 17 11:04:28 2025
+#
+<CMD> clearDrc
+<CMD> verifyGeometry -noMinArea
+ *** Starting Verify Geometry (MEM: 369.1) ***
+
+  VERIFY GEOMETRY ...... Starting Verification
+  VERIFY GEOMETRY ...... Initializing
+  VERIFY GEOMETRY ...... Deleting Existing Violations
+  VERIFY GEOMETRY ...... Creating Sub-Areas
+                  ...... bin size: 8000
+  VERIFY GEOMETRY ...... SubArea : 1 of 1
+  VERIFY GEOMETRY ...... Cells          :  0 Viols.
+  VERIFY GEOMETRY ...... SameNet        :  0 Viols.
+  VERIFY GEOMETRY ...... Wiring         :  1 Viols.
+  VERIFY GEOMETRY ...... Antenna        :  0 Viols.
+  VERIFY GEOMETRY ...... Sub-Area : 1 complete 1 Viols. 0 Wrngs.
+VG: elapsed time: 0.00
+Begin Summary ...
+  Cells       : 0
+  SameNet     : 0
+  Wiring      : 1
+  Antenna     : 0
+  Short       : 0
+  Overlap     : 0
+End Summary
+
+  Verification Complete : 1 Viols.  0 Wrngs.
+
+**********End: VERIFY GEOMETRY**********
+ *** verify geometry (CPU: 0:00:00.2  MEM: 5.8M)
+
+<CMD> refinePlace -preserveRouting
+Starting refinePlace ...
+Statistics of distance of Instance movement in detailed placement:
+  maximum (X+Y) =         0.00 um
+  mean    (X+Y) =         0.00 um
+Total instances moved : 0
+*** cpu=0:00:00.0   mem=374.9M  mem(used)=0.0M***
+Total net length = 1.508e+04 (7.274e+03 7.806e+03) (ext = 3.558e+03)
+default core: bins with density >  0.75 = 37.5 % ( 6 / 16 )
+<CMD> setNanoRouteMode -routeWithEco true
+<CMD> routeDesign -globalDetail -viaOpt -wireOpt
+Begin checking placement ...
+*info: Placed = 716
+*info: Unplaced = 0
+Placement Density:70.23%(8928/12712)
+Redoing specifyClockTree  -clkfile /home/ahesham/Labs/Lab_PNR_1/pnr/ALU_TOP_cts.enc.dat/ALU_TOP.ctstch  ...
+
+changeUseClockNetStatus Option :  -noFixedNetWires 
+*** Changed status on (0) nets in Clock.
+*** End changeUseClockNetStatus (cpu=0:00:00.0, real=0:00:00.0, mem=369.9M) ***
+
+globalDetailRoute
+
+#Start globalDetailRoute on Wed Sep 17 11:05:17 2025
+#
+Using detail cap. scale factor for clock nets.
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+#NanoRoute Version v08.10-p008 NR081027-0018/USR58-UB
+#Merging special wires...
+#WARNING (NRGR-22) Design is already detail routed.
+#Cpu time = 00:00:00
+#Elapsed time = 00:00:00
+#Increased memory = 0.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#
+#Start Detail Routing.
+#start initial detail routing ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 1st optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 2nd optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 3rd optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 4th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 5th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 6th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 7th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 8th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 9th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 10th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 11th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 12th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 13th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 14th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 15th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 16th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 17th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 18th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 19th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 20th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#Complete Detail Routing.
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#Cpu time = 00:00:02
+#Elapsed time = 00:00:02
+#Increased memory = 2.00 (Mb)
+#Total memory = 371.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#
+#Start Post Routing Optimization.
+#start 1st post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#start 2nd post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#start 3rd post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#Complete Post Routing Optimization.
+#Cpu time = 00:00:03
+#Elapsed time = 00:00:03
+#Increased memory = -2.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#start routing for process antenna violation fix ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#
+#Total wire length = 16664 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5866 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of net violated process antenna rule = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#detailRoute Statistics:
+#Cpu time = 00:00:05
+#Elapsed time = 00:00:05
+#Increased memory = 1.00 (Mb)
+#Total memory = 370.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#
+#globalDetailRoute statistics:
+#Cpu time = 00:00:05
+#Elapsed time = 00:00:05
+#Increased memory = 1.00 (Mb)
+#Total memory = 370.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#Number of warnings = 1
+#Total number of warnings = 9
+#Number of fails = 0
+#Total number of fails = 0
+#Complete globalDetailRoute on Wed Sep 17 11:05:22 2025
+#
+
+detailRoute
+
+#Start detailRoute on Wed Sep 17 11:05:22 2025
+#
+Using detail cap. scale factor for clock nets.
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+#NanoRoute Version v08.10-p008 NR081027-0018/USR58-UB
+#Merging special wires...
+#
+#Start Detail Routing.
+#start initial detail routing ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 1st optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 2nd optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 3rd optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 4th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 5th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 6th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 7th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 8th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 9th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 10th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 11th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 12th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 13th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 14th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 15th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 16th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 17th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 18th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 19th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 20th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#Complete Detail Routing.
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#Cpu time = 00:00:02
+#Elapsed time = 00:00:02
+#Increased memory = 2.00 (Mb)
+#Total memory = 372.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#
+#Start Post Routing Optimization.
+#start 1st post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#start 2nd post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#start 3rd post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#Complete Post Routing Optimization.
+#Cpu time = 00:00:03
+#Elapsed time = 00:00:03
+#Increased memory = -3.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#start routing for process antenna violation fix ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#
+#Total wire length = 16664 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5866 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of net violated process antenna rule = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#
+#detailRoute statistics:
+#Cpu time = 00:00:05
+#Elapsed time = 00:00:05
+#Increased memory = 0.00 (Mb)
+#Total memory = 370.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#Number of warnings = 0
+#Total number of warnings = 9
+#Number of fails = 0
+#Total number of fails = 0
+#Complete detailRoute on Wed Sep 17 11:05:28 2025
+#
+
+detailRoute
+
+#Start detailRoute on Wed Sep 17 11:05:28 2025
+#
+Using detail cap. scale factor for clock nets.
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+#NanoRoute Version v08.10-p008 NR081027-0018/USR58-UB
+#Merging special wires...
+#
+#Start Detail Routing.
+#start initial detail routing ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 1st optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 2nd optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 3rd optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 4th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 5th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 6th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 7th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 8th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 9th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 10th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 11th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 12th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 13th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 14th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 15th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 16th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 17th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 18th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 19th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 20th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#Complete Detail Routing.
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#Cpu time = 00:00:02
+#Elapsed time = 00:00:02
+#Increased memory = 3.00 (Mb)
+#Total memory = 373.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#
+#Start Post Routing Optimization.
+#start 1st post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#start 2nd post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#start 3rd post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#Complete Post Routing Optimization.
+#Cpu time = 00:00:03
+#Elapsed time = 00:00:03
+#Increased memory = -4.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#start routing for process antenna violation fix ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#
+#Total wire length = 16664 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5866 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of net violated process antenna rule = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#
+#detailRoute statistics:
+#Cpu time = 00:00:05
+#Elapsed time = 00:00:05
+#Increased memory = 0.00 (Mb)
+#Total memory = 370.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#Number of warnings = 0
+#Total number of warnings = 10
+#Number of fails = 0
+#Total number of fails = 0
+#Complete detailRoute on Wed Sep 17 11:05:33 2025
+#
+<CMD> setNanoRouteMode -quiet -routeTopRoutingLayer 6
+<CMD> setNanoRouteMode -quiet -routeWithSiDriven true
+<CMD> setNanoRouteMode -quiet -routeSiEffort max
+<CMD> routeDesign -globalDetail -viaOpt -wireOpt
+Begin checking placement ...
+*info: Placed = 716
+*info: Unplaced = 0
+Placement Density:70.23%(8928/12712)
+Redoing specifyClockTree  -clkfile /home/ahesham/Labs/Lab_PNR_1/pnr/ALU_TOP_cts.enc.dat/ALU_TOP.ctstch  ...
+
+changeUseClockNetStatus Option :  -noFixedNetWires 
+*** Changed status on (0) nets in Clock.
+*** End changeUseClockNetStatus (cpu=0:00:00.0, real=0:00:00.0, mem=370.7M) ***
+
+globalDetailRoute
+
+#Start globalDetailRoute on Wed Sep 17 11:05:45 2025
+#
+Using detail cap. scale factor for clock nets.
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+#NanoRoute Version v08.10-p008 NR081027-0018/USR58-UB
+#Merging special wires...
+#WARNING (NRGR-22) Design is already detail routed.
+#Cpu time = 00:00:00
+#Elapsed time = 00:00:00
+#Increased memory = 0.00 (Mb)
+#Total memory = 370.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#
+#Start Detail Routing.
+#start initial detail routing ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 1st optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 2nd optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 3rd optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 4th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 5th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 370.00 (Mb)
+#start 6th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 7th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 8th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 9th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 10th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 11th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 12th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 13th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 14th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 15th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 16th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 17th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 18th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 19th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 20th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#Complete Detail Routing.
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#Cpu time = 00:00:02
+#Elapsed time = 00:00:02
+#Increased memory = 4.00 (Mb)
+#Total memory = 374.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#
+#Start Post Routing Optimization.
+#start 1st post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#start 2nd post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#start 3rd post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#Complete Post Routing Optimization.
+#Cpu time = 00:00:03
+#Elapsed time = 00:00:03
+#Increased memory = -5.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#start routing for process antenna violation fix ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#
+#Total wire length = 16664 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5866 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of net violated process antenna rule = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#detailRoute Statistics:
+#Cpu time = 00:00:05
+#Elapsed time = 00:00:05
+#Increased memory = 1.00 (Mb)
+#Total memory = 371.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#
+#globalDetailRoute statistics:
+#Cpu time = 00:00:05
+#Elapsed time = 00:00:05
+#Increased memory = -1.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#Number of warnings = 1
+#Total number of warnings = 11
+#Number of fails = 0
+#Total number of fails = 0
+#Complete globalDetailRoute on Wed Sep 17 11:05:50 2025
+#
+
+detailRoute
+
+#Start detailRoute on Wed Sep 17 11:05:50 2025
+#
+Using detail cap. scale factor for clock nets.
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+#NanoRoute Version v08.10-p008 NR081027-0018/USR58-UB
+#Merging special wires...
+#
+#Start Detail Routing.
+#start initial detail routing ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 1st optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 2nd optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 3rd optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 4th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 5th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 6th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 7th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 8th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 9th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 10th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 11th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 12th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 13th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 14th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 15th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 16th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 17th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 18th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 19th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 20th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#Complete Detail Routing.
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#Cpu time = 00:00:02
+#Elapsed time = 00:00:02
+#Increased memory = 5.00 (Mb)
+#Total memory = 374.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#
+#Start Post Routing Optimization.
+#start 1st post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#start 2nd post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#start 3rd post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 369.00 (Mb)
+#Complete Post Routing Optimization.
+#Cpu time = 00:00:03
+#Elapsed time = 00:00:03
+#Increased memory = -5.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#start routing for process antenna violation fix ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#
+#Total wire length = 16664 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5866 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of net violated process antenna rule = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#
+#detailRoute statistics:
+#Cpu time = 00:00:05
+#Elapsed time = 00:00:05
+#Increased memory = 0.00 (Mb)
+#Total memory = 369.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#Number of warnings = 0
+#Total number of warnings = 11
+#Number of fails = 0
+#Total number of fails = 0
+#Complete detailRoute on Wed Sep 17 11:05:55 2025
+#
+
+detailRoute
+
+#Start detailRoute on Wed Sep 17 11:05:55 2025
+#
+Using detail cap. scale factor for clock nets.
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+#NanoRoute Version v08.10-p008 NR081027-0018/USR58-UB
+#Merging special wires...
+#
+#Start Detail Routing.
+#start initial detail routing ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 369.00 (Mb)
+#start 1st optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 2nd optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 3rd optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 4th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 5th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 6th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 7th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 8th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 9th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 10th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 11th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 12th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 13th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 14th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 15th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 16th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 17th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 375.00 (Mb)
+#start 18th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 375.00 (Mb)
+#start 19th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 375.00 (Mb)
+#start 20th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 375.00 (Mb)
+#Complete Detail Routing.
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#Cpu time = 00:00:02
+#Elapsed time = 00:00:02
+#Increased memory = 6.00 (Mb)
+#Total memory = 375.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#
+#Start Post Routing Optimization.
+#start 1st post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 371.00 (Mb)
+#start 2nd post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 371.00 (Mb)
+#start 3rd post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 371.00 (Mb)
+#Complete Post Routing Optimization.
+#Cpu time = 00:00:03
+#Elapsed time = 00:00:03
+#Increased memory = -4.00 (Mb)
+#Total memory = 371.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#start routing for process antenna violation fix ...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#
+#Total wire length = 16664 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5866 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of net violated process antenna rule = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#
+#detailRoute statistics:
+#Cpu time = 00:00:05
+#Elapsed time = 00:00:05
+#Increased memory = 2.00 (Mb)
+#Total memory = 371.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#Number of warnings = 0
+#Total number of warnings = 12
+#Number of fails = 0
+#Total number of fails = 0
+#Complete detailRoute on Wed Sep 17 11:06:01 2025
+#
+<CMD> refinePlace -preserveRouting
+Starting refinePlace ...
+Statistics of distance of Instance movement in detailed placement:
+  maximum (X+Y) =         0.00 um
+  mean    (X+Y) =         0.00 um
+Total instances moved : 0
+*** cpu=0:00:00.0   mem=371.7M  mem(used)=0.0M***
+Total net length = 1.508e+04 (7.274e+03 7.806e+03) (ext = 3.558e+03)
+default core: bins with density >  0.75 = 37.5 % ( 6 / 16 )
+<CMD> setNanoRouteMode -routeWithEco false
+<CMD> routeDesign -globalDetail -viaOpt -wireOpt
+Begin checking placement ...
+*info: Placed = 716
+*info: Unplaced = 0
+Placement Density:70.23%(8928/12712)
+Redoing specifyClockTree  -clkfile /home/ahesham/Labs/Lab_PNR_1/pnr/ALU_TOP_cts.enc.dat/ALU_TOP.ctstch  ...
+
+changeUseClockNetStatus Option :  -noFixedNetWires 
+*** Changed status on (0) nets in Clock.
+*** End changeUseClockNetStatus (cpu=0:00:00.0, real=0:00:00.0, mem=371.7M) ***
+
+globalDetailRoute
+
+#Start globalDetailRoute on Wed Sep 17 11:06:22 2025
+#
+#Generating timing graph information, please wait...
+#868 total nets, 867 already routed, 867 will ignore in trialRoute
+#Option routeTdrEffort has been set to 2 by user
+#Dump tif for version 2.1
+#Write timing file took: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#Done generating timing graph information.
+#Start reading timing information from file .timing_file.tif ...
+#
+#The worst setup slack read in is 47.802 
+#
+#No hold time constraints read in
+#Read in timing information for 68 ports, 764 instances from timing file .timing_file.tif.
+#NanoRoute Version v08.10-p008 NR081027-0018/USR58-UB
+#Merging special wires...
+#Using S.M.A.R.T. routing technology.
+#WARNING (NRGR-22) Design is already detail routed.
+#Cpu time = 00:00:00
+#Elapsed time = 00:00:00
+#Increased memory = 0.00 (Mb)
+#Total memory = 371.00 (Mb)
+#Peak memory = 405.00 (Mb)
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#Using S.M.A.R.T. routing technology.
+#routeSiEffort set to max
+#
+#Start Detail Routing.
+#start initial detail routing ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 1st optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 2nd optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 3rd optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 4th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 5th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 6th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 373.00 (Mb)
+#start 7th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 8th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 9th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 10th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 11th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 12th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 13th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 14th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 15th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 16th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 17th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 18th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 19th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 20th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#Complete Detail Routing.
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#Cpu time = 00:00:02
+#Elapsed time = 00:00:02
+#Increased memory = 3.00 (Mb)
+#Total memory = 374.00 (Mb)
+#Peak memory = 406.00 (Mb)
+#
+#Start Post Routing Optimization.
+#start 1st post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 371.00 (Mb)
+#start 2nd post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 371.00 (Mb)
+#start 3rd post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 371.00 (Mb)
+#Complete Post Routing Optimization.
+#Cpu time = 00:00:03
+#Elapsed time = 00:00:04
+#Increased memory = -3.00 (Mb)
+#Total memory = 371.00 (Mb)
+#Peak memory = 406.00 (Mb)
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#start routing for process antenna violation fix ...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#
+#Total wire length = 16664 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5866 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of net violated process antenna rule = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#detailRoute Statistics:
+#Cpu time = 00:00:05
+#Elapsed time = 00:00:06
+#Increased memory = 1.00 (Mb)
+#Total memory = 372.00 (Mb)
+#Peak memory = 406.00 (Mb)
+#
+#globalDetailRoute statistics:
+#Cpu time = 00:00:06
+#Elapsed time = 00:00:06
+#Increased memory = 0.00 (Mb)
+#Total memory = 371.00 (Mb)
+#Peak memory = 406.00 (Mb)
+#Number of warnings = 1
+#Total number of warnings = 13
+#Number of fails = 0
+#Total number of fails = 0
+#Complete globalDetailRoute on Wed Sep 17 11:06:28 2025
+#
+
+detailRoute
+
+#Start detailRoute on Wed Sep 17 11:06:28 2025
+#
+Using detail cap. scale factor for clock nets.
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+#Start reading timing information from file .timing_file.tif ...
+#
+#The worst setup slack read in is 47.802 
+#
+#No hold time constraints read in
+#Read in timing information for 68 ports, 764 instances from timing file .timing_file.tif.
+#NanoRoute Version v08.10-p008 NR081027-0018/USR58-UB
+#Merging special wires...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#Using S.M.A.R.T. routing technology.
+#routeSiEffort set to max
+#
+#Start Detail Routing.
+#start initial detail routing ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 1st optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 2nd optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 3rd optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 4th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 5th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 6th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 7th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 8th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 9th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 10th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 11th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 12th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 13th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 14th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 15th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 16th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 17th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 18th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 19th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 20th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#Complete Detail Routing.
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#Cpu time = 00:00:02
+#Elapsed time = 00:00:02
+#Increased memory = 3.00 (Mb)
+#Total memory = 374.00 (Mb)
+#Peak memory = 406.00 (Mb)
+#
+#Start Post Routing Optimization.
+#start 1st post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 371.00 (Mb)
+#start 2nd post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 371.00 (Mb)
+#start 3rd post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 371.00 (Mb)
+#Complete Post Routing Optimization.
+#Cpu time = 00:00:03
+#Elapsed time = 00:00:04
+#Increased memory = -3.00 (Mb)
+#Total memory = 371.00 (Mb)
+#Peak memory = 406.00 (Mb)
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#start routing for process antenna violation fix ...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#
+#Total wire length = 16664 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5866 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of net violated process antenna rule = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#
+#detailRoute statistics:
+#Cpu time = 00:00:05
+#Elapsed time = 00:00:06
+#Increased memory = 0.00 (Mb)
+#Total memory = 371.00 (Mb)
+#Peak memory = 406.00 (Mb)
+#Number of warnings = 0
+#Total number of warnings = 13
+#Number of fails = 0
+#Total number of fails = 0
+#Complete detailRoute on Wed Sep 17 11:06:34 2025
+#
+
+detailRoute
+
+#Start detailRoute on Wed Sep 17 11:06:34 2025
+#
+Using detail cap. scale factor for clock nets.
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+#Start reading timing information from file .timing_file.tif ...
+#
+#The worst setup slack read in is 47.802 
+#
+#No hold time constraints read in
+#Read in timing information for 68 ports, 764 instances from timing file .timing_file.tif.
+#NanoRoute Version v08.10-p008 NR081027-0018/USR58-UB
+#Merging special wires...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#Using S.M.A.R.T. routing technology.
+#routeSiEffort set to max
+#
+#Start Detail Routing.
+#start initial detail routing ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 1st optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 2nd optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 3rd optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 4th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 5th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#start 6th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 374.00 (Mb)
+#start 7th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 375.00 (Mb)
+#start 8th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 375.00 (Mb)
+#start 9th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 375.00 (Mb)
+#start 10th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 375.00 (Mb)
+#start 11th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 375.00 (Mb)
+#start 12th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 375.00 (Mb)
+#start 13th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 375.00 (Mb)
+#start 14th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 375.00 (Mb)
+#start 15th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 375.00 (Mb)
+#start 16th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 375.00 (Mb)
+#start 17th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 376.00 (Mb)
+#start 18th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 376.00 (Mb)
+#start 19th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 376.00 (Mb)
+#start 20th optimization iteration ...
+#    number of violations = 1
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 376.00 (Mb)
+#Complete Detail Routing.
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#Cpu time = 00:00:02
+#Elapsed time = 00:00:02
+#Increased memory = 5.00 (Mb)
+#Total memory = 376.00 (Mb)
+#Peak memory = 407.00 (Mb)
+#
+#Start Post Routing Optimization.
+#start 1st post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 371.00 (Mb)
+#start 2nd post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 371.00 (Mb)
+#start 3rd post routing optimization iteration ...
+#    number of DRC violations = 1
+#cpu time = 00:00:01, elapsed time = 00:00:01, memory = 371.00 (Mb)
+#Complete Post Routing Optimization.
+#Cpu time = 00:00:03
+#Elapsed time = 00:00:03
+#Increased memory = -5.00 (Mb)
+#Total memory = 371.00 (Mb)
+#Peak memory = 407.00 (Mb)
+#Total wire length = 16663 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5865 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#start routing for process antenna violation fix ...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 372.00 (Mb)
+#
+#Total wire length = 16664 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5866 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 1
+#Total number of net violated process antenna rule = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 1
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#
+#detailRoute statistics:
+#Cpu time = 00:00:05
+#Elapsed time = 00:00:05
+#Increased memory = 0.00 (Mb)
+#Total memory = 371.00 (Mb)
+#Peak memory = 407.00 (Mb)
+#Number of warnings = 0
+#Total number of warnings = 14
+#Number of fails = 0
+#Total number of fails = 0
+#Complete detailRoute on Wed Sep 17 11:06:39 2025
+#
+<CMD> clearDrc
+<CMD> refinePlace -preserveRouting
+Starting refinePlace ...
+Statistics of distance of Instance movement in detailed placement:
+  maximum (X+Y) =         0.00 um
+  mean    (X+Y) =         0.00 um
+Total instances moved : 0
+*** cpu=0:00:00.0   mem=371.2M  mem(used)=0.0M***
+Total net length = 1.508e+04 (7.274e+03 7.806e+03) (ext = 3.558e+03)
+default core: bins with density >  0.75 = 37.5 % ( 6 / 16 )
+<CMD> setNanoRouteMode -routeWithEco false
+<CMD> routeDesign -globalDetail -viaOpt -wireOpt
+Begin checking placement ...
+*info: Placed = 716
+*info: Unplaced = 0
+Placement Density:70.23%(8928/12712)
+Redoing specifyClockTree  -clkfile /home/ahesham/Labs/Lab_PNR_1/pnr/ALU_TOP_cts.enc.dat/ALU_TOP.ctstch  ...
+
+changeUseClockNetStatus Option :  -noFixedNetWires 
+*** Changed status on (0) nets in Clock.
+*** End changeUseClockNetStatus (cpu=0:00:00.0, real=0:00:00.0, mem=371.2M) ***
+
+globalDetailRoute
+
+#Start globalDetailRoute on Wed Sep 17 11:06:46 2025
+#
+#Generating timing graph information, please wait...
+#868 total nets, 867 already routed, 867 will ignore in trialRoute
+#Option routeTdrEffort has been set to 2 by user
+#Dump tif for version 2.1
+#Write timing file took: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#Done generating timing graph information.
+#Start reading timing information from file .timing_file.tif ...
+#
+#The worst setup slack read in is 47.802 
+#
+#No hold time constraints read in
+#Read in timing information for 68 ports, 764 instances from timing file .timing_file.tif.
+#NanoRoute Version v08.10-p008 NR081027-0018/USR58-UB
+#Merging special wires...
+#Using S.M.A.R.T. routing technology.
+#WARNING (NRGR-22) Design is already detail routed.
+#Cpu time = 00:00:00
+#Elapsed time = 00:00:00
+#Increased memory = 0.00 (Mb)
+#Total memory = 371.00 (Mb)
+#Peak memory = 407.00 (Mb)
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#Using S.M.A.R.T. routing technology.
+#routeSiEffort set to max
+#
+#Start Detail Routing.
+#start initial detail routing ...
+#    number of violations = 0
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 1st optimization iteration ...
+#    number of violations = 0
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#Complete Detail Routing.
+#Total wire length = 16664 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5866 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 0
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#start routing for process antenna violation fix ...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#
+#Total wire length = 16664 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5866 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 0
+#Total number of net violated process antenna rule = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 0
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#detailRoute Statistics:
+#Cpu time = 00:00:00
+#Elapsed time = 00:00:00
+#Increased memory = 0.00 (Mb)
+#Total memory = 371.00 (Mb)
+#Peak memory = 407.00 (Mb)
+#
+#globalDetailRoute statistics:
+#Cpu time = 00:00:00
+#Elapsed time = 00:00:00
+#Increased memory = 0.00 (Mb)
+#Total memory = 371.00 (Mb)
+#Peak memory = 407.00 (Mb)
+#Number of warnings = 1
+#Total number of warnings = 15
+#Number of fails = 0
+#Total number of fails = 0
+#Complete globalDetailRoute on Wed Sep 17 11:06:47 2025
+#
+
+detailRoute
+
+#Start detailRoute on Wed Sep 17 11:06:47 2025
+#
+Using detail cap. scale factor for clock nets.
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+#Start reading timing information from file .timing_file.tif ...
+#
+#The worst setup slack read in is 47.802 
+#
+#No hold time constraints read in
+#Read in timing information for 68 ports, 764 instances from timing file .timing_file.tif.
+#NanoRoute Version v08.10-p008 NR081027-0018/USR58-UB
+#Merging special wires...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#Using S.M.A.R.T. routing technology.
+#routeSiEffort set to max
+#
+#Start Detail Routing.
+#start initial detail routing ...
+#    number of violations = 0
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 1st optimization iteration ...
+#    number of violations = 0
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#Complete Detail Routing.
+#Total wire length = 16664 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5866 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 0
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#start routing for process antenna violation fix ...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#
+#Total wire length = 16664 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5866 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 0
+#Total number of net violated process antenna rule = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 0
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#
+#detailRoute statistics:
+#Cpu time = 00:00:00
+#Elapsed time = 00:00:00
+#Increased memory = 0.00 (Mb)
+#Total memory = 371.00 (Mb)
+#Peak memory = 407.00 (Mb)
+#Number of warnings = 0
+#Total number of warnings = 15
+#Number of fails = 0
+#Total number of fails = 0
+#Complete detailRoute on Wed Sep 17 11:06:47 2025
+#
+
+detailRoute
+
+#Start detailRoute on Wed Sep 17 11:06:47 2025
+#
+Using detail cap. scale factor for clock nets.
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+#Start reading timing information from file .timing_file.tif ...
+#
+#The worst setup slack read in is 47.802 
+#
+#No hold time constraints read in
+#Read in timing information for 68 ports, 764 instances from timing file .timing_file.tif.
+#NanoRoute Version v08.10-p008 NR081027-0018/USR58-UB
+#Merging special wires...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#Using S.M.A.R.T. routing technology.
+#routeSiEffort set to max
+#
+#Start Detail Routing.
+#start initial detail routing ...
+#    number of violations = 0
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#start 1st optimization iteration ...
+#    number of violations = 0
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#Complete Detail Routing.
+#Total wire length = 16664 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5866 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 0
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#start routing for process antenna violation fix ...
+#Worst slack with path group effect 340282346638528859811704183484516925440.000000
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 371.00 (Mb)
+#
+#Total wire length = 16664 um.
+#Total half perimeter of net bounding box = 16008 um.
+#Total wire length on LAYER METAL1 = 774 um.
+#Total wire length on LAYER METAL2 = 7416 um.
+#Total wire length on LAYER METAL3 = 5866 um.
+#Total wire length on LAYER METAL4 = 1939 um.
+#Total wire length on LAYER METAL5 = 654 um.
+#Total wire length on LAYER METAL6 = 14 um.
+#Total wire length on LAYER METAL7 = 0 um.
+#Total number of vias = 4285
+#Total number of multi-cut vias = 1567 ( 36.6%)
+#Total number of single cut vias = 2718 ( 63.4%)
+#Up-Via Summary (total 4285):
+#                   single-cut          multi-cut      Total
+#-----------------------------------------------------------
+#  Metal 1        1706 ( 71.6%)       676 ( 28.4%)       2382
+#  Metal 2         869 ( 55.3%)       703 ( 44.7%)       1572
+#  Metal 3         126 ( 47.4%)       140 ( 52.6%)        266
+#  Metal 4          15 ( 23.8%)        48 ( 76.2%)         63
+#  Metal 5           2 (100.0%)         0 (  0.0%)          2
+#-----------------------------------------------------------
+#                 2718 ( 63.4%)      1567 ( 36.6%)       4285 
+#
+#Total number of DRC violations = 0
+#Total number of net violated process antenna rule = 0
+#Total number of violations on LAYER METAL1 = 0
+#Total number of violations on LAYER METAL2 = 0
+#Total number of violations on LAYER METAL3 = 0
+#Total number of violations on LAYER METAL4 = 0
+#Total number of violations on LAYER METAL5 = 0
+#Total number of violations on LAYER METAL6 = 0
+#Total number of violations on LAYER METAL7 = 0
+#
+#
+#detailRoute statistics:
+#Cpu time = 00:00:00
+#Elapsed time = 00:00:00
+#Increased memory = 0.00 (Mb)
+#Total memory = 371.00 (Mb)
+#Peak memory = 407.00 (Mb)
+#Number of warnings = 0
+#Total number of warnings = 16
+#Number of fails = 0
+#Total number of fails = 0
+#Complete detailRoute on Wed Sep 17 11:06:47 2025
+#
+
+*** Memory Usage v0.144 (Current mem = 371.156M, initial mem = 62.238M) ***
+--- Ending "First Encounter" (totcpu=0:03:05, real=0:05:20, mem=371.2M) ---

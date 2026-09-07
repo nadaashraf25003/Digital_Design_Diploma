@@ -1,0 +1,276 @@
+#######################################################
+#                                                     #
+#  Encounter Command Logging File                     #
+#  Created on Wed Sep 17 11:06:57 2025                #
+#                                                     #
+#######################################################
+
+#@(#)CDS: First Encounter v08.10-p004_1 (32bit) 11/04/2008 14:34 (Linux 2.6)
+#@(#)CDS: NanoRoute v08.10-p008 NR081027-0018/USR58-UB (database version 2.30, 67.1.1) {superthreading v1.11}
+#@(#)CDS: CeltIC v08.10-p002_1 (32bit) 10/23/2008 22:04:14 (Linux 2.6.9-67.0.10.ELsmp)
+#@(#)CDS: CTE v08.10-p016_1 (32bit) Oct 26 2008 15:11:51 (Linux 2.6.9-67.0.10.ELsmp)
+#@(#)CDS: CPE v08.10-p009
+
+setNanoRouteMode -quiet -routeTopRoutingLayer 6
+setNanoRouteMode -quiet -routeWithSiDriven true
+setNanoRouteMode -quiet -routeSiEffort max
+routeDesign -globalDetail -viaOpt -wireOpt
+loadTimingCon -updateSetupHold
+commitAssign
+__initAutoCellFunction
+getCheckMode -netlist -quiet
+getImportMode -timerMode -quiet
+setBottomIoPadOrient R0
+setIoFlowFlag 0
+floorPlan -r 1.0 0.7 3.28 3.28 3.0 3.0 -flip f {}
+setUseDefaultDelayLimit 1000
+setDefaultNetDelay 1000.0ps
+setDefaultNetLoad 0.5pf
+setInputTransitionDelay 0.1ps
+getImportMode -timerMode -quiet
+setLibraryUnit -time none
+initCteTiming
+setPreference DesignHierChar /
+setPreference DEFHierChar /
+setPreference PDEFBusDelim {[]}
+setPreference LecDofile 0
+setPreference CmdLogMode 1
+setPreference BlockSnapRule 0
+setPreference ConstraintUserXGrid 0.0
+setPreference ConstraintUserYGrid 0.0
+setPreference ConstraintUserXOffset 0.0
+setPreference ConstraintUserYOffset 0.0
+setPreference SnapAllCorners 0
+setPreference UserGridUnit 0
+setPreference LogTypeInCmd 0
+setPreference GuideSnapRule stdRow
+setPreference InstDisplayThreshold 0.0
+setPreference WireDisplayCheck2D 1
+setPreference WireDisplayThreshold 0
+setPreference MinFPModuleSize 100
+setPreference MinFlightLineWidth 1
+setPreference MaxFlightLineNetTerms 500
+setPreference HiliteNetWhenQueryObj 1
+setPreference SelectNetWhenSelectPin 0
+setPreference QueryWireNet 0
+setPreference SelectByArea 0
+setPreference WinSelectMargin 8
+setPreference HighlightColorNumber 8
+setPreference ShowNumberBlockConnection 0
+setPreference StrecthRestriction 0
+setPreference StretchRectilinear 0
+setPreference MoveRestriction 0
+setPreference DisplayRelFPlan 1
+setPreference DisplayPtnPin 1
+setPreference YieldCostInst 1
+setPreference YieldCostWire 1
+setPreference YieldCostVia 1
+setPreference YieldCostMetal 0
+setPreference YieldWOArea 0
+setPreference DisplayFPlanFlightLine 1
+setPreference DisplayPinName 0
+setPreference InstanceText Instance
+setPreference ExclusiveFlight 0
+setPreference FlightLineInMove 1
+setPreference AutoRedraw 1
+setPreference ShowConnectionInOutNumber 0
+setPreference ShowConnectionInOutColor 0
+setPreference ShowFlightLineTermMark 0
+setPreference DisplayPlaceFlightLine 0
+setPreference NoBlockFlightLine 0
+setPreference percentageOfPan 95
+setPreference scaleOfZoom 2.0
+setPreference ShowBothInputConnection 0
+setPreference ShowNetWeightConnection 1
+setPreference ShowFlightLineThruPtnPin 0
+setPreference ShowLefLayerName 0
+setPreference ShowAttrPopup 1
+setPreference ShowDelBox 0
+setPreference SelectByLine 0
+setPreference SelectStickyMode 0
+setPreference ShowUnplacedInst 0
+setPreference zoomPrevCount 1
+setPreference noInsideMacro 0
+setPreference ShowFPObjInPlace 0
+setPreference MoveMacrosWithGuide 0
+setPreference MoveMacrosWithRegion 0
+setPreference MoveMacrosWithFence 1
+setPreference MoveStdCellWithGuide 0
+setPreference MoveStdCellWithRegion 0
+setPreference MoveStdCellWithFence 0
+setPreference MovePreplacedStdCellOnly 0
+setPreference VertViolation 0.0
+setPreference HorzViolation 0.0
+setPreference CongestionMapnrStyle 0
+setPreference CongestionMaptrStyle 0
+setPreference CongestionMaprange0 -2
+setPreference CongestionMapcolor0 0
+setPreference CongestionMaprange1 -1
+setPreference CongestionMapcolor1 1
+setPreference CongestionMaprange2 0
+setPreference CongestionMapcolor2 3
+setPreference CongestionMaprange3 1
+setPreference CongestionMapcolor3 5
+setPreference CongestionMaprange4 2
+setPreference CongestionMapcolor4 9
+setPreference CongestionMaprange5 3
+setPreference CongestionMapcolor5 10
+setPreference CongestionMaprange6 4
+setPreference CongestionMapcolor6 11
+setPreference CongestionMaprange7 5
+setPreference CongestionMapcolor7 11
+setPreference CongestionMaprange8 6
+setPreference CongestionMapcolor8 11
+setPreference CongestionMaprange9 27
+setPreference CongestionMapcolor9 11
+setLayerPreference congestH -isVisible 0
+setLayerPreference congestV -isVisible 0
+setLayerPreference congestObj -isVisible 0
+setPreference InputConnectionColor green
+setPreference OutputConnectionColor yellow
+setPreference InoutConnectionColor pink
+suppressMessage -silent SOCTCM-70
+setAnalysisMode -checkType setup -clkSrcPath true -clockPropagation sdcControl -cts postCTS -skew true -virtualIPO false
+setTrialRouteMode -handlePreroute true -keepMarkedOptRoutes true
+setOptMode -drcMargin 0 -effort high -fixDrc true -route noPreserve -rPlace true -setupTargetSlack 0
+setExtractRCMode -engine default
+setDelayCalMode -engine default
+setNanoRouteMode -quiet -drouteStartIteration 0
+setPlaceMode -ignoreScan true -timingDriven true -useNP true -WLHighEffort false
+unsuppressMessage -silent SOCTCM-70
+create_library_set -name max_library\
+   -timing\
+    [list ../std_cells/libs/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.lib]
+create_library_set -name typ_library\
+   -timing\
+    [list ../std_cells/libs/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.lib]
+create_library_set -name min_library\
+   -timing\
+    [list ../std_cells/libs/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.lib]
+create_rc_corner -name RCcorner\
+   -cap_table ../std_cells/captables/tsmc13fsg.capTbl\
+   -default_res_factor 1\
+   -detailed_res_factor 1\
+   -default_cap_factor 1\
+   -detailed_cap_factor 1\
+   -xcap_factor 1\
+   -detailed_clock_cap_factor 1
+create_delay_corner -name min_corner\
+   -library_set min_library\
+   -rc_corner RCcorner
+create_delay_corner -name max_corner\
+   -library_set max_library\
+   -rc_corner RCcorner
+create_constraint_mode -name func_mode\
+   -sdc_files\
+    [list /home/ahesham/Labs/Lab_PNR_1/pnr/ALU_TOP_cts.enc.dat/mmmc/modes/func_mode/func_mode.sdc]
+create_analysis_view -name hold1_analysis_view -constraint_mode func_mode -delay_corner min_corner
+create_analysis_view -name setup1_analysis_view -constraint_mode func_mode -delay_corner max_corner
+set_analysis_view -setup [list setup1_analysis_view] -hold [list hold1_analysis_view]
+loadFPlan /home/ahesham/Labs/Lab_PNR_1/pnr/ALU_TOP_cts.enc.dat/ALU_TOP.fp
+elaborateBlackBlob
+restorePlace /home/ahesham/Labs/Lab_PNR_1/pnr/ALU_TOP_cts.enc.dat/ALU_TOP.place.gz
+restoreRoute -ignoreChangedNet /home/ahesham/Labs/Lab_PNR_1/pnr/ALU_TOP_cts.enc.dat/ALU_TOP.route.gz
+specifyClockTree -clkfile /home/ahesham/Labs/Lab_PNR_1/pnr/ALU_TOP_cts.enc.dat/ALU_TOP.ctstch -noLoad
+get_global message_suppress_all_messages
+set_global message_suppress_all_messages 1
+set_global lib_build_asynch_de_assert_arc "true"
+set_global lib_build_timing_cond_default_arc "true"
+set_global report_precision "3"
+set_global timing_allow_input_delay_on_clock_source "false"
+set_global timing_build_all_hierarchical_pins "false"
+set_global timing_case_analysis_for_sequential_propagation "false"
+set_global timing_case_analysis_for_icg_propagation "false"
+set_global timing_clock_phase_propagation "positive"
+set_global timing_continue_on_error "false"
+set_global timing_cppr_threshold_ps "20"
+set_global timing_cppr_transition_sense "normal"
+set_global timing_cppr_self_loop_mode "false"
+set_global timing_cppr_remove_clock_to_data_crp "false"
+set_global timing_cppr_skip_clock_reconvergence "false"
+set_global timing_default_opcond_per_lib "true"
+set_global timing_disable_bus_contention_check "false"
+set_global timing_disable_clockperiod_checks "false"
+set_global timing_disable_floating_bus_check "false"
+set_global timing_disable_inferred_clock_gating_checks "false"
+set_global timing_enable_tristate_clock_gating "false"
+set_global timing_disable_internal_inout_cell_paths "true"
+set_global timing_disable_internal_inout_net_arcs "false"
+set_global timing_disable_lib_pulsewidth_checks "false"
+set_global timing_disable_library_data_to_data_checks "false"
+set_global timing_disable_nochange_checks "false"
+set_global timing_disable_recovery_removal_checks "false"
+set_global timing_disable_set_case_analysis "false"
+set_global timing_disable_skew_checks "false"
+set_global timing_disable_test_signal_arc "false"
+set_global timing_disable_tristate_disable_arcs "false"
+set_global timing_disable_user_data_to_data_checks "false"
+set_global timing_enable_default_delay_arc "true"
+set_global timing_enable_power_ground_constants "true"
+set_global timing_enable_preset_clear_arcs "false"
+set_global timing_enable_si_cppr "false"
+set_global timing_enable_uncertainty_for_pulsewidth_checks "false"
+set_global timing_io_use_clock_network_latency "ideal"
+set_global timing_path_groups_for_clocks "false"
+set_global timing_reduce_multi_drive_net_arcs "true"
+set_global timing_reduce_multi_drive_net_arcs_threshold "10000"
+set_global timing_remove_clock_reconvergence_pessimism "false"
+set_global timing_self_loop_paths_no_skew "false"
+set_global timing_self_loop_paths_no_skew_max_depth "10"
+set_global timing_self_loop_paths_no_skew_max_slack "0"
+set_global timing_set_scaling_for_negative_checks "default"
+set_global timing_set_scaling_for_negative_delays "default"
+set_global timing_use_latch_time_borrow "true"
+set_global write_global_slack_worst_trigger_path_on_clocks "false"
+set_global timing_disable_non_sequential_checks "false"
+set_global timing_disable_clock_gating_checks "false"
+set_global timing_enable_data_through_clock_gating "true"
+set_global locv_chip_size "infinite"
+set_global locv_core_size "infinite"
+set_global locv_stage_count_with_IO "true"
+set_global locv_inter_clock_use_worst_derate "false"
+set_global timing_dynamic_loop_breaking "false"
+set_global timing_enable_mmmc_loop_handling "true"
+set_global timing_propagate_latch_data_uncertainty "false"
+set_global timing_allow_useful_skew_latency_per_view "false"
+set_global timing_suppress_ilm_constraint_mismatches "false"
+set_global timing_disable_report_header_info "false"
+set_global timing_hier_object_name_compatibility "true"
+set_global timing_max_gclock_latency_loops "2"
+set_global timing_enable_new_path_exception_overwriting "true"
+set_global timing_report_launch_clock_path "false"
+set_global timing_enable_simultaneous_setup_hold_mode "false"
+set_global timing_disable_bidi_output_timing_checks "true"
+set_global timing_disable_timing_model_latch_inferencing "false"
+set_global timing_enable_multifrequency_latch_analysis "false"
+set_global timing_ignore_lumped_rc_assertions "true"
+set_global timing_library_genclk_use_group_name "false"
+set_global timing_library_zero_negative_timing_check_arcs "false"
+set_global timing_prefix_module_name_with_library_genclk "true"
+set_global timing_report_launch_clock_path "false"
+set_global timing_enable_path_delay_segmentation "false"
+set_global message_suppress_all_messages $old_message_suppress
+getTimingMode
+setDrawView fplan
+encMessage warning 1
+encMessage debug 0
+encMessage info 1
+setNanoRouteMode -quiet -routeTopRoutingLayer 6
+setNanoRouteMode -quiet -routeWithSiDriven true
+setNanoRouteMode -quiet -routeSiEffort max
+routeDesign -globalDetail -viaOpt -wireOpt
+setDrawView place
+clearDrc
+verifyGeometry -noMinArea
+zoomBox -6.397 53.721 20.539 35.569
+zoomBox -1.415 46.107 9.390 38.090
+zoomBox -0.140 43.680 2.928 41.548
+selectWire -0.1000 43.0500 0.3050 43.2500 3 {B[0]}
+deselectAll
+clearDrc
+refinePlace -preserveRouting
+setNanoRouteMode -routeWithEco true
+routeDesign -globalDetail -viaOpt -wireOpt
+zoomBox -5.812 42.010 23.076 30.689
+panPage 0 1
+zoomBox -1.744 49.438 1.851 46.745

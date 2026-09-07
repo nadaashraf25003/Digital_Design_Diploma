@@ -1,0 +1,117 @@
+#######################################################
+#                                                     #
+#  Encounter Command Logging File                     #
+#  Created on Wed Sep 17 11:37:20 2025                #
+#                                                     #
+#######################################################
+
+#@(#)CDS: First Encounter v08.10-p004_1 (32bit) 11/04/2008 14:34 (Linux 2.6)
+#@(#)CDS: NanoRoute v08.10-p008 NR081027-0018/USR58-UB (database version 2.30, 67.1.1) {superthreading v1.11}
+#@(#)CDS: CeltIC v08.10-p002_1 (32bit) 10/23/2008 22:04:14 (Linux 2.6.9-67.0.10.ELsmp)
+#@(#)CDS: CTE v08.10-p016_1 (32bit) Oct 26 2008 15:11:51 (Linux 2.6.9-67.0.10.ELsmp)
+#@(#)CDS: CPE v08.10-p009
+
+encMessage warning 0
+encMessage debug 0
+encMessage info 0
+restoreDesign /home/ahesham/Labs/Lab_PNR_1/pnr/ALU_TOP_place.enc.dat ALU_TOP
+setDrawView fplan
+encMessage warning 1
+encMessage debug 0
+encMessage info 1
+setDrawView place
+clockDesign -genSpecOnly Clock.ctstch
+clockDesign -specFile Clock.ctstch -outDir clock_report -fixedInstBeforeCTS
+setNanoRouteMode -quiet -routeTopRoutingLayer 6
+routeDesign -globalDetail -viaOpt -wireOpt
+clearDrc
+verifyGeometry -noMinArea
+zoomBox -11.472 52.941 23.467 35.764
+zoomBox -2.007 44.695 8.421 40.230
+zoomBox -0.872 43.514 2.913 41.602
+selectWire -0.1000 43.0500 0.1000 43.2000 3 {B[0]}
+zoomBox -4.445 47.280 25.029 33.227
+zoomBox -1.135 44.166 5.632 40.409
+deselectAll
+selectWire 0.3900 43.3300 3.2800 43.5900 1 VDD
+deselectAll
+selectWire 0.3900 0.3900 1.3900 118.9200 6 VDD
+deselectAll
+selectWire -0.1000 43.0500 0.3050 43.2500 3 {B[0]}
+refinePlace -preserveRouting
+setNanoRouteMode -routeWithEco true
+routeDesign -globalDetail -viaOpt -wireOpt
+clearDrc
+refinePlace -preserveRouting
+setNanoRouteMode -routeWithEco true
+routeDesign -globalDetail -viaOpt -wireOpt
+zoomBox -8.349 42.986 25.224 21.515
+panPage 0 1
+zoomBox -1.823 43.721 2.903 41.405
+zoomBox -12.253 58.406 34.202 32.446
+zoomBox -1.622 44.218 8.194 39.885
+selectWire 0.3900 0.3900 1.3900 118.9200 6 VDD
+uiSetTool ruler
+clearDrc
+uiSetTool select
+deselectAll
+selectWire 0.3900 0.3900 1.3900 118.9200 6 VDD
+uiSetTool move
+uiSetTool select
+deselectAll
+clearClockDomains
+setClockDomains -all
+timeDesign -postRoute -pathReports -drvReports -slackReports -numPaths 50 -prefix ALU_TOP_postRoute -outDir timingReports
+clearClockDomains
+setClockDomains -all
+timeDesign -postRoute -hold -pathReports -slackReports -numPaths 50 -prefix ALU_TOP_postRoute -outDir timingReports
+addFiller -cell {FILL1M FILL2M FILL4M FILL8M FILL16M FILL32M FILL64M} -prefix FILLER -markFixed
+setLayerPreference allM0 -isVisible 0
+setLayerPreference allM1 -isVisible 0
+setLayerPreference allM2 -isVisible 0
+setLayerPreference allM3 -isVisible 0
+setLayerPreference allM4 -isVisible 0
+setLayerPreference allM5 -isVisible 0
+setLayerPreference allM6 -isVisible 0
+setLayerPreference allM7 -isVisible 0
+setLayerPreference allM1Cont -isVisible 0
+setLayerPreference allM2Cont -isVisible 0
+setLayerPreference allM3Cont -isVisible 0
+setLayerPreference allM4Cont -isVisible 0
+setLayerPreference allM5Cont -isVisible 0
+setLayerPreference allM6Cont -isVisible 0
+setLayerPreference allM7Cont -isVisible 0
+zoomBox -31.981 66.032 175.782 11.450
+zoomBox 6.375 31.341 109.606 6.481
+zoomBox 39.256 26.470 98.018 7.471
+selectInst FILLER_41
+deselectAll
+selectInst FILLER_112
+deselectAll
+selectInst FILLER_71
+setLayerPreference allM0 -isVisible 1
+setLayerPreference allM1 -isVisible 1
+setLayerPreference allM2 -isVisible 1
+setLayerPreference allM3 -isVisible 1
+setLayerPreference allM4 -isVisible 1
+setLayerPreference allM5 -isVisible 1
+setLayerPreference allM6 -isVisible 1
+setLayerPreference allM7 -isVisible 1
+setLayerPreference allM1Cont -isVisible 1
+setLayerPreference allM2Cont -isVisible 1
+setLayerPreference allM3Cont -isVisible 1
+setLayerPreference allM4Cont -isVisible 1
+setLayerPreference allM5Cont -isVisible 1
+setLayerPreference allM6Cont -isVisible 1
+setLayerPreference allM7Cont -isVisible 1
+verifyGeometry -noMinArea
+zoomBox -11.667 54.307 27.761 22.881
+zoomBox -2.559 44.977 8.071 38.942
+zoomBox -0.627 43.631 1.869 41.724
+zoomOut
+zoomOut
+zoomOut
+zoomOut
+zoomOut
+zoomOut
+deselectAll
