@@ -1,0 +1,22 @@
+CLK   >>       PIN_P11 
+
+///////////////////////// Input mapped to switches ///////////////
+
+IN[0] >> SW0 - PIN_C10 
+IN[1] >> SW1 - PIN_C11 
+IN[2] >> SW2 - PIN_D12 
+IN[3] >> SW3 - PIN_C12 
+IN[4] >> SW4 - PIN_A12 
+Load  >> SW5 - PIN_B12 
+Down  >> SW6 - PIN_A13 
+Up    >> SW7 - PIN_A14
+RST   >> SW9 - PIN_F15
+
+///////////////////////// Outputs mapped to LEDs ///////////////
+Counter [0] >> LED0 -- PIN_A8  
+Counter [1] >> LED1 -- PIN_A9 
+Counter [2] >> LED2 -- PIN_A10 
+Counter [3] >> LED3 -- PIN_B10 
+Counter [4] >> LED4 -- PIN_D13 
+Low         >> LED8 -- PIN_A11 
+High        >> LED9 -- PIN_B11 

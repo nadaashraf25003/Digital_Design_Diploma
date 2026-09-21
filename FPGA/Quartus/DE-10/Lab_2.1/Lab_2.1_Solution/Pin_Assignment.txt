@@ -1,0 +1,19 @@
+CLK   >>       PIN_P11 
+
+///////////////////////// Input mapped to switches ///////////////
+
+rst_n   >> SW0 - PIN_C10 
+LFSR_EN >> SW1 - PIN_C11 
+OUT_EN  >> SW2 - PIN_D12 
+
+///////////////////////// Outputs mapped to LEDs ///////////////
+LFSR [0]  >> LED0 -- PIN_A8  
+LFSR [1]  >> LED1 -- PIN_A9 
+LFSR [2]  >> LED2 -- PIN_A10 
+LFSR [3]  >> LED3 -- PIN_B10 
+LFSR [4]  >> LED4 -- PIN_D13 
+LFSR [5]  >> LED5 -- PIN_C13
+LFSR [6]  >> LED6 -- PIN_E14
+LFSR [7]  >> LED7 -- PIN_D14
+crc_out   >> LED8 -- PIN_A11
+valid_out >> LED9 -- PIN_B11
