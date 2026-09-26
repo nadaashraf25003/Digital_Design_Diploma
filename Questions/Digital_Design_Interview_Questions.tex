@@ -1,0 +1,2319 @@
+% ============================================================
+%  Digital Design Diploma --- 100 Interview Questions
+%  LaTeX Source
+%  Compiled with: pdflatex (or xelatex)
+% ============================================================
+\documentclass[12pt,a4paper]{article}
+
+% -- Encoding & Fonts ----------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% -- Page Layout ---------------------------------------------
+\usepackage[top=2.2cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+
+% -- Colour --------------------------------------------------
+\usepackage[dvipsnames,table]{xcolor}
+\definecolor{dkblue}{HTML}{1A3C5E}
+\definecolor{ltblue}{HTML}{EBF4FB}
+\definecolor{dkgreen}{HTML}{1B5E20}
+\definecolor{ltgreen}{HTML}{E8F5E9}
+\definecolor{advred}{HTML}{C0392B}
+\definecolor{modoran}{HTML}{E67E22}
+\definecolor{codebg}{HTML}{F5F5F5}
+\definecolor{codefg}{HTML}{2C3E50}
+\definecolor{rulecol}{HTML}{3498DB}
+
+% -- Math ----------------------------------------------------
+\usepackage{amsmath,amssymb,mathtools}
+
+% -- Tables --------------------------------------------------
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multirow}
+\renewcommand{\arraystretch}{1.35}
+
+% -- Code Listings -------------------------------------------
+\usepackage{listings}
+
+\lstdefinestyle{verilogstyle}{
+  language=Verilog,
+  backgroundcolor=\color{codebg},
+  basicstyle=\ttfamily\small\color{codefg},
+  keywordstyle=\bfseries\color{dkblue},
+  commentstyle=\itshape\color{gray},
+  stringstyle=\color{dkgreen},
+  numberstyle=\tiny\color{gray},
+  numbers=left,
+  stepnumber=1,
+  frame=single,
+  rulecolor=\color{rulecol},
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=4,
+  captionpos=b,
+  xleftmargin=1.5em,
+  framexleftmargin=1.5em
+}
+
+\lstdefinestyle{tclstyle}{
+  language=tcl,
+  backgroundcolor=\color{codebg},
+  basicstyle=\ttfamily\small\color{codefg},
+  keywordstyle=\bfseries\color{Plum},
+  commentstyle=\itshape\color{gray},
+  stringstyle=\color{dkgreen},
+  numberstyle=\tiny\color{gray},
+  numbers=left,
+  stepnumber=1,
+  frame=single,
+  rulecolor=\color{Plum!60},
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=4,
+  captionpos=b,
+  xleftmargin=1.5em,
+  framexleftmargin=1.5em,
+  morekeywords={set,puts,foreach,if,proc,return,upvar,expr,array,open,
+                close,read,gets,regexp,regsub,lindex,llength,lappend,
+                lsearch,lrange,linsert,concat,split,join,string,
+                get_ports,get_clocks,get_pins,get_cells,get_nets,
+                foreach_in_collection,get_attribute,sizeof_collection,
+                create_clock,create_generated_clock,set_clock_uncertainty,
+                set_clock_transition,set_input_delay,set_output_delay,
+                set_driving_cell,set_load,set_dont_touch,
+                set_dont_touch_network,set_false_path,set_multicycle_path,
+                set_clock_groups,set_max_delay,set_operating_conditions,
+                set_wire_load_model,group_path,compile,compile_ultra,
+                set_clock_gating_style,set_fix_multiple_port_nets,
+                set_svf,read_verilog,read_db,read_ddc,read_sdc,read_sdf,
+                read_vcd,link_design,current_design,check_design,
+                update_power,report_power,set_timing_derate,
+                set_app_var,waive,clock,reset,quasi_static,
+                set_case_analysis,sync_cell,reset_synchronizer,
+                cdc_attribute,abstract_port,set_scan_configuration,
+                set_dft_signal,create_test_protocol,dft_drc,
+                preview_dft,insert_dft,match,verify,diagnose,
+                analyze_points,set_dont_verify_points,set_constant,
+                set_reference_design,set_implementation_design,set_top,
+                floorPlan,placeDesign,addTieHiLo,globalNetConnect,
+                clockDesign,routeDesign,setNanoRouteMode,addFiller,
+                verifyGeometry,verifyConnectivity,saveNetlist,
+                rcOut,delayCal,streamOut,commitConfig,setUIVar}
+}
+
+\lstdefinestyle{plaincode}{
+  backgroundcolor=\color{codebg},
+  basicstyle=\ttfamily\small\color{codefg},
+  frame=single,
+  rulecolor=\color{gray!50},
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=4,
+  xleftmargin=1.5em,
+  framexleftmargin=1.5em
+}
+
+% -- Boxes ----------------------------------------------------
+\usepackage{tcolorbox}
+\tcbuselibrary{listings,breakable}
+
+% Question box
+\newtcolorbox{questionbox}[2][]{
+  enhanced, breakable,
+  colback=ltblue, colframe=dkblue,
+  fonttitle=\bfseries\sffamily,
+  title={#2},
+  attach boxed title to top left={yshift=-2mm,xshift=4mm},
+  boxed title style={colback=dkblue,colframe=dkblue,
+                     fontupper=\color{white}\bfseries\sffamily},
+  top=3mm, bottom=3mm,
+  #1
+}
+
+% Answer box
+\newtcolorbox{answerbox}[1][]{
+  enhanced, breakable,
+  colback=ltgreen, colframe=dkgreen,
+  fonttitle=\bfseries\sffamily\color{white},
+  title={Expected Answer},
+  attach boxed title to top left={yshift=-2mm,xshift=4mm},
+  boxed title style={colback=dkgreen,colframe=dkgreen},
+  top=3mm, bottom=3mm,
+  #1
+}
+
+% Tip / note boxes
+\newtcolorbox{tipbox}{
+  enhanced, colback=yellow!10, colframe=modoran,
+  fonttitle=\bfseries\sffamily, title={Interview Tip},
+  top=2mm, bottom=2mm
+}
+
+\newtcolorbox{notebox}{
+  enhanced, colback=blue!5, colframe=dkblue!60,
+  fonttitle=\bfseries\sffamily, title={Formula Reference},
+  top=2mm, bottom=2mm
+}
+
+% -- Header / Footer ------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{dkblue} Digital Design Diploma --- Interview Questions}
+\fancyhead[R]{\small\sffamily\color{dkblue} \leftmark}
+\fancyfoot[C]{\small\sffamily\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{dkblue}\leaders\hrule height \headrulewidth\hfill}}
+
+% -- Section Formatting ---------------------------------------
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\Large\bfseries\sffamily\color{dkblue}}
+  {\thesection}
+  {1em}
+  {}
+  [\vspace{2pt}\color{dkblue}\hrule height 1.5pt]
+\titlespacing{\section}{0pt}{14pt}{8pt}
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\sffamily\color{dkblue}}
+  {\thesubsection}
+  {0.8em}
+  {}
+\titlespacing{\subsection}{0pt}{10pt}{4pt}
+
+% -- Hyperlinks -----------------------------------------------
+\usepackage[colorlinks=true, linkcolor=dkblue,
+            urlcolor=dkblue, citecolor=dkblue,
+            bookmarks=true, bookmarksopen=true]{hyperref}
+
+% -- Miscellaneous --------------------------------------------
+\usepackage{enumitem}
+\usepackage{parskip}
+\setlength{\parskip}{5pt}
+\usepackage{graphicx}
+\usepackage{float}
+% fontawesome removed for portability
+\usepackage{soul}             % \hl{} highlight
+
+% Difficulty badges
+\newcommand{\advanced}{%
+  \fbox{\textcolor{advred}{\bfseries\sffamily\small ADVANCED}}}
+\newcommand{\moderate}{%
+  \fbox{\textcolor{modoran}{\bfseries\sffamily\small MODERATE}}}
+
+% ------------------------------------------------------------
+\begin{document}
+
+% -- Title Page -----------------------------------------------
+\begin{titlepage}
+\pagecolor{dkblue}
+\color{white}
+\centering
+\vspace*{3cm}
+
+{\Huge\bfseries\sffamily Digital Design Diploma}\\[0.5em]
+{\huge\bfseries\sffamily 100 Interview Questions}\\[2em]
+\rule{0.6\textwidth}{1pt}\\[2em]
+
+{\large\sffamily
+\begin{tabular}{ll}
+\textbf{Coverage:} & Verilog HDL, TCL, SpyGlass Lint/CDC\\
+ & Synthesis (DC), STA (PrimeTime)\\
+ & Power Analysis, CDC Design\\
+ & Formal Verification (Formality)\\
+ & DFT, GLS, Physical Design (PnR)\\[1em]
+\textbf{Difficulty:} & 70\% Advanced \quad 30\% Moderate\\[0.5em]
+\textbf{Formats:} & Conceptual, Scenario-Based, Code Review,\\
+ & Mathematical, True/False, Fill-in-the-Blank\\
+\end{tabular}
+}
+
+\vfill
+{\large\sffamily\today}
+\end{titlepage}
+\pagecolor{white}\color{black}
+
+% -- Table of Contents ----------------------------------------
+\tableofcontents
+\clearpage
+
+% ============================================================
+\section{Verilog HDL \& Digital Architecture (12 Questions)}
+\label{sec:verilog}
+% ============================================================
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q1 \advanced\ --- Blocking vs.\ Non-Blocking Race Condition \hfill\textit{Code Review / Scenario}}
+
+Consider the following Verilog snippet:
+
+\begin{lstlisting}[style=verilogstyle]
+always @(posedge clk) begin
+    a = b;
+    b = a;
+end
+\end{lstlisting}
+
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What is the result after the clock edge --- does a swap occur? Explain why.
+  \item Rewrite the block using non-blocking assignments to achieve the intended swap behavior.
+  \item What is the underlying simulator execution model that makes non-blocking assignments safe for sequential logic?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+With blocking \texttt{=}, \texttt{a} gets the old value of \texttt{b}, then \texttt{b} gets the \textbf{new} value of \texttt{a} (which already holds old \texttt{b}) --- no swap occurs, both end up equal.
+
+Non-blocking \texttt{<=} schedules all RHS evaluations first (simultaneously during the ``evaluate'' phase), then performs all LHS assignments (in the ``update'' phase) --- producing a true swap:
+\begin{lstlisting}[style=verilogstyle]
+always @(posedge clk) begin
+    a <= b;
+    b <= a;
+end
+\end{lstlisting}
+The scheduler separates ``evaluate'' from ``update'' phases, making \texttt{<=} safe for concurrent sequential register transfers.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q2 \advanced\ --- Latch Inference Diagnosis \hfill\textit{Code Review}}
+
+\begin{lstlisting}[style=verilogstyle]
+always @(*) begin
+    case (sel)
+        2'b00: out = a;
+        2'b01: out = b;
+        2'b10: out = c;
+    endcase
+end
+\end{lstlisting}
+
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Will this code infer a latch? Why or why not?
+  \item Provide two correct methods to fix this without changing the functional intent.
+  \item What SpyGlass rule ID is triggered by this violation, and what severity does it carry?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\textbf{Yes} --- \texttt{sel = 2'b11} has no assignment, so \texttt{out} must retain its previous value $\Rightarrow$ D-Latch is inferred.
+
+\textbf{Fix 1} --- Add \texttt{default} case: \texttt{default: out = 'x;}
+
+\textbf{Fix 2} --- Assign default at top of \texttt{always} block:
+\begin{lstlisting}[style=verilogstyle]
+always @(*) begin
+    out = 'x;   // default kills all latches
+    case (sel)
+        2'b00: out = a;
+        2'b01: out = b;
+        2'b10: out = c;
+    endcase
+end
+\end{lstlisting}
+SpyGlass rule: \texttt{InferLatch} / \texttt{W188}, severity \textbf{Error}.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q3 \moderate\ --- FSM Architecture Styles \hfill\textit{Conceptual}}
+Compare \textbf{Mealy vs.\ Moore} FSM output styles and explain the \textbf{3 advantages} of using the 3-process registered-output FSM style over the classic 2-process Mealy style in ASIC design.
+\end{questionbox}
+
+\begin{answerbox}
+\textbf{Moore:} outputs depend only on current state.
+\textbf{Mealy:} outputs depend on both state and inputs.
+
+3-process advantages:
+\begin{enumerate}
+  \item \textbf{Glitch-free outputs} --- registered outputs eliminate combinational glitches on asynchronous signals.
+  \item \textbf{Setup-friendly} --- the output register adds one cycle latency but dramatically improves timing closure.
+  \item \textbf{DFT-ready} --- registered outputs are standard D flip-flops, fully accessible via scan chains.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q4 \advanced\ --- LFSR \& CRC Design \hfill\textit{Conceptual + Mathematical}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item For the CRC-8 polynomial $x^8 + x^2 + x + 1$, identify the feedback tap positions in the LFSR.
+  \item What is the maximal-length sequence period for an 8-bit LFSR?
+  \item Why is an all-zeros state forbidden in an LFSR, and how is it avoided in hardware?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Taps at positions 8, 2, 1, 0 $\Rightarrow$ XOR feedback from bits \texttt{[7]}, \texttt{[1]}, \texttt{[0]} back to the \texttt{bit[7]} input.
+  \item Period $= 2^8 - 1 = \mathbf{255}$.
+  \item All-zeros locks in a zero-only loop forever. Avoided by loading a non-zero seed at reset or adding an extra gate (e.g., OR of all states) to inject a 1.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q5 \advanced\ --- ALU Flags \& Overflow Detection \hfill\textit{Conceptual}}
+For a 16-bit signed ALU performing subtraction ($A - B$):
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Write the Boolean expression for detecting \textbf{signed overflow}.
+  \item When does the \textbf{Carry} flag differ from the \textbf{Overflow} flag in a subtraction?
+  \item What is the difference between arithmetic right shift and logical right shift for signed numbers?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item $\text{Overflow} = (A[15] \oplus B[15]) \mathbin{\&} (A[15] \oplus \text{result}[15])$ --- signs of operands differ AND result sign differs from $A$.
+  \item Carry indicates unsigned borrow/overflow; Overflow signals signed overflow. They are independent and can each be 0 or 1 simultaneously.
+  \item Arithmetic right shift replicates (sign-extends) the MSB; logical right shift fills with 0.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q6 \advanced\ --- Parameterized Register File \hfill\textit{Code Review}}
+
+\begin{lstlisting}[style=verilogstyle]
+module RegFile #(parameter DEPTH=8, parameter WIDTH=8) (
+    input  clk, wr_en,
+    input  [$clog2(DEPTH)-1:0] wr_addr, rd_addr,
+    input  [WIDTH-1:0] wr_data,
+    output reg [WIDTH-1:0] rd_data
+);
+    reg [WIDTH-1:0] mem [0:DEPTH-1];
+    always @(posedge clk) begin
+        if (wr_en) mem[wr_addr] <= wr_data;
+        rd_data <= mem[rd_addr];
+    end
+endmodule
+\end{lstlisting}
+
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What is the read behavior --- synchronous or asynchronous? What timing implication does this have?
+  \item If \texttt{wr\_addr == rd\_addr} and \texttt{wr\_en == 1} simultaneously, what value does \texttt{rd\_data} capture (new or old)?
+  \item How would you implement ``read-first'' vs.\ ``write-first'' behavior?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item \textbf{Synchronous} read --- \texttt{rd\_data} is registered, adding one cycle read latency. STA sees this as a Reg-to-Reg path through the memory array.
+  \item \textbf{Old value} --- because both assignments use \texttt{<=}, the read captures the pre-edge array content.
+  \item \textbf{Write-first:}
+\begin{lstlisting}[style=verilogstyle]
+if (wr_en && wr_addr == rd_addr)
+    rd_data <= wr_data;
+else
+    rd_data <= mem[rd_addr];
+\end{lstlisting}
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q7 \moderate\ --- Testbench Self-Checking \hfill\textit{Conceptual}}
+What is the difference between a \textbf{directed testbench} and a \textbf{self-checking testbench}? List three elements a professional self-checking testbench must contain.
+\end{questionbox}
+
+\begin{answerbox}
+A directed TB manually applies vectors; a self-checking TB automatically compares DUT outputs against expected values using assertions.
+
+Three mandatory elements:
+\begin{enumerate}
+  \item \textbf{Clock generator} with a precise, parameterised period.
+  \item \textbf{Driver tasks} that systematically apply stimulus.
+  \item \textbf{Checker/scoreboard} with \texttt{\$display} pass/fail messages, an \texttt{err\_count} register, and a final \texttt{\$finish}.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q8 \advanced\ --- Sensitivity List Pitfalls \hfill\textit{Code Review}}
+
+\begin{lstlisting}[style=verilogstyle]
+always @(a or b) begin
+    c = a & b;
+    d = c | e;
+end
+\end{lstlisting}
+
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What SpyGlass rule is violated? What is the fix?
+  \item What simulation bug occurs when \texttt{e} changes but \texttt{a} and \texttt{b} do not?
+  \item Does the sensitivity list affect the synthesised gate-level netlist? Explain.
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item \textbf{W18} --- incomplete sensitivity list. Fix: \texttt{always @(*)} or SystemVerilog \texttt{always\_comb}.
+  \item \texttt{d} will not update when \texttt{e} changes alone --- RTL simulation diverges from actual hardware behaviour.
+  \item \textbf{No} --- synthesis ignores the sensitivity list entirely and infers gates from the dataflow. The mismatch causes Sim/Synth divergence only in simulation.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q9 \moderate\ --- \texttt{full\_case} / \texttt{parallel\_case} Dangers \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What does \texttt{// synthesis parallel\_case} instruct the synthesis tool to do?
+  \item Why does SpyGlass flag this with rule \texttt{W398}?
+  \item What is the correct, synthesisable alternative?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Tells synthesis each case arm is mutually exclusive $\Rightarrow$ synthesises a priority MUX as a flat parallel MUX (saves area/timing).
+  \item Simulation still evaluates case with priority, so simulator and synthesis tool produce different logic $\Rightarrow$ functional mismatch.
+  \item Explicitly code all non-overlapping conditions or add \texttt{default:} so both tools see identical logic without relying on pragmas.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q10 \advanced\ --- \texttt{assign} vs.\ \texttt{always} vs.\ Procedural Timing \hfill\textit{Fill-in-the-Blank}}
+
+Complete the table:
+
+\begin{center}
+\begin{tabularx}{\linewidth}{|l|X|X|X|}
+\hline
+\rowcolor{dkblue!15}
+\textbf{Statement} & \textbf{Evaluated when\ldots} & \textbf{Models\ldots} & \textbf{Synthesises to\ldots}\\
+\hline
+\texttt{assign y = a \& b;} & \underline{(1)} & \underline{(2)} & \underline{(3)}\\
+\hline
+\texttt{always @(*)} with \texttt{=} & \underline{(4)} & \underline{(5)} & \underline{(6)}\\
+\hline
+\texttt{always @(posedge clk)} with \texttt{<=} & \underline{(7)} & \underline{(8)} & \underline{(9)}\\
+\hline
+\end{tabularx}
+\end{center}
+\end{questionbox}
+
+\begin{answerbox}
+(1)~Any time \texttt{a} or \texttt{b} changes;\quad
+(2)~Continuous wire-level logic;\quad
+(3)~AND gate;\\
+(4)~Any input changes;\quad
+(5)~Combinational logic;\quad
+(6)~Gates / MUX;\\
+(7)~Active clock edge;\quad
+(8)~Sequential register transfer;\quad
+(9)~D flip-flop.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q11 \advanced\ --- Multi-Bit Counter with Terminal Flags \hfill\textit{Design}}
+
+Design a \textbf{parameterised synchronous up/down counter} that:
+\begin{itemize}
+  \item Has synchronous active-high load.
+  \item Asserts \texttt{High} flag when at max value ($2^{\text{WIDTH}}-1$).
+  \item Asserts \texttt{Low} flag when at min value ($0$).
+  \item Uses non-blocking assignments throughout.
+\end{itemize}
+Write the core \texttt{always} block and the flag \texttt{assign} statements.
+\end{questionbox}
+
+\begin{answerbox}
+\begin{lstlisting}[style=verilogstyle]
+parameter WIDTH = 8;
+reg [WIDTH-1:0] Counter;
+input Up, Down, Load, CLK, RST_N;
+input [WIDTH-1:0] IN;
+output High, Low;
+
+always @(posedge CLK or negedge RST_N) begin
+    if (!RST_N)     Counter <= {WIDTH{1'b0}};
+    else if (Load)  Counter <= IN;
+    else if (Up)    Counter <= Counter + 1;
+    else if (Down)  Counter <= Counter - 1;
+end
+
+assign High = (Counter == {WIDTH{1'b1}});
+assign Low  = (Counter == {WIDTH{1'b0}});
+\end{lstlisting}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q12 \moderate\ --- Synthesisable vs.\ Non-Synthesisable Constructs \hfill\textit{True/False}}
+
+State whether each construct is synthesisable:
+
+\begin{center}
+\begin{tabular}{|l|c|}
+\hline
+\rowcolor{dkblue!15}
+\textbf{Construct} & \textbf{Synthesisable?}\\
+\hline
+\texttt{initial begin \ldots end} & \underline{(1)}\\
+\hline
+\texttt{\#10 a = 1;} & \underline{(2)}\\
+\hline
+\texttt{\$display("hello")} & \underline{(3)}\\
+\hline
+\texttt{always @(*)} & \underline{(4)}\\
+\hline
+\texttt{integer i; for (i=0; i<4; i=i+1)} & \underline{(5)}\\
+\hline
+\end{tabular}
+\end{center}
+\end{questionbox}
+
+\begin{answerbox}
+(1)~\textbf{No} --- simulation-only initialisation;
+(2)~\textbf{No} --- absolute time delay;
+(3)~\textbf{No} --- system task;
+(4)~\textbf{Yes};
+(5)~\textbf{Yes} --- if loop bounds are constants (statically unrolled by synthesis).
+\end{answerbox}
+
+% ============================================================
+\section{TCL Scripting for EDA (8 Questions)}
+\label{sec:tcl}
+% ============================================================
+
+\begin{questionbox}{Q13 \moderate\ --- TCL Substitution Rules \hfill\textit{Scenario}}
+Predict the output of each line:
+\begin{lstlisting}[style=tclstyle]
+set x 10
+set y "x is $x"
+set z {x is $x}
+puts $y
+puts $z
+puts "Double: [expr $x * 2]"
+\end{lstlisting}
+\end{questionbox}
+
+\begin{answerbox}
+\texttt{x is 10} \quad / \quad \texttt{x is \$x} \quad / \quad \texttt{Double: 20}
+
+Double quotes perform variable and command substitution; curly braces suppress all substitution.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q14 \advanced\ --- EDA Collection Iteration \hfill\textit{Scenario}}
+In Design Compiler, which option is correct for iterating over input ports?
+
+\begin{lstlisting}[style=tclstyle]
+# Option A
+foreach port [get_ports *] { puts $port }
+
+# Option B
+foreach_in_collection port [get_ports -filter "direction == in"] {
+    puts [get_attribute $port name]
+}
+\end{lstlisting}
+\end{questionbox}
+
+\begin{answerbox}
+\textbf{Option B} is correct. \texttt{get\_ports} returns a DC \textbf{collection object}, not a Tcl list; \texttt{foreach} cannot iterate over it. \texttt{foreach\_in\_collection} is the correct EDA command, and \texttt{get\_attribute} extracts the name string.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q15 \advanced\ --- TCL \texttt{upvar} and Procedure Scope \hfill\textit{Code Review}}
+
+\begin{lstlisting}[style=tclstyle]
+proc multiply_all {arr_name factor} {
+    upvar $arr_name arr
+    foreach key [array names arr] {
+        set arr($key) [expr $arr($key) * $factor]
+    }
+}
+array set prices {apples 5 oranges 3 bananas 2}
+multiply_all prices 10
+\end{lstlisting}
+
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Without \texttt{upvar}, what happens to the array inside the proc?
+  \item After execution, what are the values in \texttt{prices}?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Tcl passes by value --- a local copy is modified and the original is unchanged. \texttt{upvar} creates an alias to the caller's variable.
+  \item \texttt{apples=50, oranges=30, bananas=20}.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q16 \moderate\ --- File I/O for Testbench Generation \hfill\textit{Scenario}}
+Write a Tcl script that reads \texttt{interface.v}, replaces \texttt{input} with \texttt{reg} and \texttt{output} with \texttt{wire}, then writes the result to \texttt{tb\_signals.v}.
+\end{questionbox}
+
+\begin{answerbox}
+\begin{lstlisting}[style=tclstyle]
+set fh [open "interface.v" r]
+set content [read $fh]; close $fh
+regsub -all {\binput\b}  $content "reg"  content
+regsub -all {\boutput\b} $content "wire" content
+set fh [open "tb_signals.v" w+]
+puts $fh $content; close $fh
+\end{lstlisting}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q17 \advanced\ --- Timing Budget Calculation in TCL \hfill\textit{Scenario}}
+Write Tcl commands that set input delay to 30\% and output delay to 20\% of clock period \texttt{\$CLK\_PER} and print both values.
+\end{questionbox}
+
+\begin{answerbox}
+\begin{lstlisting}[style=tclstyle]
+set in_delay  [expr 0.30 * $CLK_PER]
+set out_delay [expr 0.20 * $CLK_PER]
+puts "Input delay:  $in_delay ns"
+puts "Output delay: $out_delay ns"
+\end{lstlisting}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q18 \advanced\ --- Regex Report Parsing \hfill\textit{Scenario}}
+Write a Tcl script that opens \texttt{timing.rpt} and prints every line containing \texttt{"slack (VIOLATED)"}.
+\end{questionbox}
+
+\begin{answerbox}
+\begin{lstlisting}[style=tclstyle]
+set fh [open "timing.rpt" r]
+while {[gets $fh line] >= 0} {
+    if {[regexp {slack \(VIOLATED\)} $line]} {
+        puts $line
+    }
+}
+close $fh
+\end{lstlisting}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q19 \moderate\ --- TCL List Operations \hfill\textit{Fill-in-the-Blank}}
+Given \texttt{set clks \{CLK\_A CLK\_B CLK\_C CLK\_D\}}:
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\rowcolor{dkblue!15}
+\textbf{Task} & \textbf{Command}\\
+\hline
+Get 3rd element & \underline{(1)}\\
+\hline
+Remove CLK\_B & \underline{(2)}\\
+\hline
+Add CLK\_E at end & \underline{(3)}\\
+\hline
+Find index of CLK\_C & \underline{(4)}\\
+\hline
+Get length & \underline{(5)}\\
+\hline
+\end{tabular}
+\end{center}
+\end{questionbox}
+
+\begin{answerbox}
+(1)~\texttt{lindex \$clks 2};\quad
+(2)~\texttt{set clks [lreplace \$clks 1 1]};\quad
+(3)~\texttt{lappend clks CLK\_E};\quad
+(4)~\texttt{lsearch \$clks CLK\_C};\quad
+(5)~\texttt{llength \$clks}.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q20 \advanced\ --- Conditional Port Existence Check \hfill\textit{Scenario}}
+Write a Tcl snippet in DC that applies \texttt{set\_false\_path} from \texttt{RST\_N} only if the port exists.
+\end{questionbox}
+
+\begin{answerbox}
+\begin{lstlisting}[style=tclstyle]
+if {[sizeof_collection [get_ports -quiet RST_N]] > 0} {
+    set_false_path -from [get_ports RST_N]
+    echo "Applied false path on RST_N"
+}
+\end{lstlisting}
+\end{answerbox}
+
+% ============================================================
+\section{SpyGlass Lint \& CDC Static Verification (10 Questions)}
+\label{sec:spyglass}
+% ============================================================
+
+\begin{questionbox}{Q21 \moderate\ --- Lint Policy Hierarchy \hfill\textit{Conceptual}}
+List the 5 core SpyGlass Lint policy groups and briefly describe what each catches.
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}
+  \item \textbf{\texttt{lint}} --- syntax/semantic, type mismatches.
+  \item \textbf{\texttt{morelint}} --- advanced style, unused signals (\texttt{UnloadedOutTerm-ML}).
+  \item \textbf{\texttt{simulation}} --- Sim/Synth mismatches: \texttt{W415} (blocking in seq), \texttt{W18} (incomplete sensitivity list).
+  \item \textbf{\texttt{latch}} --- inferred latches (\texttt{InferLatch / W188}).
+  \item \textbf{\texttt{erc}} --- electrical rules: combinational loops (\texttt{W120}), multi-driven nets (\texttt{W422}), floating inputs (\texttt{W240}).
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q22 \advanced\ --- Multi-Driven Net Hazard \hfill\textit{Scenario}}
+
+\begin{lstlisting}[style=verilogstyle]
+module top (input a, b, output out);
+    assign out = a;
+    assign out = b;
+endmodule
+\end{lstlisting}
+
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Which SpyGlass ERC rule fires?
+  \item What happens in simulation when \texttt{a=1, b=0}?
+  \item What physical hardware hazard does this represent?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item \textbf{W422} --- multi-driven net.
+  \item Simulation result is non-deterministic or \texttt{X}; the simulator resolves conflicting drivers by strength or unknown.
+  \item Physical short-circuit between two driver outputs --- can destroy gates and cause hot carrier injection.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q23 \advanced\ --- Waiver File Strategy \hfill\textit{Scenario}}
+An output port \texttt{STATUS\_FLAGS[7:0]} is intentionally unconnected (optional debug port). Write the SpyGlass waiver entry.
+\end{questionbox}
+
+\begin{answerbox}
+\begin{lstlisting}[style=tclstyle]
+waive -rule "UnloadedOutTerm-ML" \
+      -module "ALU_TOP" \
+      -port "STATUS_FLAGS" \
+      -comment "Debug-only port. Intentionally unconnected in production."
+\end{lstlisting}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q24 \advanced\ --- CDC Goal Progression \hfill\textit{Conceptual}}
+Explain the 4-goal SpyGlass CDC progression and why the order is mandatory:
+\[
+\texttt{cdc\_setup\_check} \;\to\; \texttt{clock\_reset\_integrity} \;\to\; \texttt{cdc\_verify\_struct} \;\to\; \texttt{cdc\_verify}
+\]
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}
+  \item \textbf{cdc\_setup\_check} --- validates SGDC/SDC constraints. Without valid constraints, all subsequent goals produce unreliable results.
+  \item \textbf{clock\_reset\_integrity} --- checks for glitchy clocks, floating reset nets.
+  \item \textbf{cdc\_verify\_struct} --- detects structurally unsynchronised crossings (\texttt{Ac\_unsync01/02}) and reconvergence (\texttt{Ac\_conv01}).
+  \item \textbf{cdc\_verify} --- functional level: data stability, Gray code correctness, FIFO protocol.
+\end{enumerate}
+Each stage depends on the clean output of the previous stage.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q25 \advanced\ --- Reconvergence Hazard (\texttt{Ac\_conv01}) \hfill\textit{Scenario}}
+
+\begin{lstlisting}[style=plaincode]
+CLKA -> Flop A -> 2-FF Sync -> Dest Logic --+
+                                             +--> AND Gate -> Output
+CLKA -> Flop B -> 2-FF Sync -> Dest Logic --+
+\end{lstlisting}
+
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Why does SpyGlass flag \texttt{Ac\_conv01} even though both signals are individually synchronised?
+  \item What is the correct fix?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Each 2-FF synchroniser can resolve in either 1 or 2 cycles independently. If A resolves in 1 cycle and B resolves in 2 cycles, their AND gate sees data from different time-steps --- a functional race on the combined output.
+  \item Combine them into a \textbf{single} synchronised control token: route one signal through a single 2-FF and gate the other based on that single synchronised enable.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q26 \moderate\ --- SGDC Clock Domain Binding \hfill\textit{Code Review}}
+Write an SGDC snippet that declares \texttt{sys\_clk} (100 MHz) and \texttt{usb\_clk} (60 MHz) as unrelated asynchronous domains, and \texttt{rst\_n} as an asynchronous active-low reset.
+\end{questionbox}
+
+\begin{answerbox}
+\begin{lstlisting}[style=tclstyle]
+current_design top
+clock -name "top.sys_clk" -domain d_sys -period 10   -waveform {0 5}
+clock -name "top.usb_clk" -domain d_usb -period 16.67 -waveform {0 8.33}
+reset -name "top.rst_n" -value 0 -async
+cdc_attribute -unrelated {top.sys_clk top.usb_clk}
+\end{lstlisting}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q27 \advanced\ --- Glitch on Synchroniser Input (\texttt{Ac\_glitch01}) \hfill\textit{Scenario}}
+
+\begin{lstlisting}[style=verilogstyle]
+// WRONG: combinational signal fed directly to synchroniser
+assign crossing_signal = (state == RUN) & enable;
+// Then passed directly to 2-FF synchroniser in CLKB domain
+\end{lstlisting}
+
+Why is this a CDC violation and what is the correct coding pattern?
+\end{questionbox}
+
+\begin{answerbox}
+Combinational logic can produce glitches (hazard spikes shorter than a clock period) --- the synchroniser can accidentally sample a glitch as a valid transition, corrupting the destination logic.
+
+\textbf{Correct pattern:} register \texttt{crossing\_signal} in the source clock domain first, then feed the \emph{registered} output into the 2-FF synchroniser. Only stable, registered signals should cross domain boundaries.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q28 \moderate\ --- Quasi-Static Signal Definition \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What is a quasi-static signal in SpyGlass CDC terminology?
+  \item When is it safe to waive a CDC violation for a quasi-static signal?
+  \item Give a real-world example.
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item A signal changed only during system initialisation or controlled software configuration phases --- never toggles during normal operation.
+  \item Safe to waive when software guarantees the signal is stable before any destination clock domain logic reads it.
+  \item Baud rate divisor register, DMA burst length configuration, mode select register.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q29 \advanced\ --- Clock Integrity Violation \hfill\textit{Scenario}}
+A design uses \texttt{assign gated\_clk = clk \& enable;}.
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Which SpyGlass CDC rule fires?
+  \item What is the specific danger of using standard logic gates for clock gating?
+  \item What is the correct hardware solution?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item \textbf{\texttt{Clock\_glitch01}}.
+  \item The AND gate can produce glitches when \texttt{enable} changes while \texttt{clk} is high --- the glitch propagates as a false clock edge, corrupting flip-flop data.
+  \item Use an \textbf{Integrated Clock Gating (ICG)} cell: the enable is sampled by a latch on the falling edge, so \texttt{gated\_clk} transitions only when \texttt{clk} is low --- glitch-free.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q30 \moderate\ --- SpyGlass Flow Deliverables \hfill\textit{Fill-in-the-Blank}}
+Match each SpyGlass output file to its purpose:
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\rowcolor{dkblue!15}
+\textbf{File} & \textbf{Purpose}\\
+\hline
+\texttt{moresimple.rpt} & \underline{(1)}\\
+\hline
+\texttt{summary.rpt} & \underline{(2)}\\
+\hline
+\texttt{elab\_summary.rpt} & \underline{(3)}\\
+\hline
+\texttt{.awl} & \underline{(4)}\\
+\hline
+\end{tabular}
+\end{center}
+\end{questionbox}
+
+\begin{answerbox}
+(1)~Filtered detailed violation list with file/line references;\\
+(2)~High-level severity count (Errors / Warnings / Infos);\\
+(3)~Design elaboration log --- port connectivity, hierarchy resolution;\\
+(4)~Waiver file --- suppresses known-benign violations with documented justification.
+\end{answerbox}
+
+% ============================================================
+\section{ASIC Synthesis --- Synopsys Design Compiler (12 Questions)}
+\label{sec:synthesis}
+% ============================================================
+
+\begin{questionbox}{Q31 \moderate\ --- PVT Library Corners \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What do SS, TT, FF stand for in standard cell library naming?
+  \item Which corner is used for \textbf{setup} analysis and why?
+  \item Which corner is used for \textbf{hold} analysis and why?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item \textbf{SS} = Slow-Slow (worst process + lowest voltage + highest temperature); \textbf{TT} = Typical-Typical; \textbf{FF} = Fast-Fast (best case).
+  \item \textbf{SS} for setup --- cells are slowest, giving worst-case (maximum) propagation delays --- hardest setup scenario.
+  \item \textbf{FF} for hold --- cells are fastest, giving minimum propagation delays --- data may race to corrupt the same-edge capture.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q32 \advanced\ --- \texttt{link} vs.\ \texttt{elaborate} vs.\ \texttt{check\_design} \hfill\textit{Conceptual}}
+Describe what each DC command does and in what order they must be called:
+\texttt{analyze}, \texttt{elaborate}, \texttt{link}, \texttt{check\_design}.
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}
+  \item \textbf{analyze -format verilog} --- parses and syntax-checks RTL into DC internal format.
+  \item \textbf{elaborate} --- instantiates the design hierarchy, resolves parameters and generics.
+  \item \textbf{link} --- resolves all module references against the library/design database; fails if unresolved black boxes exist.
+  \item \textbf{check\_design} --- reports structural issues (unconnected pins, multi-driven nets, missing connections). Must be clean (0 errors) before applying constraints.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q33 \advanced\ --- Path Grouping Strategy \hfill\textit{Conceptual + Scenario}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What is the risk of not using path groups?
+  \item Write the 3 standard path group commands.
+  \item How does path grouping improve QoR?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item DC targets the single globally worst slack path --- may fix I/O paths while ignoring critical Reg-to-Reg paths, or vice versa.
+\begin{lstlisting}[style=tclstyle]
+group_path -name INREG  -from [all_inputs]
+group_path -name REGOUT -to   [all_outputs]
+group_path -name INOUT  -from [all_inputs] -to [all_outputs]
+\end{lstlisting}
+  \item Each group receives an independent optimisation budget --- DC simultaneously targets all timing categories, producing balanced WNS across all path types.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q34 \advanced\ --- Multicycle Path Constraints \hfill\textit{Mathematical + Scenario}}
+A divider uses 2 clock cycles (100 MHz clock, period = 10 ns).
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Write the SDC commands for setup and hold MCP constraints.
+  \item What does the \texttt{-end} qualifier do in the hold constraint?
+  \item What happens if MCP setup = 2 but the hold constraint is omitted?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{lstlisting}[style=tclstyle]
+set_multicycle_path -setup 2 -from [get_clocks CLK] \
+                              -to   [get_cells U_DIV/result*]
+set_multicycle_path -hold  1 -from [get_clocks CLK] \
+                              -to   [get_cells U_DIV/result*] -end
+\end{lstlisting}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \setcounter{enumi}{1}
+  \item \texttt{-end} moves the hold check reference edge at the \textbf{capture} side back by $N-1$ cycles, preventing over-tightening.
+  \item The tool defaults hold to check at cycle 0 against the setup edge of cycle 2 --- an impossibly tight hold check causing unnecessary buffer insertion and area/power bloat.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q35 \advanced\ --- Clock Gating for Power Reduction \hfill\textit{Conceptual + Code}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What is Automatic Clock Gating (ICG) in Design Compiler?
+  \item Write the DC command for ICG with minimum bit-width of 4.
+  \item Why is \texttt{set\_dont\_touch\_network} applied to clock nets before \texttt{compile\_ultra}?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item DC identifies registers with a common clock enable and inserts an ICG cell that gates the clock --- saving dynamic power when registers hold stable values.
+  \item \texttt{set\_clock\_gating\_style -minimum\_bitwidth 4 -positive\_edge\_logic \{integrated\}}
+  \item DC would otherwise insert its own clock buffers during optimisation, unbalancing the clock tree. CTS in PnR handles clock buffering with full physical awareness.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q36 \moderate\ --- \texttt{set\_fix\_multiple\_port\_nets} \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What problem does \texttt{set\_fix\_multiple\_port\_nets -all -buffer\_constants -feedthroughs} solve?
+  \item What is a ``feedthrough net'' and why must it be buffered?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Raw Verilog netlists can contain \texttt{assign} statements for constant drivers (tied inputs) and feedthrough nets (inputs directly wired to outputs). These are valid RTL but illegal in a gate-level netlist for PnR. The command inserts buffer cells to eliminate them.
+  \item A feedthrough is a primary input directly connected to a primary output with no logic. PnR requires an explicit buffer cell so the net has a driver with physical coordinates.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q37 \advanced\ --- Generated Clock Definition \hfill\textit{Code Review}}
+
+\begin{lstlisting}[style=tclstyle]
+create_generated_clock -name "REG_CLK" \
+    -source [get_ports CLK] \
+    -master_clock MASTER_CLK \
+    -divide_by 2 \
+    [get_pins U0_ClkDiv/o_div_clk]
+\end{lstlisting}
+
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What does \texttt{-divide\_by 2} mean for timing analysis?
+  \item Why use \texttt{create\_generated\_clock} instead of \texttt{create\_clock} here?
+  \item What happens to Reg-to-Reg paths between \texttt{MASTER\_CLK} and \texttt{REG\_CLK}?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item DC treats \texttt{REG\_CLK} as having half the frequency (20 ns period if master is 10 ns).
+  \item \texttt{create\_clock} on an internal pin implies an independent source --- DC loses the phase relationship. \texttt{create\_generated\_clock} maintains the parent-child relationship and propagates source latency correctly.
+  \item These are CDC paths requiring \texttt{set\_clock\_groups -asynchronous} or \texttt{set\_multicycle\_path} depending on design intent.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q38 \moderate\ --- Synthesis Output Deliverables \hfill\textit{Fill-in-the-Blank}}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\rowcolor{dkblue!15}
+\textbf{File} & \textbf{Full Name} & \textbf{Used By}\\
+\hline
+\texttt{top.v} (gate-level) & \underline{(1)} & \underline{(2)}\\
+\hline
+\texttt{top.ddc} & \underline{(3)} & \underline{(4)}\\
+\hline
+\texttt{top.sdc} & \underline{(5)} & \underline{(6)}\\
+\hline
+\texttt{top.sdf} & \underline{(7)} & \underline{(8)}\\
+\hline
+\end{tabular}
+\end{center}
+\end{questionbox}
+
+\begin{answerbox}
+(1)~Verilog gate-level netlist;\ (2)~PnR, GLS, Formality;\\
+(3)~Synopsys Design Database binary;\ (4)~Formality, incremental DC runs;\\
+(5)~Synopsys Design Constraints;\ (6)~PrimeTime STA, PnR;\\
+(7)~Standard Delay Format;\ (8)~GLS back-annotation in ModelSim/QuestaSim.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q39 \advanced\ --- \texttt{compile\_ultra} vs.\ \texttt{compile} \hfill\textit{Conceptual}}
+What are the 3 key algorithmic differences between \texttt{compile\_ultra} and \texttt{compile -map\_effort high}?
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}
+  \item \textbf{Automatic hierarchy ungrouping} --- \texttt{compile\_ultra} flattens across module boundaries for global optimisation (better QoR, slower runtime).
+  \item \textbf{Register retiming} --- moves registers across combinational logic cones.
+  \item \textbf{Advanced delay calculation} --- more accurate RC models for critical path selection.
+\end{enumerate}
+Use \texttt{compile -no\_autoungroup} when: preserving hierarchy for Formality, limited runtime, or hard-macro boundaries must not be flattened.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q40 \advanced\ --- Wire Load Model \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What is a Wire Load Model (WLM) and when is it used?
+  \item Why do post-PnR timing results often differ from synthesis predictions?
+  \item What is the most accurate timing sign-off flow?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item A statistical model estimating wire RC based on net fanout, used in pre-layout synthesis when no physical routing exists.
+  \item WLM is an average; actual routing depends on cell placement, congestion, and detours --- actual RC can differ significantly.
+  \item Post-PnR SPEF back-annotation into PrimeTime for parasitic-based STA.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q41 \moderate\ --- \texttt{check\_design} Output Interpretation \hfill\textit{Scenario}}
+After running \texttt{check\_design}:
+\begin{lstlisting}[style=plaincode]
+Warning: In design 'ALU_TOP', port 'STATUS[3]' is not connected. (ELAB-311)
+Error:   In design 'ALU_TOP', net 'carry_internal' has multiple drivers. (ELAB-318)
+\end{lstlisting}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Which warning can be safely waived and how?
+  \item Which error is a showstopper and what is its fix?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item The unconnected port warning (ELAB-311) can be waived if \texttt{STATUS[3]} is an intentional debug port left floating. Add a SpyGlass/DC waiver with a justification comment.
+  \item The multi-driver error (ELAB-318) is a showstopper --- two logic drivers fight on the same net. Fix: trace both drivers and remove the redundant \texttt{assign} or redesign the datapath so only one source drives \texttt{carry\_internal}.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q42 \advanced\ --- Operating Conditions \& Multi-Corner Analysis \hfill\textit{Conceptual}}
+
+\begin{lstlisting}[style=tclstyle]
+set_operating_conditions -max TSMC_SS_1P08V_125C \
+                         -min TSMC_FF_1P32V_M40C \
+                         -max_library $SSLIB \
+                         -min_library $FFLIB
+\end{lstlisting}
+
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What do \texttt{-max} and \texttt{-min} operating conditions represent?
+  \item What is the danger of analysing hold with SS corner delays?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item \texttt{-max} = worst-case slow corner for setup (maximum delays); \texttt{-min} = best-case fast corner for hold (minimum delays).
+  \item SS corner gives pessimistic (large) delays --- hold analysis at SS shows paths that are ``too slow'', artificially passing hold when they might actually race at FF corner. Must use FF for hold.
+\end{enumerate}
+\end{answerbox}
+
+% ============================================================
+\section{Static Timing Analysis --- Synopsys PrimeTime (12 Questions)}
+\label{sec:sta}
+% ============================================================
+
+\begin{questionbox}{Q43 \moderate\ --- The 4 Fundamental Timing Paths \hfill\textit{Conceptual}}
+Name and describe the 4 fundamental timing path types in STA with startpoint, endpoint, and bounding SDC constraints.
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}
+  \item \textbf{In-to-Reg}: Primary input $\to$ D-pin of FF. Bounded by \texttt{set\_input\_delay} + \texttt{create\_clock}.
+  \item \textbf{Reg-to-Reg}: Q of launch FF $\to$ D of capture FF. Bounded by \texttt{create\_clock} on both.
+  \item \textbf{Reg-to-Out}: Q of FF $\to$ Primary output. Bounded by \texttt{create\_clock} + \texttt{set\_output\_delay}.
+  \item \textbf{In-to-Out}: Primary input $\to$ Primary output (combinational). Bounded by \texttt{set\_input\_delay} + \texttt{set\_output\_delay}.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q44 \advanced\ --- Setup Slack Calculation \hfill\textit{Mathematical}}
+Given: $T_{\text{period}}=10\,\text{ns}$, $T_{\text{launch,clk}}=0.5\,\text{ns}$, $T_{\text{capture,clk}}=0.8\,\text{ns}$, $T_{\text{cq,max}}=0.3\,\text{ns}$, $T_{\text{comb,max}}=6.2\,\text{ns}$, $T_{\text{setup}}=0.15\,\text{ns}$, $T_{\text{unc}}=0.2\,\text{ns}$.
+
+Calculate: (1) Data Arrival Time, (2) Data Required Time, (3) Setup Slack, (4) Violation?
+\end{questionbox}
+
+\begin{answerbox}
+\begin{align*}
+\text{DAT} &= T_{\text{launch,clk}} + T_{\text{cq,max}} + T_{\text{comb,max}} = 0.5 + 0.3 + 6.2 = \mathbf{7.0\,ns}\\
+\text{DRT} &= T_{\text{period}} + T_{\text{capture,clk}} - T_{\text{setup}} - T_{\text{unc}} = 10 + 0.8 - 0.15 - 0.2 = \mathbf{10.45\,ns}\\
+\text{Slack} &= 10.45 - 7.0 = \mathbf{+3.45\,ns} \quad \text{[No violation]}
+\end{align*}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q45 \advanced\ --- Hold Slack Calculation \hfill\textit{Mathematical}}
+Same design, minimum path: $T_{\text{launch,clk}}=0.5$, $T_{\text{capture,clk}}=0.8$, $T_{\text{cq,min}}=0.1$, $T_{\text{comb,min}}=0.2$, $T_{\text{hold}}=0.08$, $T_{\text{unc,hold}}=0.05\,\text{ns}$.
+
+Calculate: (1) DAT, (2) DRT, (3) Hold Slack, (4) Violation?
+\end{questionbox}
+
+\begin{answerbox}
+\begin{align*}
+\text{DAT}_{min} &= T_{\text{launch,clk}} + T_{\text{cq,min}} + T_{\text{comb,min}} = 0.5 + 0.1 + 0.2 = \mathbf{0.8\,ns}\\
+\text{DRT}_{hold} &= T_{\text{capture,clk}} + T_{\text{hold}} + T_{\text{unc,hold}} = 0.8 + 0.08 + 0.05 = \mathbf{0.93\,ns}\\
+\text{Hold Slack} &= 0.8 - 0.93 = \mathbf{-0.13\,ns} \quad \text{[Hold Violation!]}
+\end{align*}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q46 \advanced\ --- Clock Skew Impact Analysis \hfill\textit{Conceptual + Mathematical}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Define positive and negative clock skew.
+  \item Does positive skew help or hurt setup? Show using the formula.
+  \item Does positive skew help or hurt hold?
+  \item Why can ``useful skew'' be a timing closure technique?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Positive: $T_{\text{capture,clk}} > T_{\text{launch,clk}}$ (capture clock arrives later). Negative: opposite.
+  \item \textbf{Helps setup:} $\text{DRT} = T_{\text{period}} + T_{\text{capture,clk}} - T_{\text{setup}} - T_{\text{unc}}$. Larger $T_{\text{capture,clk}}$ increases DRT $\Rightarrow$ more margin.
+  \item \textbf{Hurts hold:} $\text{DRT}_{hold} = T_{\text{capture,clk}} + T_{\text{hold}} + T_{\text{unc,hold}}$. Larger $T_{\text{capture,clk}}$ raises the minimum data must arrive.
+  \item Intentionally delaying the capture clock on setup-critical paths borrows time without changing clock frequency.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q47 \advanced\ --- OCV \& Derating \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What physical phenomenon does On-Chip Variation (OCV) model?
+  \item For setup analysis, which path is derated late and which early? Why?
+  \item Write the PrimeTime commands for $\pm5\%$ derating.
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item PVT gradients across the die --- cells in different locations see different voltage drops, temperature, and process variation.
+  \item Setup OCV: launch path derated \textbf{late} (slower = worse for setup); capture path derated \textbf{early} (faster = less required time = also worse for setup).
+\begin{lstlisting}[style=tclstyle]
+set_timing_derate -early 0.95 -cell_delay
+set_timing_derate -late  1.05 -cell_delay
+\end{lstlisting}
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q48 \moderate\ --- CPPR / CRPR Explained \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What is Common Path Pessimism Removal (CPPR)?
+  \item Give an example of when CPPR applies.
+  \item What command enables it in PrimeTime?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item When launch and capture paths share common clock tree buffers, those cells cannot simultaneously be fast (launch) AND slow (capture). CPPR removes this artificial double-counting of shared-path variation.
+  \item Two flops clocked by the same source with only a local routing difference in their last buffer --- the trunk of the clock tree is common.
+  \item \texttt{set timing\_remove\_clock\_reconvergence\_pessimism true}
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q49 \advanced\ --- Recovery \& Removal Checks \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What is the \textbf{Recovery} timing check for an asynchronous reset?
+  \item What is the \textbf{Removal} timing check?
+  \item How do they relate to Setup and Hold checks?
+  \item Why must asynchronous resets be synchronously de-asserted?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item \textbf{Recovery}: minimum time \texttt{rst\_n} must de-assert \emph{before} the next active clock edge --- analogous to Setup.
+  \item \textbf{Removal}: minimum time \texttt{rst\_n} must remain asserted \emph{after} the clock edge before de-assertion --- analogous to Hold.
+  \item Recovery $\leftrightarrow$ Setup;\ Removal $\leftrightarrow$ Hold.
+  \item If \texttt{rst\_n} de-asserts asynchronously too close to the clock edge, different FFs exit reset on different cycles, breaking deterministic initialisation.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q50 \advanced\ --- Fixing Setup vs.\ Hold Violations \hfill\textit{Scenario}}
+Identify the violation type and correct fix for each scenario:
+\begin{enumerate}
+  \item Critical path slack $= -500\,\text{ps}$; path passes through 12 logic levels.
+  \item Data path minimum delay $= 0.15\,\text{ns}$; hold requirement $= 0.25\,\text{ns}$.
+  \item Fixed clock frequency; setup slack $= -800\,\text{ps}$ on a single path.
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}
+  \item \textbf{Setup} --- upsize cells on the critical path or pipeline (insert a register).
+  \item \textbf{Hold} --- insert delay buffers on the data path to increase minimum delay above the hold requirement.
+  \item \textbf{Setup at fixed frequency} --- restructure logic to reduce level count, or apply useful clock skew to delay the capture flop's clock.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q51 \moderate\ --- WNS vs.\ TNS \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Define Worst Negative Slack (WNS) and Total Negative Slack (TNS).
+  \item A design has $\text{WNS} = -200\,\text{ps}$ and $\text{TNS} = -15{,}000\,\text{ps}$. What does this indicate?
+  \item Which metric is the hard requirement for tape-out sign-off?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item \textbf{WNS} = slack of the single most violating path (most negative). \textbf{TNS} = sum of all negative slacks across all violating endpoints.
+  \item Many paths violating (large TNS) but no single catastrophic outlier (small WNS) --- suggests systematic delay issues, not one critical path.
+  \item \textbf{WNS} must be $\geq 0$ at sign-off. A single negative slack means the chip will malfunction.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q52 \advanced\ --- False Path vs.\ Multicycle Path \hfill\textit{Scenario}}
+Choose the correct SDC exception for each situation:
+\begin{enumerate}
+  \item Asynchronous boundary between USB controller and CPU.
+  \item Floating-point divider architected for 4 cycles.
+  \item Scan shift path between SI and SO during test mode.
+  \item Configuration register written only at boot.
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}
+  \item \texttt{set\_clock\_groups -asynchronous} or \texttt{set\_false\_path}.
+  \item \texttt{set\_multicycle\_path -setup 4} + \texttt{set\_multicycle\_path -hold 3 -end}.
+  \item \texttt{set\_false\_path -through [get\_pins */SE]}.
+  \item \texttt{set\_false\_path} --- quasi-static, never sampled in functional timing.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q53 \moderate\ --- $F_{\max}$ Formula \hfill\textit{Mathematical}}
+Derive the expression for $F_{\max}$ in terms of $T_{cq}$, $T_{comb}$, $T_{\text{setup}}$, $T_{\text{unc}}$, and $T_{\text{skew}}$.
+\end{questionbox}
+
+\begin{answerbox}
+\[
+T_{\text{period,min}} = T_{\text{cq,max}} + T_{\text{comb,max}} + T_{\text{setup}} + T_{\text{unc}} - T_{\text{skew}}
+\]
+\[
+\boxed{F_{\max} = \frac{1}{T_{\text{period,min}}}}
+\]
+Positive skew reduces $T_{\text{period,min}}$, increasing $F_{\max}$.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q54 \advanced\ --- Input/Output Delay Modelling \hfill\textit{Scenario}}
+External FF: $T_{\text{co}}=2\,\text{ns}$, board trace delay $= 0.5\,\text{ns}$, board clock skew $= 1\,\text{ns}$, chip period $= 10\,\text{ns}$.
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Calculate \texttt{set\_input\_delay} value.
+  \item Write the SDC command.
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Input delay $= T_{\text{co}} + \text{trace} + \text{skew} = 2 + 0.5 + 1 = \mathbf{3.5\,ns}$.
+  \item \texttt{set\_input\_delay 3.5 -max -clock MASTER\_CLK [all\_inputs]}
+\end{enumerate}
+\end{answerbox}
+
+% ============================================================
+\section{Clock Domain Crossing (CDC) Design (10 Questions)}
+\label{sec:cdc}
+% ============================================================
+
+\begin{questionbox}{Q55 \moderate\ --- Metastability Fundamentals \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What is metastability and at what voltage level does it occur?
+  \item Can it be eliminated entirely? Why or why not?
+  \item What design technique makes metastability \textbf{safe} for reliability?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item An intermediate voltage state between logic~0 and~1 where internal feedback transistors of a flip-flop are in unstable equilibrium.
+  \item No --- it is a fundamental physical property of bistable circuits when setup/hold is violated. Any async crossing can theoretically metastabilise.
+  \item Multi-stage synchronisers add resolution time exponentially increasing MTBF, making the probability of failure negligible.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q56 \advanced\ --- MTBF Formula Analysis \hfill\textit{Mathematical}}
+Given: $\tau=0.2\,\text{ns}$, $T_0=1\,\text{ns}$, $f_{\text{clk}}=200\,\text{MHz}$, $f_{\text{data}}=10\,\text{MHz}$, $T_{\text{clk}}=5\,\text{ns}$, $T_{\text{setup}}=0.15\,\text{ns}$, $T_{\text{co}}=0.3\,\text{ns}$.
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Calculate $T_{\text{res}}$ for a 2-FF synchroniser.
+  \item Calculate MTBF.
+  \item Why does a third FF dramatically improve MTBF?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\[
+\text{MTBF} = \frac{e^{T_{\text{res}}/\tau}}{T_0 \cdot f_{\text{clk}} \cdot f_{\text{data}}}
+\]
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item $T_{\text{res}} = (T_{\text{clk}} - T_{\text{setup}} - T_{\text{co}}) + T_{\text{clk}} = (5 - 0.15 - 0.3) + 5 = \mathbf{9.55\,ns}$
+  \item $\text{MTBF} = e^{9.55/0.2} / (10^{-9} \times 200\times10^6 \times 10\times10^6) \approx$ billions of years.
+  \item Each additional FF adds $T_{\text{clk}}$ to $T_{\text{res}}$. The exponential $e^{T_{\text{res}}/\tau}$ means a 5 ns addition multiplies MTBF by $e^{25} \approx 7\times10^{10}$.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q57 \advanced\ --- Gray Code in Async FIFO \hfill\textit{Mathematical + Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Convert binary \texttt{0111} (7) to Gray code.
+  \item Convert binary \texttt{1000} (8) to Gray code.
+  \item Why is Gray code essential for async FIFO pointer synchronisation?
+  \item Write the Verilog expression for binary-to-Gray conversion.
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+The formula is: $\text{Gray} = \text{Binary} \oplus (\text{Binary} \gg 1)$
+
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item $\texttt{0111} \oplus \texttt{0011} = \texttt{0100}$
+  \item $\texttt{1000} \oplus \texttt{0100} = \texttt{1100}$
+  \item Binary 7$\to$8 changes 4 bits simultaneously; the synchroniser might capture any of 16 erroneous combinations. Gray code changes exactly 1 bit --- the captured value is always either the old or new pointer (both valid FIFO positions).
+  \item \texttt{assign gray = binary \textasciicircum\ (binary >> 1);}
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q58 \advanced\ --- Async FIFO Full/Empty Conditions \hfill\textit{Mathematical}}
+For $N=3$ (depth=8, 4-bit Gray pointers including wrap bit):
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Write the \textbf{empty} condition in terms of Gray-coded pointers.
+  \item Write the \textbf{full} condition.
+  \item Why is full checked in the write domain and empty in the read domain?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item \textbf{Empty} (read domain): \texttt{rptr\_gray == wptr\_gray\_sync}
+  \item \textbf{Full} (write domain): \texttt{wptr\_gray[N:N-1] == \textasciitilde rptr\_gray\_sync[N:N-1]} AND \texttt{wptr\_gray[N-2:0] == rptr\_gray\_sync[N-2:0]}
+  \item Full controls the write side (prevents overflow) --- must use write-domain signals. Empty controls the read side (prevents underflow) --- must use read-domain signals.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q59 \advanced\ --- FIFO Depth Calculation \hfill\textit{Mathematical}}
+Write at 200 MHz (1 word/clock), read at 80 MHz (1 word/clock), burst of 120 words.
+Calculate: (1) Write time, (2) Words read, (3) Min FIFO depth, (4) Actual depth (power of 2).
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}
+  \item Write time $= 120 \times 5\,\text{ns} = \mathbf{600\,ns}$
+  \item Words read $= 600\,\text{ns} / 12.5\,\text{ns} = \mathbf{48}$
+  \item Min depth $= 120 - 48 = \mathbf{72}$ entries
+  \item Actual depth $= \mathbf{128}$ (next power of 2 $\geq 72$)
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q60 \moderate\ --- Reset Synchroniser Design \hfill\textit{Conceptual + Code}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Why must an async reset be asserted asynchronously but de-asserted synchronously?
+  \item Describe the circuit topology of a reset synchroniser.
+  \item What is the role of VCC at the D-input of the first flip-flop?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Async assertion: clock may not be running (power-on) --- must reset immediately. Sync de-assertion: prevents different FFs from exiting reset on different cycles.
+  \item VCC $\to$ D of FF1; Q1 $\to$ D of FF2; Q2 = \texttt{sync\_rst\_n}. Async clear (\texttt{rst\_n}) connected to both FFs.
+  \item VCC ensures that when reset releases, the FFs load logic `1' on successive clock edges, cleanly propagating the de-assertion.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q61 \moderate\ --- Why Multiple 2-FF Synchronisers Cannot Handle Multi-Bit Data \hfill\textit{Conceptual}}
+Explain exactly why placing separate 2-FF synchronisers on each bit of a 4-bit bus is incorrect.
+\end{questionbox}
+
+\begin{answerbox}
+Each FF can resolve metastability in either 1 or 2 destination clock cycles independently. At any crossing, bit[0] might resolve in 1 cycle while bit[3] resolves in 2 cycles --- the destination domain sees a transient vector where some bits are updated and others are not. This coherence failure produces an erroneous intermediate value that never existed in the source domain, causing functional corruption.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q62 \advanced\ --- Handshake Synchroniser Protocol \hfill\textit{Conceptual + Diagram}}
+Describe the 4-phase handshake CDC protocol:
+
+\begin{center}
+\begin{tabular}{|c|l|l|}
+\hline
+\rowcolor{dkblue!15}
+\textbf{Phase} & \textbf{Action} & \textbf{Signal State}\\
+\hline
+1 & \underline{(1)} & \underline{(2)}\\
+\hline
+2 & \underline{(3)} & \underline{(4)}\\
+\hline
+3 & \underline{(5)} & \underline{(6)}\\
+\hline
+4 & \underline{(7)} & \underline{(8)}\\
+\hline
+\end{tabular}
+\end{center}
+
+What is the main limitation vs.\ Async FIFO?
+\end{questionbox}
+
+\begin{answerbox}
+(1) Source asserts REQ, puts data on bus; (2) REQ=1, ACK=0;\\
+(3) Destination samples data, asserts ACK; (4) REQ=1, ACK=1;\\
+(5) Source sees sync ACK, de-asserts REQ; (6) REQ=0, ACK=1;\\
+(7) Destination de-asserts ACK; (8) REQ=0, ACK=0.\\
+\textbf{Limitation:} max throughput = 1 transfer per 4 synchroniser latencies (8--12 cycles) --- far lower than Async FIFO streaming.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q63 \advanced\ --- \texttt{Ac\_unsync02} Deep Dive \hfill\textit{Scenario}}
+A 32-bit bus crosses from CLKA to CLKB directly. SpyGlass reports \texttt{Ac\_unsync02}.
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Is inserting 32 parallel 2-FF synchronisers the correct fix?
+  \item List 3 architecturally correct solutions with trade-offs.
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item \textbf{No} --- parallel synchronisers cause bus coherence failure (see Q61).
+  \item Correct solutions:
+    \begin{itemize}
+      \item \textbf{Async FIFO} --- highest throughput, medium hardware cost, ideal for streaming.
+      \item \textbf{MUX-Recirculation (DATA\_SYNC)} --- source holds data stable, single-bit REQ synchronises load strobe --- low cost but source must hold data.
+      \item \textbf{Handshake controller} --- general-purpose, low throughput, suitable for infrequent transfers.
+    \end{itemize}
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q64 \moderate\ --- CDC Verification: Simulation vs.\ Static \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Why is simulation alone insufficient for CDC verification?
+  \item What does SpyGlass CDC provide that simulation cannot?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Simulation is vector-dependent. Metastability events depend on exact timing between clock edges, which varies across PVT corners. No simulation can exhaustively cover all timing scenarios.
+  \item SpyGlass performs exhaustive static structural analysis --- it mathematically checks all crossing paths regardless of stimulus, guaranteeing coverage of every possible metastability scenario.
+\end{enumerate}
+\end{answerbox}
+
+% ============================================================
+\section{Power Analysis \& Clock Gating (5 Questions)}
+\label{sec:power}
+% ============================================================
+
+\begin{questionbox}{Q65 \advanced\ --- Power Components \hfill\textit{Mathematical + Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Write the full power equation and define each component.
+  \item Clock tree: 200 MHz, 50 pF total load, 1.2 V supply. Calculate switching power.
+  \item Which component dominates at high frequency? At idle?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item $P_{total} = P_{internal} + P_{\text{switching}} + P_{leakage}$, where
+  $P_{\text{switching}} = \tfrac{1}{2}CV_{DD}^2 f\alpha$ and $P_{leakage} = V_{DD}\cdot I_{leakage}$.
+  \item $P = \tfrac{1}{2}\times 50\times10^{-12}\times 1.44\times 200\times10^6\times 1 = \mathbf{7.2\,mW}$
+  \item \textbf{High frequency}: dynamic power ($P_{internal}+P_{\text{switching}}$). \textbf{Idle}: leakage --- increasingly critical in advanced process nodes.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q66 \advanced\ --- VCD-Based Dynamic Power \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What does a Value Change Dump (VCD) file capture?
+  \item How does PrimeTime-PX use the VCD?
+  \item What is the risk of using a VCD from an untypical workload?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Time-stamped event-driven records of every signal transition --- digital state changes and exact simulation timestamps.
+  \item PT-PX extracts actual switching activity ($\alpha$ toggle rates) per net, multiplies by capacitance and $V^2 f$ to compute accurate dynamic power.
+  \item The power report reflects only the simulated scenario. Worst-case power requires maximum-activity VCDs from stress tests.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q67 \moderate\ --- Clock Gating Efficiency \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item 10,000 FFs total; 7,000 gated with average activity 0.3. How much clock power is saved?
+  \item What is the minimum bit-width threshold for ICG and why?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Savings $= 7000\times(1-0.3) = 4900$ FF-clock-loads $= \mathbf{49\%}$ reduction in clock-related dynamic power.
+  \item Minimum 4--8 bits. Below this, the area and power of the ICG cell (latch + AND gate) exceeds the power saved. Command: \texttt{set\_clock\_gating\_style -minimum\_bitwidth 4}.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q68 \advanced\ --- SDF for GLS Power \hfill\textit{Conceptual}}
+Why does GLS power analysis use SDF back-annotation while RTL power analysis uses nominal estimates?
+\end{questionbox}
+
+\begin{answerbox}
+RTL power uses generic WLM and estimated activity --- ballpark accuracy only. SDF provides actual cell delays and parasitic RC from physical routing. With SDF in GLS, \textbf{glitch power} (false transitions in combinational logic before steady state) is captured accurately. RTL simulation has zero propagation delay and cannot model glitches.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q69 \moderate\ --- SAIF vs.\ VCD vs.\ FSDB \hfill\textit{Fill-in-the-Blank}}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{|l|X|X|X|}
+\hline
+\rowcolor{dkblue!15}
+\textbf{Format} & \textbf{Full Name} & \textbf{Content} & \textbf{Best Used For}\\
+\hline
+VCD & \underline{(1)} & \underline{(2)} & \underline{(3)}\\
+\hline
+SAIF & \underline{(4)} & \underline{(5)} & \underline{(6)}\\
+\hline
+FSDB & \underline{(7)} & \underline{(8)} & \underline{(9)}\\
+\hline
+\end{tabularx}
+\end{center}
+\end{questionbox}
+
+\begin{answerbox}
+(1) Value Change Dump; (2) Event-based waveform with timestamps; (3) PT-PX dynamic power, waveform debug;\\
+(4) Switching Activity Interchange Format; (5) Statistical toggle rates / duty cycles; (6) Averaged power analysis, early estimates;\\
+(7) Fast Signal DataBase; (8) Compressed binary waveform + switching activity; (9) Synopsys VCS / Verdi / PT-PX high-speed.
+\end{answerbox}
+
+% ============================================================
+\section{Formal Verification --- Logic Equivalence Checking (8 Questions)}
+\label{sec:formal}
+% ============================================================
+
+\begin{questionbox}{Q70 \moderate\ --- LEC vs.\ Simulation vs.\ STA \hfill\textit{Conceptual}}
+Compare the three verification methods:
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\rowcolor{dkblue!15}
+\textbf{Method} & \textbf{Covers} & \textbf{Cannot Catch}\\
+\hline
+Simulation & \underline{(1)} & \underline{(2)}\\
+\hline
+STA & \underline{(3)} & \underline{(4)}\\
+\hline
+LEC (Formality) & \underline{(5)} & \underline{(6)}\\
+\hline
+\end{tabular}
+\end{center}
+\end{questionbox}
+
+\begin{answerbox}
+(1) Functional behaviour for applied vectors; (2) Bugs in uncovered state space, timing.\\
+(3) All timing paths (100\% coverage); (4) Functional logic correctness, dynamic hazards.\\
+(5) Logical equivalence across 100\% state space; (6) Does not verify the design is ``correct'' --- only that two representations are identical.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q71 \advanced\ --- SVF (Setup Verification Format) --- Why It Is Critical \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Explain why FSM re-encoding breaks Formality without SVF.
+  \item Explain why register retiming breaks Formality without SVF.
+  \item How is the SVF generated and consumed?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item DC may change state encoding (e.g., Binary $\to$ One-Hot) --- register names, bit-widths, and state values all change. Formality cannot match retimed state bits to original RTL states without SVF guidance.
+  \item Retiming moves registers across combinational logic boundaries. A register at a module output in RTL may now be at a gate input in the netlist. Without SVF, Formality cannot find the matching compare point.
+  \item \textbf{Generated in DC:} \texttt{set\_svf <name>.svf} before \texttt{compile}; disable with \texttt{set\_svf -off}. \textbf{Consumed in fm\_shell:} \texttt{set\_svf <name>.svf} before \texttt{read\_verilog}.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q72 \advanced\ --- Compare Points \& Logic Cones \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What are Formality Compare Points? List the 3 types.
+  \item What happens if a compare point in Imp has no match in Ref?
+  \item What does an ``ABORTED'' compare point mean?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Points where Formality cuts the circuit into combinational cones: (1) Primary output ports; (2) D-inputs of all FFs and latches; (3) Inputs to black-box modules.
+  \item Listed in \texttt{unmatched\_points.rpt} --- may indicate unintended register removal by synthesis. Must be reviewed carefully.
+  \item The SAT solver ran out of memory or time. Equivalence is neither proven nor disproven --- requires debugging (cone simplification, additional SVF).
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q73 \moderate\ --- Handling Post-DFT Formal Verification \hfill\textit{Code Review}}
+Formality fails with hundreds of mismatches after DFT insertion. Write the TCL commands to configure Formality for post-DFT verification.
+\end{questionbox}
+
+\begin{answerbox}
+\begin{lstlisting}[style=tclstyle]
+set_dont_verify_points -type port Ref:/WORK/*/SI -quiet
+set_dont_verify_points -type port Imp:/WORK/*/SI -quiet
+set_dont_verify_points -type port Ref:/WORK/*/SO -quiet
+set_dont_verify_points -type port Imp:/WORK/*/SO -quiet
+set_constant Ref:/WORK/*/SE        0 -quiet
+set_constant Imp:/WORK/*/SE        0 -quiet
+set_constant Ref:/WORK/*/test_mode 0 -quiet
+set_constant Imp:/WORK/*/test_mode 0 -quiet
+\end{lstlisting}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q74 \advanced\ --- Formality vs.\ Simulation: Exhaustiveness \hfill\textit{Conceptual}}
+A design has 32 state registers. How many input combinations must simulation cover exhaustively vs.\ what Formality proves?
+\end{questionbox}
+
+\begin{answerbox}
+\textbf{Simulation:} $2^{32} \times$ (input combinations per state) $> 4\times10^9$ state combinations $\times$ input space --- computationally impossible.
+
+\textbf{Formality:} Uses BDD (Binary Decision Diagrams) and SAT solvers to reason about ALL possible states simultaneously --- proves equivalence across the entire state space in minutes without enumeration.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q75 \advanced\ --- Diagnosing Formal Failures \hfill\textit{Scenario}}
+
+\begin{lstlisting}[style=plaincode]
+FAILED: 3 compare points
+  - reg_out[7]: FAILED
+  - reg_out[6]: FAILED
+  - primary_output_STATUS: FAILED
+\end{lstlisting}
+
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What command do you run to investigate?
+  \item What does \texttt{analyze\_points -failing} show?
+  \item List 3 common root causes for Formality failures.
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item \texttt{diagnose; analyze\_points -failing}
+  \item Shows the counter-example input vector that distinguishes the two implementations.
+  \item (1) Missing SVF --- DC optimisation changed structure without guidance; (2) DFT test mode active (SE=1 during verification); (3) Stale netlist vs.\ new RTL --- synthesis not re-run after RTL changes.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q76 \moderate\ --- Ref vs.\ Imp Containers \hfill\textit{Scenario}}
+Verifying a post-PnR netlist against original RTL. Which design goes in \texttt{Ref} and \texttt{Imp}? What files must be loaded into each?
+\end{questionbox}
+
+\begin{answerbox}
+\textbf{Ref}: RTL (all source \texttt{.v} files via \texttt{read\_verilog}) + standard cell \texttt{.db} libraries.\\
+\textbf{Imp}: Post-PnR netlist (\texttt{top\_pnr.v}) + same \texttt{.db} libraries. SVF loaded globally before reading any design.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q77 \advanced\ --- Incremental LEC Runtime Optimisation \hfill\textit{Conceptual}}
+Formality takes 12 hours on a 500K-gate design. What 3 techniques improve runtime without sacrificing coverage?
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}
+  \item \textbf{Hierarchical verification} --- verify sub-blocks independently with defined boundaries, then integrate at the top.
+  \item \textbf{Restrict scope} with \texttt{set\_dont\_verify\_points} for known-stable blocks that have not changed.
+  \item \textbf{Comprehensive SVF} --- ensures Formality maps points efficiently without wasting time on unmatched topology exploration.
+\end{enumerate}
+\end{answerbox}
+
+% ============================================================
+\section{Design for Testability (DFT) \& Scan Insertion (10 Questions)}
+\label{sec:dft}
+% ============================================================
+
+\begin{questionbox}{Q78 \moderate\ --- Why DFT? \hfill\textit{Conceptual}}
+Distinguish between \textbf{functional verification} and \textbf{manufacturing test}. Why can a chip pass all RTL simulations but still fail manufacturing test?
+\end{questionbox}
+
+\begin{answerbox}
+Functional verification confirms logical behaviour matches the specification. Manufacturing test detects physical silicon defects (metal shorts, opens, via voids, gate oxide defects) from CMOS fabrication. A chip can be logically perfect but have a metal short from a lithography defect --- simulation cannot model physical process variation. ATPG generates patterns targeting physical fault models (stuck-at-0/1, transition faults).
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q79 \advanced\ --- Muxed-D Scan Flip-Flop Operation \hfill\textit{Conceptual + Code}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Describe the internal architecture of a Muxed-D SDFF.
+  \item State of \texttt{SE} during: normal operation, scan shift, capture?
+  \item Write a Verilog model of a Muxed-D SDFF.
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item 2:1 MUX $\to$ D-FF: Functional\_D (sel=0) and Scan\_In (sel=1), controlled by SE.
+  \item Normal: SE=0; Shift: SE=1; Capture: SE=0 (one clock pulse).
+\begin{lstlisting}[style=verilogstyle]
+module SDFF (input CLK, SE, D, SI, output reg Q);
+    always @(posedge CLK)
+        Q <= SE ? SI : D;
+endmodule
+\end{lstlisting}
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q80 \advanced\ --- DFT DRC: Clock Controllability (D1) \hfill\textit{Scenario}}
+An internal clock divider generates \texttt{div\_clk = clk/4}. During scan shift, the tester needs full-speed clock.
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Which DFT DRC rule fires?
+  \item Describe the fix.
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item \textbf{D1: Clock Controllability violation}.
+  \item Insert a \texttt{test\_mode}-controlled 2:1 MUX: \texttt{gated\_clk = test\_mode ? scan\_clk : div\_clk}. When \texttt{test\_mode=1}, \texttt{scan\_clk} bypasses the divider directly.
+\begin{lstlisting}[style=tclstyle]
+set_dft_signal -port scan_clk -type ScanClock \
+               -view existing_dft -timing {30 60}
+\end{lstlisting}
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q81 \advanced\ --- DFT DRC: Reset Controllability (D2) \hfill\textit{Scenario}}
+During scan shift, the asynchronous reset is active, corrupting the scan chain.
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Which DFT DRC rule fires?
+  \item Write the gate-level fix.
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item \textbf{D2: Reset Controllability violation}.
+  \item Gate reset with \texttt{test\_mode}: \texttt{actual\_rst\_n = rst\_n | test\_mode;} --- when \texttt{test\_mode=1}, reset is held inactive (logic 1 for active-low), allowing free scan shifting.
+\begin{lstlisting}[style=tclstyle]
+set_dft_signal -port scan_rst -type Reset \
+               -view existing_dft -active_state 0
+\end{lstlisting}
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q82 \moderate\ --- Scan Chain Architecture \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Why is \texttt{-clock\_mixing no\_mix} important?
+  \item What happens with mixed positive/negative-edge FFs in the same chain?
+  \item Why does DFT Compiler place negative-edge FFs first?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Mixing clocks from different domains causes hold violations during scan shift --- chain data races across domains on a single shift clock pulse.
+  \item On a rising shift edge, the pos-edge flop captures new data while the neg-edge flop still holds old data --- the old data may be overwritten before being shifted out.
+  \item Neg-edge FFs placed first capture SI on the rising edge and pass to pos-edge FFs on the falling edge --- avoiding data overlap.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q83 \advanced\ --- ATPG Coverage \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What is stuck-at fault coverage and why does it matter?
+  \item What is the production tape-out target?
+  \item What are ``untestable'' faults and how are they classified?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Percentage of all modelled stuck-at-0/stuck-at-1 faults detectable by ATPG patterns. Higher coverage = higher confidence that no defective chip escapes.
+  \item $\geq 98\%$ stuck-at coverage (often 99\%+).
+  \item Nodes that cannot be controlled or observed via any input/scan access. Classified as: \textbf{Redundant} (logically masked), \textbf{Unused} (dead code), \textbf{Tied} (constant by design).
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q84 \advanced\ --- Post-DFT Deliverables to TetraMAX \hfill\textit{Fill-in-the-Blank}}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\rowcolor{dkblue!15}
+\textbf{File} & \textbf{Purpose in ATPG}\\
+\hline
+\texttt{top\_dft.v} & \underline{(1)}\\
+\hline
+\texttt{top\_dft.spf} & \underline{(2)}\\
+\hline
+\texttt{top\_dft.sdc} & \underline{(3)}\\
+\hline
+\texttt{scan\_paths.rpt} & \underline{(4)}\\
+\hline
+\end{tabular}
+\end{center}
+\end{questionbox}
+
+\begin{answerbox}
+(1) Gate-level netlist --- TetraMAX uses structural connectivity to model faults and generate patterns.\\
+(2) STIL Protocol File --- defines scan chain connectivity (SI/SO, SE, scan clock waveforms).\\
+(3) Timing constraints --- ensures ATPG patterns respect scan clock periods and hold times.\\
+(4) Scan path report --- audit document verifying chain integrity before ATPG.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q85 \moderate\ --- \texttt{compile -scan} vs.\ \texttt{insert\_dft} \hfill\textit{Conceptual}}
+What is the functional difference between these two DC-DFT commands?
+\end{questionbox}
+
+\begin{answerbox}
+\textbf{\texttt{compile -scan}:} replaces standard D flip-flops with \emph{unstitched} scan flip-flops --- each SDFF has SI and SO pins floating. No chain connections made yet.
+
+\textbf{\texttt{insert\_dft}:} physically stitches unconnected scan ports into ordered chains:
+\[ \text{SI} \to \text{SDFF}_1 \to \text{SDFF}_2 \to \ldots \to \text{SDFF}_n \to \text{SO} \]
+After \texttt{insert\_dft}, a complete, functional scan path exists.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q86 \advanced\ --- DFT's Impact on Formal Verification \hfill\textit{Conceptual}}
+After DFT insertion, Formality between pre-DFT RTL and post-DFT netlist fails. Name the 5 specific changes DFT introduces that Formality must account for.
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}
+  \item \textbf{New ports} added: SI, SO, SE, \texttt{scan\_clk}, \texttt{scan\_rst}, \texttt{test\_mode} --- absent in RTL.
+  \item \textbf{MUX at every FF D-input} --- changes logic topology throughout.
+  \item \textbf{Scan chain routing} changes FF interconnect.
+  \item \textbf{test\_mode MUX bypasses} clock dividers --- creates alternative clock paths.
+  \item \textbf{Reset gating} with \texttt{test\_mode}.
+  Fix: \texttt{set\_dont\_verify\_points} on SI/SO; \texttt{set\_constant SE=0, test\_mode=0} to force functional mode.
+\end{enumerate}
+\end{answerbox}
+
+% ============================================================
+\section{Gate-Level Simulation (GLS) \& Back-Annotation (5 Questions)}
+\label{sec:gls}
+% ============================================================
+
+\begin{questionbox}{Q87 \moderate\ --- Why GLS After STA? \hfill\textit{Conceptual}}
+STA proves all timing paths clean. LEC proves netlist matches RTL. List at least 4 additional failures that GLS can catch.
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}
+  \item \textbf{Async reset recovery/removal violations} --- real sequential impact on downstream logic after metastable reset de-assertion.
+  \item \textbf{CDC functional verification} --- validates handshake protocols and FIFO behaviour with real delays.
+  \item \textbf{Glitch detection} --- combinational hazards from unequal path delays not visible in zero-delay RTL simulation.
+  \item \textbf{Multi-cycle / false path validation} --- confirms logic completes in allocated cycles under real delays.
+  \item \textbf{X-state propagation} --- ensures all FFs initialise correctly on reset.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q88 \advanced\ --- SDF Annotation Modes \hfill\textit{Scenario}}
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\rowcolor{dkblue!15}
+\textbf{Mode} & \textbf{vsim Flag} & \textbf{Purpose} & \textbf{PVT Corner}\\
+\hline
+Zero-delay & \texttt{+notimingchecks} & \underline{(1)} & \underline{(2)}\\
+\hline
+SDF Max & \texttt{-sdfmax} & \underline{(3)} & \underline{(4)}\\
+\hline
+SDF Min & \texttt{-sdfmin} & \underline{(5)} & \underline{(6)}\\
+\hline
+\end{tabular}
+\end{center}
+\end{questionbox}
+
+\begin{answerbox}
+(1) Pure functional verification --- confirms logic correct without timing; (2) N/A (no delays);\\
+(3) Setup-time worst-case: maximum delays show worst-case data arrival; (4) SS 1.08V $125^\circ\text{C}$;\\
+(5) Hold-time: minimum delays reveal fastest data propagation and hold races; (6) FF 1.32V $-40^\circ\text{C}$.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q89 \advanced\ --- X-Propagation Problem \hfill\textit{Scenario}}
+In GLS with SDF max, 80\% of outputs show \texttt{XXXX} from time 0 and never resolve.
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Most likely cause?
+  \item Diagnostic approach?
+  \item Fix?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item FFs without asynchronous reset power up as \texttt{X} in gate-level models. Any gate receiving X propagates X to output --- cascading X through the entire design.
+  \item Check if async reset pulse is applied at $t=0$ in the testbench; verify SDF load order; use \texttt{+acc} to inspect individual FF states.
+  \item Apply a clean reset pulse for $\geq 2$ clock cycles. FFs without async reset must be force-initialised via \texttt{\$deposit} or simulator \texttt{force}.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q90 \advanced\ --- Notifier Register Mechanism \hfill\textit{Conceptual}}
+GLS runs correctly for $10\,\mu\text{s}$ then starts producing X on several outputs.
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What is a timing notifier register?
+  \item How does it relate to the observed X?
+  \item What are the two strategies to handle this?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item A Verilog \texttt{\$setup}/\texttt{\$hold} task inside a \texttt{specify} block. When a timing violation is detected, it writes X to a notifier register, forcing the FF Q to X.
+  \item A legitimate setup or hold violation (often near mode transitions) triggers the notifier and propagates X downstream.
+  \item (1) \textbf{Debug mode}: use \texttt{+timing\_checks} and timing reports to find the violating path. (2) \textbf{Suppress during initialisation}: use \texttt{+notimingchecks} or \texttt{+no\_notifier} only during reset, then re-enable.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q91 \moderate\ --- PrimeTime-PX Power Analysis Flow \hfill\textit{Conceptual}}
+Describe the 5-step PrimeTime-PX flow for dynamic power analysis after GLS.
+\end{questionbox}
+
+\begin{answerbox}
+\begin{lstlisting}[style=tclstyle]
+# Step 1: Enable power mode
+set_app_var power_enable_analysis true
+set_app_var power_analysis_mode   time_based
+
+# Step 2: Read gate netlist
+read_verilog "results/top_netlist.v"
+current_design top
+link_design
+
+# Step 3: Read timing
+read_sdc "results/top.sdc"
+read_sdf "results/top.sdf"
+
+# Step 4: Annotate switching activity
+read_vcd -strip_path tb/dut "sim/VCD/design.vcd"
+
+# Step 5: Calculate and report
+update_power
+report_power           > "pt_reports/power_summary.rpt"
+report_power -hierarchy > "pt_reports/power_hierarchy.rpt"
+\end{lstlisting}
+\end{answerbox}
+
+% ============================================================
+\section{Physical Design --- Place \& Route (8 Questions)}
+\label{sec:pnr}
+% ============================================================
+
+\begin{questionbox}{Q92 \moderate\ --- PnR Flow Stages \hfill\textit{Conceptual}}
+Name all 7 major stages of the physical design flow in order with a one-sentence description of each.
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}
+  \item \textbf{Design Import \& MMMC Setup} --- load netlist, LEF, lib, define multi-corner views.
+  \item \textbf{Floorplanning \& Power Planning} --- define die/core area, insert VDD/VSS power rings and stripes.
+  \item \textbf{Standard Cell Placement} --- legally place all cells minimising wirelength and congestion.
+  \item \textbf{Clock Tree Synthesis (CTS)} --- build a balanced clock buffer tree minimising skew and insertion delay.
+  \item \textbf{Global \& Detailed Routing} --- NanoRoute assigns metal tracks and vias to all nets.
+  \item \textbf{Chip Finishing} --- filler cells, antenna fix, DRC/LVS verification.
+  \item \textbf{Signoff Export} --- GDSII, SPEF, post-PnR netlist, SDF.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q93 \advanced\ --- Floorplan Utilisation \& Aspect Ratio \hfill\textit{Mathematical}}
+Total cell area: $15{,}000\,\mu\text{m}^2$, die: $200\,\mu\text{m}$ $\times$ $150\,\mu\text{m}$, core margins: $5\,\mu\text{m}$ all sides.
+Calculate: (1) Core area, (2) Utilisation, (3) Aspect ratio, (4) Is this reasonable?
+\end{questionbox}
+
+\begin{answerbox}
+\begin{align*}
+\text{Core area} &= (200-10)\times(150-10) = 190\times140 = \mathbf{26{,}600\;\mu m^2}\\
+\text{Utilisation} &= 15{,}000/26{,}600 = \mathbf{56.4\%}\\
+\text{Aspect ratio} &= 140/190 = \mathbf{0.74}
+\end{align*}
+\textbf{Reasonable:} 50--70\% utilisation is typical. Below 50\% wastes area; above 80\% causes routing congestion and CTS difficulties.
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q94 \advanced\ --- CTS Targets \hfill\textit{Conceptual + Scenario}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Define clock skew, insertion delay, and transition time in the context of CTS.
+  \item After CTS, skew = 450 ps but target is $\leq 200$ ps. Give 3 reduction approaches.
+  \item Why must hold violations be re-checked after CTS?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item \textbf{Skew}: max clock arrival time difference between any two FFs. \textbf{Insertion delay}: time for clock to travel from source pin to FF clock pins. \textbf{Transition (slew)}: rise/fall time of clock waveform at FF pins.
+  \item (1) Restructure clock tree topology to a more balanced H-tree. (2) Add buffering on late-arriving branches. (3) Upsize clock buffers on high-fanout nodes.
+  \item Before CTS, clocks are ideal (zero delay). After CTS, real insertion delays exist --- paths with marginal hold during synthesis may now violate because the capture FF receives its clock later.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q95 \advanced\ --- Power Delivery Network (PDN) \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Describe the 3-tier power delivery hierarchy in an ASIC.
+  \item What is IR drop and why is it dangerous?
+  \item What is electromigration and how does it constrain power stripe width?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item (1) \textbf{Power Rings} --- thick metal rings around core carrying VDD/VSS from IO pads. (2) \textbf{Power Stripes} --- wide upper-layer (M5/M6) lines distributing current across the core. (3) \textbf{Standard Cell Rails} --- M1 horizontal lines in each cell row.
+  \item IR drop $= V = I \times R$. Excessive drop lowers $V_{DD}$ at cell locations $\Rightarrow$ slower cells $\Rightarrow$ setup violations and functional failure.
+  \item Electromigration: electron wind physically displaces metal atoms over time, creating voids or shorts. Each layer has a maximum current density limit ($\text{A}/\mu\text{m}$); exceeding it causes reliability failure. Wider stripes reduce current density below the limit.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q96 \advanced\ --- Filler Cells vs.\ Tie Cells \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Why are filler cells needed and what do they contain?
+  \item Why can't unused gate inputs connect directly to VDD or VSS?
+  \item What cells replace direct VDD/VSS connections?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Empty row gaps break continuous N-well/P-substrate implant layers $\Rightarrow$ DRC violations. Filler cells contain no active transistors but maintain implant continuity.
+  \item Direct connections are subject to ESD events during PCB handling --- the voltage spike can rupture thin gate oxides ($<5$ nm in modern nodes).
+  \item \textbf{Tie-Hi (TIEHIM)} and \textbf{Tie-Lo (TIELOM)} cells: contain a protected circuit with internal ESD clamps that safely output logic 1 or 0.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q97 \moderate\ --- GDSII Tape-Out Process \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What does ``tape-out'' mean in the IC design flow?
+  \item What is GDSII and what does it contain?
+  \item What are the two final foundry verification steps after GDSII generation?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item Tape-out is the final delivery of the chip design to the semiconductor foundry. No further RTL or physical changes can be made. Historically referred to the magnetic tape used to carry design data.
+  \item GDSII (Graphic Data System II) is a binary stream format containing all physical mask geometries --- every polygon, via, text label, and layer assignment needed to expose photolithography masks.
+  \item (1) \textbf{DRC} --- verifies all geometries meet foundry minimum spacing, width, and density rules. (2) \textbf{LVS} --- verifies the extracted layout netlist matches the gate-level schematic connectivity.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q98 \advanced\ --- Antenna Violation \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What causes the antenna effect during fabrication?
+  \item What is the danger to the circuit?
+  \item Name two methods to fix antenna violations.
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item During plasma etching, long metal routes accumulate charge from the ionised gas. When charge is large enough, it drives current through connected gate oxides before the gate's source/drain provides a discharge path.
+  \item The charge can rupture the thin gate oxide (2--5 nm) permanently, causing transistor failure or $V_{th}$ shift --- parametric yield loss.
+  \item (1) \textbf{Antenna diode insertion} --- diode-connected transistor at gate input discharges charge through substrate. (2) \textbf{Metal jumper} --- break the long route and re-route through a higher layer with an intervening via (resets the antenna ratio).
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q99 \advanced\ --- MMMC Setup in PnR \hfill\textit{Conceptual}}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What does MMMC (Multi-Mode Multi-Corner) mean in physical design?
+  \item Why are both \texttt{max\_library} (SS) and \texttt{min\_library} (FF) needed simultaneously?
+  \item How does Encounter use MMMC during post-CTS timing optimisation?
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item MMMC simultaneously analyses the design across multiple operating modes (functional, test, low-power) and multiple PVT corners (SS $125^\circ\text{C}$ for setup, FF $-40^\circ\text{C}$ for hold) in a single PnR session.
+  \item Setup optimisation needs worst-case SS timing; hold needs best-case FF. Without both, fixing setup may introduce hold violations --- MMMC prevents oscillating fixes.
+  \item After CTS, Encounter runs all corners simultaneously. Buffers inserted for hold at FF corner are verified not to create setup issues at SS corner, and vice versa.
+\end{enumerate}
+\end{answerbox}
+
+% ----------------------------------------------------------
+\begin{questionbox}{Q100 \advanced\ --- Full ASIC Flow Integration \hfill\textit{System-Level Scenario}}
+A chip returns from the foundry with 30\% failures producing wrong outputs only at $125^\circ\text{C}$ and 500 MHz.
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item What type of failure is most likely?
+  \item Which ASIC flow steps may have failed to catch this?
+  \item Propose a complete corrective action plan for the next tape-out.
+\end{enumerate}
+\end{questionbox}
+
+\begin{answerbox}
+\begin{enumerate}[label=\textbf{\alph*)}]
+  \item \textbf{Setup timing violation} at the Slow-Slow process corner (SS + $125^\circ\text{C}$) --- cells at their slowest, paths marginally passing at typical conditions violate at worst case.
+  \item Possible flow gaps:
+    \begin{itemize}
+      \item STA run only at TT corner, not SS $125^\circ\text{C}$.
+      \item WLM inaccurate pre-layout; actual routing RC worse.
+      \item OCV derating not applied.
+      \item SPEF back-annotation from PnR not used for final STA.
+      \item Clock uncertainty margin insufficient.
+    \end{itemize}
+  \item Corrective plan:
+    \begin{enumerate}
+      \item Re-run STA at SS 1.08V $125^\circ\text{C}$ with SPEF back-annotation.
+      \item Enable OCV derating ($\pm5\%$ or foundry AOCV tables).
+      \item Increase clock uncertainty margin to cover measured jitter + skew.
+      \item Fix critical paths --- upsize cells or increase pipeline depth.
+      \item Add timing margin guard of $+200$--$500$ ps to all critical endpoints before tape-out.
+    \end{enumerate}
+\end{enumerate}
+\end{answerbox}
+
+% ============================================================
+\section*{Summary Statistics}
+\addcontentsline{toc}{section}{Summary Statistics}
+% ============================================================
+
+\begin{center}
+\begin{longtable}{|c|l|c|c|}
+\hline
+\rowcolor{dkblue}
+\textcolor{white}{\textbf{Section}} &
+\textcolor{white}{\textbf{Topic}} &
+\textcolor{white}{\textbf{Questions}} &
+\textcolor{white}{\textbf{Difficulty}}\\
+\hline\endhead
+1  & Verilog HDL \& Digital Architecture & 12 & 8 Adv / 4 Mod\\
+\hline
+2  & TCL Scripting                        &  8 & 5 Adv / 3 Mod\\
+\hline
+3  & SpyGlass Lint \& CDC                 & 10 & 7 Adv / 3 Mod\\
+\hline
+4  & ASIC Synthesis (DC)                  & 12 & 9 Adv / 3 Mod\\
+\hline
+5  & Static Timing Analysis (PrimeTime)   & 12 & 9 Adv / 3 Mod\\
+\hline
+6  & CDC Design                           & 10 & 7 Adv / 3 Mod\\
+\hline
+7  & Power Analysis                       &  5 & 3 Adv / 2 Mod\\
+\hline
+8  & Formal Verification (Formality)      &  8 & 6 Adv / 2 Mod\\
+\hline
+9  & DFT \& Scan Insertion                & 10 & 7 Adv / 3 Mod\\
+\hline
+10 & Gate-Level Simulation                &  5 & 4 Adv / 1 Mod\\
+\hline
+11 & Physical Design (PnR)                &  8 & 6 Adv / 2 Mod\\
+\hline
+\rowcolor{dkblue!20}
+\textbf{Total} & & \textbf{100} & \textbf{71 Adv / 29 Mod}\\
+\hline
+\end{longtable}
+\end{center}
+
+% ============================================================
+\section*{Interview Tips \& Formula Reference}
+\addcontentsline{toc}{section}{Interview Tips \& Formula Reference}
+% ============================================================
+
+\begin{tipbox}
+\textbf{For behavioural interviews:} Always connect answers to diploma project experience --- mention SpyGlass, Design Compiler, PrimeTime, Formality, or Cadence Encounter by name.
+
+\textbf{Key role focus areas:}
+\begin{itemize}[noitemsep]
+  \item \textbf{RTL / Digital Design:} Q1--Q12, Q55--Q64 (CDC always asked).
+  \item \textbf{Synthesis / STA:} Q31--Q54 heavily tested.
+  \item \textbf{DFT Specialist:} Q78--Q86 are critical.
+  \item \textbf{Physical Design:} Q92--Q100 are the foundation.
+  \item \textbf{Verification:} Q70--Q77 (Formal), Q87--Q91 (GLS).
+\end{itemize}
+\end{tipbox}
+
+\vspace{1em}
+
+\begin{notebox}
+\textbf{Formula Cheat Sheet --- Memorise These:}
+
+\begin{align}
+\text{Setup Slack} &= (T_{\text{period}} + T_{\text{capture,clk}} - T_{\text{setup}} - T_{\text{unc}})
+                    - (T_{\text{launch,clk}} + T_{\text{cq,max}} + T_{\text{comb,max}})\\[4pt]
+\text{Hold Slack}  &= (T_{\text{launch,clk}} + T_{\text{cq,min}} + T_{\text{comb,min}})
+                    - (T_{\text{capture,clk}} + T_{\text{hold}} + T_{\text{unc,hold}})\\[4pt]
+F_{\max}           &= \frac{1}{T_{\text{cq,max}} + T_{\text{comb,max}} + T_{\text{setup}} + T_{\text{unc}} - T_{\text{skew}}}\\[4pt]
+\text{Gray Code}   &= \text{Binary} \oplus (\text{Binary} \gg 1)\\[4pt]
+P_{\text{switching}}      &= \frac{1}{2}\,C\,V_{DD}^2\,f\,\alpha\\[4pt]
+\text{MTBF}        &= \frac{e^{T_{\text{res}}/\tau}}{T_0 \cdot f_{\text{clk}} \cdot f_{\text{data}}}
+\end{align}
+\end{notebox}
+
+\end{document}

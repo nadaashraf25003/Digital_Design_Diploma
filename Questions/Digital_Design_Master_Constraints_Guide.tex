@@ -1,0 +1,991 @@
+% ==============================================================================
+%  Digital Design Diploma --- Master Hardware & Timing Constraints Guide
+%  Complete Reference for SDC, UPF, SGDC, DFT, PnR, GLS & FPGA Constraints
+%  Target Compilers: pdflatex, xelatex, lualatex (Overleaf / TeXLive / MikTeX)
+% ==============================================================================
+\documentclass[11pt,a4paper]{article}
+
+% -- Encoding & Typography -----------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% -- Page Geometry -------------------------------------------------------------
+\usepackage[top=2.0cm, bottom=2.2cm, left=2.2cm, right=2.2cm, headheight=22pt]{geometry}
+
+% -- Simplified Minimalist Color Palette ---------------------------------------
+\usepackage[dvipsnames,table]{xcolor}
+\definecolor{primary}{HTML}{1E3A8A}      % Deep Classic Navy
+\definecolor{darktext}{HTML}{0F172A}     % Deep Charcoal
+\definecolor{mutedgray}{HTML}{64748B}    % Slate Gray
+\definecolor{bordercol}{HTML}{CBD5E1}    % Subtle Border
+\definecolor{boxbg}{HTML}{F8FAFC}        % Neutral Off-White Background
+\definecolor{accentbg}{HTML}{F1F5F9}     % Subtle Card Background
+
+% -- Mathematics ---------------------------------------------------------------
+\usepackage{amsmath,amssymb,mathtools}
+
+% -- Tables --------------------------------------------------------------------
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multirow}
+\renewcommand{\arraystretch}{1.3}
+
+% -- Lists & Spacing -----------------------------------------------------------
+\usepackage{enumitem}
+\usepackage{parskip}
+\setlength{\parskip}{4.5pt}
+
+% -- Code Listings (Clean & Unified Minimalist Style) --------------------------
+\usepackage{listings}
+
+\lstdefinestyle{sdcstyle}{
+  language=tcl,
+  backgroundcolor=\color{boxbg},
+  basicstyle=\ttfamily\footnotesize\color{darktext},
+  keywordstyle=\bfseries\color{primary},
+  commentstyle=\itshape\color{mutedgray},
+  stringstyle=\color{darktext},
+  numbers=none,
+  frame=single,
+  rulecolor=\color{bordercol},
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=2,
+  xleftmargin=0.8em,
+  framexleftmargin=0.8em,
+  morekeywords={create_clock,create_generated_clock,set_clock_uncertainty,
+                set_clock_latency,set_clock_transition,set_propagated_clock,
+                set_clock_sense,set_input_delay,set_output_delay,
+                set_driving_cell,set_drive,set_input_transition,set_load,
+                set_false_path,set_multicycle_path,set_max_delay,set_min_delay,
+                set_clock_groups,set_case_analysis,set_disable_timing,
+                set_data_check,set_operating_conditions,set_wire_load_model,
+                set_wire_load_mode,set_max_capacitance,set_max_transition,
+                set_max_fanout,set_min_capacitance,set_max_area,group_path,
+                set_dont_touch,set_dont_touch_network,set_fix_multiple_port_nets,
+                set_clock_gating_style,set_boundary_optimization,set_timing_derate,
+                get_ports,get_clocks,get_pins,get_cells,get_nets,all_inputs,all_outputs,
+                current_design,link,compile_ultra,check_timing,report_timing}
+}
+
+\lstdefinestyle{upfstyle}{
+  language=tcl,
+  backgroundcolor=\color{boxbg},
+  basicstyle=\ttfamily\footnotesize\color{darktext},
+  keywordstyle=\bfseries\color{primary},
+  commentstyle=\itshape\color{mutedgray},
+  stringstyle=\color{darktext},
+  numbers=none,
+  frame=single,
+  rulecolor=\color{bordercol},
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=2,
+  xleftmargin=0.8em,
+  framexleftmargin=0.8em,
+  morekeywords={create_power_domain,create_supply_port,create_supply_net,
+                connect_supply_net,set_domain_supply_net,create_power_switch,
+                set_isolation,set_isolation_control,set_level_shifter,
+                set_retention,set_retention_control,create_pst,add_pst_state}
+}
+
+\lstdefinestyle{sgdcstyle}{
+  language=tcl,
+  backgroundcolor=\color{boxbg},
+  basicstyle=\ttfamily\footnotesize\color{darktext},
+  keywordstyle=\bfseries\color{primary},
+  commentstyle=\itshape\color{mutedgray},
+  stringstyle=\color{darktext},
+  numbers=none,
+  frame=single,
+  rulecolor=\color{bordercol},
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=2,
+  xleftmargin=0.8em,
+  framexleftmargin=0.8em,
+  morekeywords={current_design,clock,reset,quasi_static,abstract_port,
+                cdc_attribute,sync_cell,fifo,waive,set_case_analysis}
+}
+
+\lstdefinestyle{xdcstyle}{
+  language=tcl,
+  backgroundcolor=\color{boxbg},
+  basicstyle=\ttfamily\footnotesize\color{darktext},
+  keywordstyle=\bfseries\color{primary},
+  commentstyle=\itshape\color{mutedgray},
+  stringstyle=\color{darktext},
+  numbers=none,
+  frame=single,
+  rulecolor=\color{bordercol},
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=2,
+  xleftmargin=0.8em,
+  framexleftmargin=0.8em,
+  morekeywords={set_property,PACKAGE_PIN,IOSTANDARD,DRIVE,SLEW,
+                create_clock,set_input_delay,set_output_delay,
+                set_clock_groups,set_false_path,set_max_delay}
+}
+
+% -- Minimalist Box Environments (mdframed default engine: 0.5s compile time) --
+\usepackage[framemethod=default]{mdframed}
+
+% Command Box: Clean Left-Border Minimalist Card
+\mdfdefinestyle{cmdstyle}{
+  backgroundcolor=boxbg,
+  linecolor=primary,
+  linewidth=2.0pt,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  innertopmargin=6pt,
+  innerbottommargin=6pt,
+  innerleftmargin=9pt,
+  innerrightmargin=8pt,
+  skipabove=8pt,
+  skipbelow=5pt
+}
+
+% Physical Rationale Box: Subtle Neutral Card
+\mdfdefinestyle{physstyle}{
+  backgroundcolor=accentbg,
+  linecolor=mutedgray,
+  linewidth=1.5pt,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  innerleftmargin=9pt,
+  innerrightmargin=8pt,
+  skipabove=4pt,
+  skipbelow=7pt
+}
+
+% Formula Box: Simple Bordered Box
+\mdfdefinestyle{formstyle}{
+  backgroundcolor=boxbg,
+  linecolor=bordercol,
+  linewidth=1.0pt,
+  roundcorner=2pt,
+  innertopmargin=6pt,
+  innerbottommargin=6pt,
+  innerleftmargin=8pt,
+  innerrightmargin=8pt,
+  skipabove=6pt,
+  skipbelow=6pt
+}
+
+% Environment Definitions
+\newenvironment{cmdbox}[2]{%
+  \begin{mdframed}[style=cmdstyle]%
+  {\bfseries\sffamily\color{primary}#1 \hfill \footnotesize\color{mutedgray}[#2]}\par\vspace{3pt}%
+}{%
+  \end{mdframed}%
+}
+
+\newenvironment{physbox}{%
+  \begin{mdframed}[style=physstyle]%
+  {\bfseries\sffamily\color{darktext}\small Physical \& Timing Rationale}\par\vspace{2pt}\small%
+}{%
+  \end{mdframed}%
+}
+
+\newenvironment{formulabox}[1]{%
+  \begin{mdframed}[style=formstyle]%
+  {\bfseries\sffamily\color{primary}\small #1}\par\vspace{2pt}\small%
+}{%
+  \end{mdframed}%
+}
+
+% -- Headers & Footers ---------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{darktext}\textbf{Digital Design Diploma} --- Master Constraints Guide}
+\fancyhead[R]{\small\sffamily\color{mutedgray}\leftmark}
+\fancyfoot[C]{\small\sffamily\color{mutedgray}\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{bordercol}\leaders\hrule height \headrulewidth\hfill}}
+
+% -- Section Styling -----------------------------------------------------------
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\Large\bfseries\sffamily\color{primary}}
+  {\thesection}
+  {1em}
+  {}
+  [\vspace{2pt}\color{primary}\hrule height 1.2pt]
+\titlespacing{\section}{0pt}{14pt}{8pt}
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\sffamily\color{darktext}}
+  {\thesubsection}
+  {0.8em}
+  {}
+\titlespacing{\subsection}{0pt}{10pt}{4pt}
+
+% -- Hyperlinks ----------------------------------------------------------------
+\usepackage[colorlinks=true, linkcolor=primary,
+            urlcolor=primary, citecolor=primary,
+            bookmarks=true, bookmarksopen=true]{hyperref}
+
+% ==============================================================================
+\begin{document}
+
+% -- Title Page (Clean & Minimalist) -------------------------------------------
+\begin{titlepage}
+  \centering
+  \vspace*{1.0cm}
+  {\Huge\bfseries\sffamily\color{primary} Master Hardware \& Timing Constraints Guide\par}
+  \vspace{0.4cm}
+  {\Large\sffamily\color{mutedgray} SDC $\cdot$ UPF (IEEE 1801) $\cdot$ SpyGlass SGDC $\cdot$ DFT Protocols $\cdot$ PnR Rules $\cdot$ FPGA XDC/QSF\par}
+  \vspace{0.8cm}
+  
+  \begin{mdframed}[style=cmdstyle]
+    \centering\small\sffamily
+    \textbf{Curriculum Scope:} Complete compilation of every hardware design constraint, timing assertion, environmental rule, power intent command, CDC directive, and physical boundary rule taught across the entire Digital Design Diploma.\\[4pt]
+    \textbf{Tools Covered:} Synopsys Design Compiler (DC), PrimeTime (PT), Formality (LEC), TetraMAX (DFT), SpyGlass Lint/CDC, Cadence Innovus / Synopsys ICC2 (PnR), ModelSim/VCS (GLS), AMD/Xilinx Vivado (XDC), Intel Quartus Prime (SDC/QSF).
+  \end{mdframed}
+
+  \vspace{0.8cm}
+
+  \begin{table}[h!]
+    \centering\small
+    \begin{tabular}{p{3.8cm} p{3.2cm} p{7.5cm}}
+      \toprule
+      \textbf{Constraint Domain} & \textbf{Format / Standard} & \textbf{Primary Purpose \& Scope} \\
+      \midrule
+      \textbf{Timing \& Optimization} & Synopsys SDC (TCL) & Clocks, generated clocks, I/O delays, DRVs, exceptions \\
+      \textbf{Power Intent} & IEEE 1801 UPF / CPF & Power domains, power switches, level shifters, isolation, PST \\
+      \textbf{CDC \& Lint Rules} & SpyGlass SGDC & Domain tags, asynchronous resets, quasi-static buses, waivers \\
+      \textbf{Test \& Scan (DFT)} & SDC / SPF / STIL & Scan clocks, scan enable, chain configs, autofix rules \\
+      \textbf{Signoff STA} & PrimeTime SDC / TCL & OCV derates, AOCV/POCV tables, CPPR, SI crosstalk checks \\
+      \textbf{Physical Design (PnR)} & DEF / Tcl / Tech LEF & Core utilization, halos, CTS options, NDR 2W2S, antenna rules \\
+      \textbf{FPGA Constraints} & Xilinx XDC / Intel QSF & Physical pin mapping, I/O standards, BUFG clock placement \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \vfill
+  {\small\sffamily\color{mutedgray} Professional Reference for Digital ASIC \& FPGA Engineering\par}
+  \vspace*{0.5cm}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+% ==============================================================================
+\section{Constraint Fundamentals \& Timing Path Taxonomy}
+% ==============================================================================
+
+In digital ASIC and FPGA design, \textbf{Constraints} represent the mathematical contract between the hardware designer, the EDA synthesis engine, the Static Timing Analysis (STA) signoff tool, and the Physical Place-and-Route (PnR) router.
+
+\begin{formulabox}{The 4 Fundamental Timing Paths}
+Every synchronous digital design is partitioned into four fundamental timing path categories:
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{Input-to-Register (In-to-Reg):} Constrained by \texttt{set\_input\_delay} relative to an input clock.
+  \item \textbf{Register-to-Register (Reg-to-Reg):} Constrained by \texttt{create\_clock} and \texttt{create\_generated\_clock}.
+  \item \textbf{Register-to-Output (Reg-to-Out):} Constrained by \texttt{set\_output\_delay} relative to an output clock.
+  \item \textbf{Input-to-Output (In-to-Out Feedthrough):} Constrained by both \texttt{set\_input\_delay} and \texttt{set\_output\_delay} (or \texttt{set\_max\_delay}).
+\end{enumerate}
+\end{formulabox}
+
+\begin{table}[h!]
+  \centering\small
+  \begin{tabular}{p{3.5cm} p{5.0cm} p{5.5cm}}
+    \toprule
+    \textbf{Path Category} & \textbf{Startpoint} & \textbf{Endpoint} \\
+    \midrule
+    \textbf{Reg-to-Reg} & Clock pin of Launch Flip-Flop & Data input (D) pin of Capture Flip-Flop \\
+    \textbf{In-to-Reg} & Primary Input Port of chip & Data input (D) pin of Capture Flip-Flop \\
+    \textbf{Reg-to-Out} & Clock pin of Launch Flip-Flop & Primary Output Port of chip \\
+    \textbf{In-to-Out} & Primary Input Port of chip & Primary Output Port of chip \\
+    \bottomrule
+  \end{tabular}
+  \caption{Static Timing Analysis Path Definitions}
+\end{table}
+
+% ==============================================================================
+\section{Clock Definition \& Clock Tree Constraints (SDC)}
+% ==============================================================================
+
+\subsection{create\_clock}
+\begin{cmdbox}{create\_clock}{Primary Clock Specification}
+\textbf{Syntax:}
+\begin{lstlisting}[style=sdcstyle]
+create_clock -name <clk_name> -period <period_val> 
+             [-waveform {<rise_time> <fall_time>}] 
+             [<port_or_pin_list>]
+\end{lstlisting}
+\textbf{Examples:}
+\begin{lstlisting}[style=sdcstyle]
+# 100 MHz Master System Clock (50% duty cycle: rise=0ns, fall=5ns)
+create_clock -name SYS_CLK -period 10.0 [get_ports clk_in]
+
+# 50 MHz Clock with asymmetric duty cycle (rise=0ns, fall=6ns)
+create_clock -name ASYM_CLK -period 20.0 -waveform {0 6.0} [get_ports clk_asym]
+
+# Virtual Clock (Reference clock for I/O with no physical port)
+create_clock -name VCLK_IN  -period 10.0
+create_clock -name VCLK_OUT -period 10.0
+\end{lstlisting}
+\end{cmdbox}
+
+\begin{physbox}
+\textbf{Physical Rationale:} Clocks are the fundamental heartbeat of synchronous circuits. Defining a clock sets the target clock period $T_{clk}$ for setup checks and establishes the time zero reference for all downstream register-to-register paths. If no port/pin is specified, the clock is treated as a \textbf{Virtual Clock}, used strictly as a timing reference for input and output board-level delays.
+\end{physbox}
+
+\subsection{create\_generated\_clock}
+\begin{cmdbox}{create\_generated\_clock}{Divided / Multiplied / Inverted Clocks}
+\textbf{Syntax:}
+\begin{lstlisting}[style=sdcstyle]
+create_generated_clock -name <gen_clk_name> 
+                       -source <master_pin_or_port> 
+                       [-divide_by <int>] [-multiply_by <int>] 
+                       [-invert] [-duty_cycle <percent>]
+                       [-edges {<edge1> <edge2> <edge3>}]
+                       [-edge_shift {<shift1> <shift2> <shift3>}]
+                       [-combinational]
+                       <target_pin_or_port>
+\end{lstlisting}
+\textbf{Examples:}
+\begin{lstlisting}[style=sdcstyle]
+# Clock Divided by 2 on Flip-Flop Q pin
+create_generated_clock -name CLK_DIV2 -source [get_ports clk] \
+                       -divide_by 2 [get_pins u_div2/q_reg/Q]
+
+# Clock Divided by 4 with Phase Inversion
+create_generated_clock -name CLK_DIV4_INV -source [get_ports clk] \
+                       -divide_by 4 -invert [get_pins u_div4/q_reg/Q]
+
+# Master UART TX Clock derived from Clock Divider MUX output
+create_generated_clock -name TX_CLK -source [get_ports clk] \
+                       -divide_by 8 [get_pins u_clkdiv_mux/clk_out]
+
+# Pure Combinational Gated Clock (Zero frequency alteration)
+create_generated_clock -name GATED_ALU_CLK -source [get_ports clk] \
+                       -combinational [get_pins u_icg/CLK_OUT]
+\end{lstlisting}
+\end{cmdbox}
+
+\begin{physbox}
+\textbf{Physical Rationale:} Generated clocks maintain phase, latency, and jitter relationships with their master source. Defining them using \texttt{create\_clock} instead of \texttt{create\_generated\_clock} would erase source latency tracking and break clock tree balancing in CTS and STA.
+\end{physbox}
+
+\subsection{set\_clock\_uncertainty}
+\begin{cmdbox}{set\_clock\_uncertainty}{Jitter, Skew, and Timing Margins}
+\textbf{Syntax:}
+\begin{lstlisting}[style=sdcstyle]
+set_clock_uncertainty [-setup | -hold] <uncertainty_val> 
+                      [-from <clk1>] [-to <clk2>] 
+                      [<clock_list>]
+\end{lstlisting}
+\textbf{Examples:}
+\begin{lstlisting}[style=sdcstyle]
+# Pre-CTS Setup Uncertainty (Jitter + Estimated Skew + Margin)
+set_clock_uncertainty -setup 0.25 [get_clocks SYS_CLK]
+
+# Pre-CTS Hold Uncertainty (Estimated Skew)
+set_clock_uncertainty -hold  0.10 [get_clocks SYS_CLK]
+
+# Post-CTS Clock Uncertainty (Jitter only, since skew is measured directly)
+set_clock_uncertainty -setup 0.05 [get_clocks SYS_CLK]
+set_clock_uncertainty -hold  0.02 [get_clocks SYS_CLK]
+
+# Inter-Clock Domain Uncertainty
+set_clock_uncertainty -setup 0.35 -from [get_clocks CLK_A] -to [get_clocks CLK_B]
+\end{lstlisting}
+\end{cmdbox}
+
+\begin{physbox}
+\textbf{Pre-CTS vs Post-CTS Difference:}
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Pre-CTS (Synthesis):} Clocks are ideal (zero latency). Uncertainty must cover PLL Jitter ($T_{jitter}$), estimated clock tree skew ($T_{skew}$), and signoff guardband margins ($T_{margin}$).
+  \item \textbf{Post-CTS (PnR / Signoff):} Clocks are propagated. Physical skew is extracted directly from the routed clock tree. Uncertainty is reduced to strictly \textbf{PLL Jitter} and power supply noise margins.
+\end{itemize}
+\end{physbox}
+
+\subsection{set\_clock\_latency \& set\_clock\_transition}
+\begin{cmdbox}{set\_clock\_latency \& set\_clock\_transition}{Insertion Delay and Slew}
+\textbf{Examples:}
+\begin{lstlisting}[style=sdcstyle]
+# Source Latency (Off-chip board/package clock delay)
+set_clock_latency -source -early 1.2 [get_clocks SYS_CLK]
+set_clock_latency -source -late  1.8 [get_clocks SYS_CLK]
+
+# Network Latency (Pre-CTS estimated on-chip insertion delay)
+set_clock_latency 0.8 [get_clocks SYS_CLK]
+
+# Clock Transition (Clock slew rate on clock pins)
+set_clock_transition 0.12 [get_clocks SYS_CLK]
+
+# Post-CTS: Activate real propagated clock delay calculations
+set_propagated_clock [all_clocks]
+\end{lstlisting}
+\end{cmdbox}
+
+% ==============================================================================
+\section{I/O Interface \& Boundary Constraints (SDC)}
+% ==============================================================================
+
+\subsection{set\_input\_delay}
+\begin{cmdbox}{set\_input\_delay}{Input Arrival Time Constraints}
+\textbf{Syntax:}
+\begin{lstlisting}[style=sdcstyle]
+set_input_delay -max <max_delay> -clock <clk_name> [-clock_fall] [-add_delay] <port_list>
+set_input_delay -min <min_delay> -clock <clk_name> [-clock_fall] [-add_delay] <port_list>
+\end{lstlisting}
+\textbf{Examples:}
+\begin{lstlisting}[style=sdcstyle]
+# Max Input Delay (for Setup check): 25% of clock period (2.5ns on 10ns clock)
+set_input_delay -max 2.5 -clock SYS_CLK [get_ports -filter "direction == in && name != clk"]
+
+# Min Input Delay (for Hold check): 5% of clock period (0.5ns)
+set_input_delay -min 0.5 -clock SYS_CLK [get_ports -filter "direction == in && name != clk"]
+
+# DDR (Double Data Rate) Input Delay (Both Clock Edges)
+set_input_delay -max 1.2 -clock DDR_CLK [get_ports ddr_data_in]
+set_input_delay -max 1.2 -clock DDR_CLK -clock_fall -add_delay [get_ports ddr_data_in]
+set_input_delay -min 0.3 -clock DDR_CLK [get_ports ddr_data_in]
+set_input_delay -min 0.3 -clock DDR_CLK -clock_fall -add_delay [get_ports ddr_data_in]
+\end{lstlisting}
+\end{cmdbox}
+
+\begin{formulabox}{Input Delay Formulations}
+\begin{align}
+  T_{input\_delay(max)} &= T_{board\_clk\_delay} + T_{ext\_launch\_cq(max)} + T_{ext\_pcb\_trace(max)} \\
+  T_{input\_delay(min)} &= T_{board\_clk\_delay} + T_{ext\_launch\_cq(min)} + T_{ext\_pcb\_trace(min)}
+\end{align}
+The allowable internal chip combinational delay $T_{comb\_in}$ is bounded by:
+\begin{equation}
+  T_{comb\_in} \le T_{clk} - T_{input\_delay(max)} - T_{setup}
+\end{equation}
+\end{formulabox}
+
+\subsection{set\_output\_delay}
+\begin{cmdbox}{set\_output\_delay}{Downstream Capture Constraints}
+\textbf{Syntax:}
+\begin{lstlisting}[style=sdcstyle]
+set_output_delay -max <max_delay> -clock <clk_name> [-clock_fall] [-add_delay] <port_list>
+set_output_delay -min <min_delay> -clock <clk_name> [-clock_fall] [-add_delay] <port_list>
+\end{lstlisting}
+\textbf{Examples:}
+\begin{lstlisting}[style=sdcstyle]
+# Max Output Delay (External PCB trace + External Setup time): 3.0ns
+set_output_delay -max 3.0 -clock SYS_CLK [get_ports -filter "direction == out"]
+
+# Min Output Delay (Negative of external hold time requirement): -0.5ns
+set_output_delay -min -0.5 -clock SYS_CLK [get_ports -filter "direction == out"]
+\end{lstlisting}
+\end{cmdbox}
+
+\begin{formulabox}{Output Delay Formulations}
+\begin{align}
+  T_{output\_delay(max)} &= T_{ext\_pcb\_trace(max)} + T_{ext\_capture\_setup} \\
+  T_{output\_delay(min)} &= T_{ext\_pcb\_trace(min)} - T_{ext\_capture\_hold}
+\end{align}
+The allowable internal chip clock-to-output delay $T_{cq} + T_{comb\_out}$ is bounded by:
+\begin{equation}
+  T_{cq} + T_{comb\_out} \le T_{clk} - T_{output\_delay(max)}
+\end{equation}
+\end{formulabox}
+
+\subsection{set\_driving\_cell \& set\_load}
+\begin{cmdbox}{set\_driving\_cell \& set\_load}{I/O Electrical Modeling}
+\textbf{Examples:}
+\begin{lstlisting}[style=sdcstyle]
+# Model input port drive strength using an inverter from the standard cell library
+set_driving_cell -lib_cell INV_X4 -library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c [all_inputs]
+
+# Exclude clock and reset ports from standard cell drive model (ideal nets pre-CTS)
+set_dont_touch_network [get_ports {clk rst_n}]
+
+# Explicit input transition time (slew) if driving cell is not used
+set_input_transition 0.15 [get_ports uart_rx]
+
+# Output capacitive load (pF or fF depending on technology library unit)
+set_load 0.05 [all_outputs]          ;# 50 fF capacitive load on all output pins
+set_load 5.0  [get_ports pad_tx_out] ;# 5.0 pF heavy off-chip PCB pad load
+\end{lstlisting}
+\end{cmdbox}
+
+% ==============================================================================
+\section{Timing Exceptions \& Path Modifiers (SDC)}
+% ==============================================================================
+
+\subsection{set\_false\_path}
+\begin{cmdbox}{set\_false\_path}{Disabling Non-Functional Timing Checks}
+\textbf{Examples:}
+\begin{lstlisting}[style=sdcstyle]
+# Cut asynchronous reset deassertion path (handled via recovery/removal checks)
+set_false_path -from [get_ports rst_n]
+
+# Cut static/quasi-static configuration register paths
+set_false_path -from [get_cells u_regfile/cfg_baud_div_reg*]
+
+# Cut paths crossing asynchronous clock domains (Alternative to set_clock_groups)
+set_false_path -from [get_clocks SYS_CLK] -to [get_clocks UART_TX_CLK]
+
+# Cut test/scan-mode paths during functional timing analysis
+set_false_path -through [get_pins u_dft_mux/test_mode]
+\end{lstlisting}
+\end{cmdbox}
+
+\begin{physbox}
+\textbf{CRITICAL WARNING:} \texttt{set\_false\_path} completely disables both Setup AND Hold analysis. Never apply a false path to a synchronous multicycle path or a CDC path that requires skew bounding (\texttt{set\_max\_delay -datapath\_only}).
+\end{physbox}
+
+\subsection{set\_multicycle\_path}
+\begin{cmdbox}{set\_multicycle\_path}{Multi-Cycle Synchronous Datapaths}
+\textbf{Examples:}
+\begin{lstlisting}[style=sdcstyle]
+# 2-Cycle Multicycle Path (Setup takes 2 clock cycles)
+set_multicycle_path 2 -setup -from [get_cells u_alu/op_reg*] -to [get_cells u_alu/result_reg*]
+set_multicycle_path 1 -hold  -from [get_cells u_alu/op_reg*] -to [get_cells u_alu/result_reg*]
+
+# 4-Cycle Multicycle Path for Deep Pipelined Divider
+set_multicycle_path 4 -setup -from [get_cells u_div/a_reg*] -to [get_cells u_div/out_reg*]
+set_multicycle_path 3 -hold  -from [get_cells u_div/a_reg*] -to [get_cells u_div/out_reg*]
+\end{lstlisting}
+\end{cmdbox}
+
+\begin{formulabox}{Multicycle Hold Rule}
+In SDC, setting \texttt{-setup N} automatically shifts the default hold check to cycle $N-1$. For standard synchronous single-clock designs where data must be held relative to the original launch edge (cycle 0), you \textbf{MUST} specify \texttt{-hold (N - 1)}.
+\end{formulabox}
+
+\subsection{set\_clock\_groups}
+\begin{cmdbox}{set\_clock\_groups}{Asynchronous \& Exclusive Clock Domains}
+\textbf{Examples:}
+\begin{lstlisting}[style=sdcstyle]
+# Asynchronous Clocks (System Clock vs UART TX Clock)
+set_clock_groups -asynchronous \
+                 -group [get_clocks SYS_CLK] \
+                 -group [get_clocks TX_CLK]
+
+# Logically Exclusive Clocks (Multiplexed Clock - Functional vs Fast Test Clock)
+set_clock_groups -logically_exclusive \
+                 -group [get_clocks FUNC_CLK] \
+                 -group [get_clocks TEST_CLK]
+
+# Physically Exclusive Clocks (Shared pad driven by two external mutually exclusive sources)
+set_clock_groups -physically_exclusive \
+                 -group [get_clocks XTAL_CLK] \
+                 -group [get_clocks EXT_PLL_CLK]
+\end{lstlisting}
+\end{cmdbox}
+
+\subsection{set\_max\_delay \& set\_min\_delay (-datapath\_only)}
+\begin{cmdbox}{set\_max\_delay -datapath\_only}{Asynchronous CDC Skew Bounding}
+\textbf{Examples:}
+\begin{lstlisting}[style=sdcstyle]
+# Constrain pure datapath latency across asynchronous FIFO Gray pointers
+set_max_delay 4.0 -datapath_only -from [get_cells u_fifo/wr_ptr_gray_reg*] \
+                                 -to   [get_cells u_fifo/u_sync_wr/sync_reg1*]
+
+# Pure Point-to-Point Min/Max Delays (No clock reference)
+set_max_delay 8.0 -from [get_ports ext_req] -to [get_ports ext_ack]
+set_min_delay 1.0 -from [get_ports ext_req] -to [get_ports ext_ack]
+\end{lstlisting}
+\end{cmdbox}
+
+\subsection{set\_case\_analysis \& set\_disable\_timing}
+\begin{cmdbox}{set\_case\_analysis \& set\_disable\_timing}{Mode Selection \& Loop Breaking}
+\textbf{Examples:}
+\begin{lstlisting}[style=sdcstyle]
+# Statically configure Functional Mode (Test Mode = 0)
+set_case_analysis 0 [get_ports test_mode]
+set_case_analysis 0 [get_ports scan_enable]
+
+# Configure Clock Divider MUX select pin to Slow Division Mode
+set_case_analysis 1 [get_pins u_clkdiv_mux/sel_div4]
+
+# Disable timing arc across an Integrated Clock Gating cell to break false loop
+set_disable_timing -from E -to Q [get_cells u_icg]
+\end{lstlisting}
+\end{cmdbox}
+
+% ==============================================================================
+\section{Environmental, Design Rule (DRC) \& Optimization Constraints}
+% ==============================================================================
+
+\subsection{Design Rule Constraints (DRCs)}
+\begin{cmdbox}{set\_max\_transition, set\_max\_capacitance, set\_max\_fanout}{Electrical Integrity}
+\textbf{Examples:}
+\begin{lstlisting}[style=sdcstyle]
+# Max transition (slew limit) across all nodes in the design
+set_max_transition 0.20 [current_design]
+
+# Max pin capacitance across design (overriding library default)
+set_max_capacitance 0.15 [current_design]
+
+# Max fanout guideline
+set_max_fanout 16 [current_design]
+
+# Area constraint (0 forces synthesis to minimize area as much as possible without violating timing)
+set_max_area 0
+\end{lstlisting}
+\end{cmdbox}
+
+\subsection{Path Grouping for Optimization}
+\begin{cmdbox}{group\_path}{Custom Optimization Weighting}
+\textbf{Examples:}
+\begin{lstlisting}[style=sdcstyle]
+# Group In-to-Reg, Reg-to-Out, and In-to-Out paths
+group_path -name INREG  -from [all_inputs]
+group_path -name REGOUT -to [all_outputs]
+group_path -name INOUT  -from [all_inputs] -to [all_outputs]
+
+# Dedicated group for Master System Clock with critical range and higher weight
+group_path -name SYS_CLK_GRP -critical_range 1.0 -weight 2.0 [get_clocks SYS_CLK]
+\end{lstlisting}
+\end{cmdbox}
+
+\subsection{Operating Conditions \& Wire Load Models}
+\begin{cmdbox}{set\_operating\_conditions \& set\_wire\_load\_model}{PVT \& Interconnect Modeling}
+\textbf{Examples:}
+\begin{lstlisting}[style=sdcstyle]
+# Set Slow PVT corner for pre-layout synthesis (SS, 1.08V, 125C)
+set_operating_conditions -max scmetro_tsmc_cl013g_rvt_ss_1p08v_125c \
+                         -max_library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+# Statistical Wire Load Model (for legacy pre-layout nodes > 65nm)
+set_wire_load_model -name "tsmc13_wl10" -library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+set_wire_load_mode enclosed
+\end{lstlisting}
+\end{cmdbox}
+
+% ==============================================================================
+\section{Static Timing Analysis (STA) Signoff Constraints (PrimeTime)}
+% ==============================================================================
+
+\subsection{On-Chip Variation (OCV) Derating}
+\begin{cmdbox}{set\_timing\_derate}{OCV Delay Margins}
+\textbf{Examples:}
+\begin{lstlisting}[style=sdcstyle]
+# Setup Timing Derate (Slow Corner: Max late launch, Min early capture)
+set_timing_derate -early 0.95 -clock [current_design]  ;# 5% faster capture clock
+set_timing_derate -late  1.05 -data  [current_design]  ;# 5% slower launch datapath
+set_timing_derate -late  1.05 -clock [current_design]  ;# 5% slower launch clock
+
+# Hold Timing Derate (Fast Corner: Min early launch, Max late capture)
+set_timing_derate -early 0.90 -data  [current_design]  ;# 10% faster launch data
+set_timing_derate -early 0.90 -clock [current_design]  ;# 10% faster launch clock
+set_timing_derate -late  1.10 -clock [current_design]  ;# 10% slower capture clock
+
+# Net-specific vs Cell-specific derates
+set_timing_derate -cell_delay -early 0.92 [current_design]
+set_timing_derate -net_delay  -late  1.08 [current_design]
+\end{lstlisting}
+\end{cmdbox}
+
+\subsection{Signoff STA Audit Script}
+\begin{cmdbox}{check\_timing \& report\_timing}{Signoff Validation Commands}
+\textbf{Examples:}
+\begin{lstlisting}[style=sdcstyle]
+# Comprehensive unconstrained endpoints audit
+check_timing -include {unconstrained_endpoints no_clock loop no_input_delay no_output_delay}
+
+# Worst Negative Slack (WNS) Setup Timing Report
+report_timing -delay_type max -max_paths 50 -path_type full_clock -derate -crosstalk_delta > reports/setup_timing.rpt
+
+# Hold Timing Report
+report_timing -delay_type min -max_paths 50 -path_type full_clock -derate > reports/hold_timing.rpt
+
+# Summary constraint report
+report_constraint -all_violators > reports/all_violators.rpt
+\end{lstlisting}
+\end{cmdbox}
+
+% ==============================================================================
+\section{Low Power Intent Constraints (UPF / IEEE 1801)}
+% ==============================================================================
+
+\begin{cmdbox}{Unified Power Format (UPF)}{Power Domain, Switch, Isolation \& PST}
+\textbf{Syntax \& Master Example:}
+\begin{lstlisting}[style=upfstyle]
+# 1. Define Power Domains
+create_power_domain PD_TOP  -include_scope
+create_power_domain PD_ALU  -elements {u_alu}
+create_power_domain PD_MEM  -elements {u_regfile}
+
+# 2. Define Supply Ports & Supply Nets
+create_supply_port VDD     -direction in
+create_supply_port VDD_LOW -direction in
+create_supply_port VSS     -direction in
+
+create_supply_net  VDD_TOP     -domain PD_TOP
+create_supply_net  VDD_ALU     -domain PD_ALU
+create_supply_net  VDD_ALU_SW  -domain PD_ALU   ;# Switched supply
+create_supply_net  VSS         -domain PD_TOP
+
+# 3. Connect Supply Nets to Ports
+connect_supply_net VDD_TOP -ports {VDD}
+connect_supply_net VSS     -ports {VSS}
+
+# 4. Set Domain Primary Power Nets
+set_domain_supply_net PD_TOP -primary_power_net VDD_TOP    -primary_ground_net VSS
+set_domain_supply_net PD_ALU -primary_power_net VDD_ALU_SW -primary_ground_net VSS
+
+# 5. Create Power Switch (Header PMOS Switch for Power Gating)
+create_power_switch pwr_sw_alu \
+    -domain PD_ALU \
+    -input_supply_port  {in_pwr  VDD_TOP} \
+    -output_supply_port {out_pwr VDD_ALU_SW} \
+    -control_port       {sleep   u_pwr_ctrl/alu_sleep} \
+    -on_state           {alu_on in_pwr {!sleep}}
+
+# 6. Set Isolation Strategy (Clamp to 0 when PD_ALU is powered down)
+set_isolation iso_alu_out \
+    -domain PD_ALU \
+    -isolation_supply_set {isolation_power VDD_TOP isolation_ground VSS} \
+    -clamp_value 0 \
+    -applies_to outputs
+
+set_isolation_control iso_alu_out \
+    -domain PD_ALU \
+    -isolation_signal u_pwr_ctrl/alu_iso_en \
+    -isolation_sense high \
+    -location parent
+
+# 7. Set Level Shifter Strategy (Low-to-High: 0.8V to 1.2V)
+set_level_shifter ls_low_to_high \
+    -domain PD_ALU \
+    -applies_to inputs \
+    -rule low_to_high \
+    -location self
+
+# 8. Set State Retention Strategy
+set_retention ret_alu \
+    -domain PD_ALU \
+    -retention_power_net  VDD_TOP \
+    -retention_ground_net VSS
+
+set_retention_control ret_alu \
+    -domain PD_ALU \
+    -save_signal    {u_pwr_ctrl/save_en high} \
+    -restore_signal {u_pwr_ctrl/restore_en high}
+
+# 9. Power State Table (PST) Definition
+create_pst sys_pst -supplies {VDD_TOP VDD_ALU_SW VSS}
+add_pst_state FULL_ON  -pst sys_pst -state {1.20 1.20 0.0}
+add_pst_state ALU_OFF  -pst sys_pst -state {1.20 OFF  0.0}
+add_pst_state STANDBY  -pst sys_pst -state {0.80 OFF  0.0}
+\end{lstlisting}
+\end{cmdbox}
+
+% ==============================================================================
+\section{Clock Domain Crossing (CDC) Constraints (SpyGlass SGDC)}
+% ==============================================================================
+
+\begin{cmdbox}{SpyGlass SGDC Constraints}{CDC Clocks, Resets, and Waivers}
+\textbf{Master Example:}
+\begin{lstlisting}[style=sgdcstyle]
+# 1. Set Top-Level Design Scope
+current_design "System_Top"
+
+# 2. Define Clocks and Domain Tags
+clock -name "clk"           -domain DOMAIN_SYS  -tag SYS_CLK  -period 10.0 -edge {0 5.0}
+clock -name "u_uart/tx_clk" -domain DOMAIN_UART -tag UART_CLK -period 80.0 -edge {0 40.0}
+
+# 3. Define Asynchronous Resets
+reset -name "rst_n"         -value 0 -async
+
+# 4. Declare Quasi-Static Signals (Bypasses CDC synchronizer checks)
+quasi_static -name "u_regfile/baud_rate_div*"
+quasi_static -name "u_regfile/config_parity_en"
+
+# 5. Define Synchronizer Cells & Structural FIFO directives
+sync_cell -name "DATA_SYNC" -input "unsync_in" -output "sync_out"
+fifo -memory "u_async_fifo/mem" -rd_clk "clk" -wr_clk "u_uart/tx_clk"
+
+# 6. Waivers for Specific Approved Architectures
+waive -rule Ac_conv01 -cell "u_sys_ctrl" -comment "Controlled FSM handshake re-convergence"
+waive -rule W188      -cell "u_rom"      -comment "Intentionally incomplete ROM table"
+\end{lstlisting}
+\end{cmdbox}
+
+% ==============================================================================
+\section{Design for Testability (DFT) Constraints \& Protocols}
+% ==============================================================================
+
+\begin{cmdbox}{Synopsys DFT Compiler SDC / Tcl Constraints}{Scan Chain Insertion}
+\textbf{Examples:}
+\begin{lstlisting}[style=sdcstyle]
+# 1. Define Scan Signals
+set_dft_signal -view spec -type ScanClock   -port [get_ports clk]    -active_state 1
+set_dft_signal -view spec -type Reset       -port [get_ports rst_n]  -active_state 0
+set_dft_signal -view spec -type ScanEnable  -port [get_ports scan_en] -active_state 1
+set_dft_signal -view spec -type ScanDataIn  -port [get_ports scan_in]
+set_dft_signal -view spec -type ScanDataOut -port [get_ports scan_out]
+
+# 2. Configure Scan Architecture
+set_scan_configuration -chain_count 4 \
+                       -style multiplexed_flip_flop \
+                       -clock_mixing mix_clocks \
+                       -add_lockup true
+
+# 3. Auto-fix Violating Non-Controllable Asynchronous Pins
+set_autofix_configuration -type reset -control_signal test_mode -test_data rst_n
+
+# 4. Create Test Protocol & Run Pre-Scan DRC
+create_test_protocol
+dft_drc -verbose > reports/dft_drc_pre_insert.rpt
+
+# 5. Insert Scan Chains & Balance
+preview_dft
+insert_dft
+\end{lstlisting}
+\end{cmdbox}
+
+% ==============================================================================
+\section{Physical Design (PnR) Constraints \& Technology Rules}
+% ==============================================================================
+
+\begin{cmdbox}{PnR Floorplan, CTS \& Routing Constraints}{Cadence Innovus / Synopsys ICC2}
+\textbf{Master Example:}
+\begin{lstlisting}[style=sdcstyle]
+# 1. Floorplan & Core Aspect Ratio Constraints
+create_floorplan -core_utilization 0.60 \
+                 -aspect_ratio 1.0 \
+                 -core_margins_by die \
+                 -core_margin_top 10.0 -core_margin_bottom 10.0 \
+                 -core_margin_left 10.0 -core_margin_right 10.0
+
+# 2. Macro Placement Halo (Keepout Margins)
+create_placement_halo -width 5.0 -sides {top bottom left right} [get_cells u_mem_macro]
+
+# 3. Clock Tree Synthesis (CTS) Options
+set_clock_tree_options -clocks [get_clocks SYS_CLK] \
+                       -target_skew 0.05 \
+                       -target_latency 0.80 \
+                       -max_transition 0.15 \
+                       -max_capacitance 0.10 \
+                       -buffer_relocation true
+
+# 4. Non-Default Routing Rules (NDR: 2W2S for Clocks)
+create_routing_rule RULE_2W2S -multiplier_width 2 -multiplier_spacing 2
+set_routing_rule -rule RULE_2W2S [get_nets -of_objects [get_clocks *]]
+
+# 5. Antenna Ratio Design Rules
+set_antenna_rules -max_ratio 400.0 -diode_cell ANTENNA_X1
+\end{lstlisting}
+\end{cmdbox}
+
+% ==============================================================================
+\section{FPGA Constraints (Xilinx XDC \& Intel Quartus QSF)}
+% ==============================================================================
+
+\begin{cmdbox}{Xilinx Vivado XDC Constraints}{Physical Pinout \& Timing}
+\textbf{Master Example:}
+\begin{lstlisting}[style=xdcstyle]
+# 1. Timing Clock Constraint
+create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} [get_ports clk]
+
+# 2. Physical Pin Placement & IO Standards
+set_property PACKAGE_PIN E3    [get_ports clk]
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
+
+set_property PACKAGE_PIN C12   [get_ports rst_n]
+set_property IOSTANDARD LVCMOS33 [get_ports rst_n]
+
+set_property PACKAGE_PIN D4    [get_ports uart_tx]
+set_property IOSTANDARD LVCMOS33 [get_ports uart_tx]
+set_property DRIVE 8           [get_ports uart_tx]
+set_property SLEW FAST         [get_ports uart_tx]
+
+# 3. Asynchronous Clock Domain Groups in XDC
+set_clock_groups -asynchronous -group [get_clocks -include_generated_clocks sys_clk_pin] \
+                               -group [get_clocks -include_generated_clocks tx_clk_pin]
+
+# 4. Max Delay Datapath Only for Asynchronous Crossings
+set_max_delay -from [get_cells u_async_fifo/wr_ptr_reg*] \
+              -to   [get_cells u_async_fifo/sync_reg1*] 5.000 -datapath_only
+\end{lstlisting}
+\end{cmdbox}
+
+% ==============================================================================
+\section{Complete Master SDC Script for the Diploma System Chip}
+% ==============================================================================
+
+\begin{cmdbox}{System\_Top.sdc}{Unified Production SDC File}
+\begin{lstlisting}[style=sdcstyle]
+################################################################################
+#                   MASTER PRODUCTION SDC CONSTRAINT FILE
+#                          System Controller SoC
+################################################################################
+current_design System_Top
+
+# 1. Time Units & Operational Environment
+set_operating_conditions -max scmetro_tsmc_cl013g_rvt_ss_1p08v_125c \
+                         -max_library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+# 2. Clocks Definition
+set CLK_PER 10.0   ;# 100 MHz Master System Clock
+create_clock -name REF_CLK -period $CLK_PER [get_ports clk]
+create_clock -name UART_CLK -period 80.0    [get_ports uart_clk]
+
+# Virtual Clocks for I/O Timing Reference
+create_clock -name VCLK_SYS  -period $CLK_PER
+create_clock -name VCLK_UART -period 80.0
+
+# Generated Clocks
+create_generated_clock -name TX_CLK -source [get_ports uart_clk] -divide_by 8 \
+                       [get_pins u_clkdiv/clk_out]
+
+create_generated_clock -name GATED_ALU_CLK -source [get_ports clk] -combinational \
+                       [get_pins u_clk_gate/GATED_CLK]
+
+# 3. Clock Uncertainties & Latencies
+set_clock_uncertainty -setup 0.20 [get_clocks REF_CLK]
+set_clock_uncertainty -hold  0.08 [get_clocks REF_CLK]
+set_clock_uncertainty -setup 0.50 [get_clocks UART_CLK]
+set_clock_uncertainty -hold  0.15 [get_clocks UART_CLK]
+
+set_clock_transition 0.10 [all_clocks]
+
+# 4. Input Constraints
+set_input_delay -max [expr $CLK_PER * 0.25] -clock VCLK_SYS [get_ports rst_n]
+set_input_delay -min [expr $CLK_PER * 0.05] -clock VCLK_SYS [get_ports rst_n]
+
+set_input_delay -max 20.0 -clock VCLK_UART [get_ports uart_rx]
+set_input_delay -min  4.0 -clock VCLK_UART [get_ports uart_rx]
+
+set_driving_cell -lib_cell INV_X4 [all_inputs]
+set_dont_touch_network [get_ports {clk uart_clk rst_n}]
+
+# 5. Output Constraints
+set_output_delay -max 20.0 -clock VCLK_UART [get_ports uart_tx]
+set_output_delay -min -2.0 -clock VCLK_UART [get_ports uart_tx]
+set_load 0.05 [all_outputs]
+
+# 6. Timing Exceptions
+set_clock_groups -asynchronous -group [get_clocks {REF_CLK GATED_ALU_CLK}] \
+                               -group [get_clocks {UART_CLK TX_CLK}]
+
+set_false_path -from [get_ports rst_n]
+
+set_max_delay 4.0 -datapath_only -from [get_cells u_async_fifo/wr_ptr_gray_reg*] \
+                                 -to   [get_cells u_async_fifo/u_sync/sync_reg1*]
+
+# 7. Design Rule Constraints (DRCs)
+set_max_transition  0.20 [current_design]
+set_max_capacitance 0.15 [current_design]
+set_max_fanout      16   [current_design]
+set_max_area        0
+
+# 8. Path Optimization Groups
+group_path -name INREG  -from [all_inputs]
+group_path -name REGOUT -to [all_outputs]
+group_path -name INOUT  -from [all_inputs] -to [all_outputs]
+group_path -name CORE   -critical_range 1.0 -weight 2.0 [get_clocks REF_CLK]
+################################################################################
+\end{lstlisting}
+\end{cmdbox}
+
+\end{document}
